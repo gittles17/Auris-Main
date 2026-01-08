@@ -1,0 +1,30 @@
+# Auris - Films & Series Intelligence Agent
+
+# Core AI
+openai>=1.0.0
+anthropic>=0.18.0
+
+# Web Interface
+streamlit>=1.30.0
+
+# Data Processing
+pandas>=2.0.0
+python-dateutil>=2.8.0
+
+# PDF Processing
+pdfplumber>=0.10.0
+PyPDF2>=3.0.0
+
+# API Integrations
+requests>=2.31.0
+
+# Web Scraping for Industry Sites
+beautifulsoup4>=4.12.0
+feedparser>=6.0.0
+
+# Browser Automation (for IMDb Pro)
+playwright>=1.40.0
+
+# Environment & Config
+python-dotenv>=1.0.0
+

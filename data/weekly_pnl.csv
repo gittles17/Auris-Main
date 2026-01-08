@@ -1,0 +1,4 @@
+job_number,job_name,client,creative_director,status,budget,actual_cost,billed,gross_profit,margin_pct,start_date,due_date,project_type,notes
+# STATUS options: Pitched, Awarded, In Progress, Complete, On Hold, Cancelled
+# PROJECT_TYPE options: Trailer, TV Spot, Digital Campaign, Print, Social, Sizzle, Full Campaign
+

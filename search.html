@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search - Auris</title>
+    <link rel="icon" type="image/png" href="auris_logo.png">
+    <meta property="og:title" content="Search - Auris">
+    <meta property="og:image" content="Auris_logo_2.svg">
+    <meta property="og:type" content="website">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        
+        body {
+            background: #faf7f2;
+            color: #5a4a3a;
+        }
+        
+        .search-input {
+            flex: 1;
+            padding: 16px 20px;
+            border: 2px solid rgba(255, 168, 122, 0.3);
+            border-radius: 12px;
+            font-size: 18px;
+            color: #6a5a4a;
+            background: #ffffff;
+            outline: none;
+            transition: border-color 0.3s ease;
+            width: 100%;
+        }
+        
+        .search-input:focus {
+            border-color: rgba(255, 168, 122, 0.8);
+        }
+        
+        .search-input::placeholder {
+            color: #8a6a4a;
+            opacity: 0.7;
+        }
+        
+        .search-results {
+            margin-top: 32px;
+        }
+        
+        .search-result-item {
+            padding: 20px;
+            margin-bottom: 16px;
+            background: #ffffff;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 168, 122, 0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .search-result-item:hover {
+            border-color: rgba(255, 168, 122, 0.5);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .search-result-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #6a5a4a;
+            margin-bottom: 8px;
+        }
+        
+        .search-result-snippet {
+            font-size: 14px;
+            color: #8a6a4a;
+            line-height: 1.6;
+        }
+        
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            color: #8a6a4a;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            margin-bottom: 32px;
+        }
+        
+        .back-button:hover {
+            background: rgba(255, 168, 122, 0.1);
+            color: #6a5a4a;
+        }
+        
+        @media (max-width: 767px) {
+            .search-input {
+                font-size: 16px;
+                padding: 14px 16px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-[#faf7f2] text-[#8a6a4a] font-sans antialiased">
+    <div class="min-h-screen py-12 px-6">
+        <div class="max-w-4xl mx-auto">
+            <!-- Back button -->
+            <a href="index.html" class="back-button">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 12H5M12 19l-7-7 7-7" stroke="#8a6a4a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Back to Home</span>
+            </a>
+            
+            <!-- Search Header -->
+            <div class="mb-8">
+                <h1 class="text-4xl md:text-5xl font-normal mb-4 text-[#2d2d2d]" style="font-family: 'Crimson Text', Georgia, serif;">Search</h1>
+                <p class="text-lg text-[#6a5a4a]">Find what you're looking for</p>
+            </div>
+            
+            <!-- Search Input -->
+            <div class="mb-8">
+                <div class="flex items-center gap-4">
+                    <input 
+                        type="text" 
+                        id="search-input" 
+                        class="search-input" 
+                        placeholder="Search..." 
+                        autocomplete="off"
+                        autofocus
+                    >
+                    <button id="search-button" class="px-6 py-4 bg-[#8a6a4a] text-white rounded-lg hover:bg-[#7a5a3a] transition-colors">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                            <path d="M13 13l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Search Results -->
+            <div id="search-results" class="search-results">
+                <!-- Results will be populated here -->
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const searchInput = document.getElementById('search-input');
+        const searchButton = document.getElementById('search-button');
+        const searchResults = document.getElementById('search-results');
+        
+        // Searchable content index
+        const searchIndex = [
+            {
+                title: 'The Challenge',
+                section: 'problem',
+                keywords: ['challenge', 'volatility', 'competition', 'revenue', 'headcount', 'labor costs', 'linear trap', 'information silos', 'workflows', 'scaling'],
+                content: 'Volatility Is the New Norm. Competition is fierce, rate cards are declining, and labor costs are rising. Current processes prevent us from scaling revenue without matching linear increases in labor costs and headcount. Fragmented workflows between platforms force teams to chase information rather than make creative decisions.'
+            },
+            {
+                title: 'The Solution',
+                section: 'solution',
+                keywords: ['solution', 'creategpt', 'intelligence', 'private', 'time', 'monitors', 'platforms', 'savings', 'bottlenecks', 'assistant', 'timesheet'],
+                content: 'Introducing Auris. A private intelligence layer designed to protect our most valuable asset: Time. It monitors our platforms in real time, spots savings, and stops bottlenecks before they happen. Launch with one high impact use case like the Timesheet Assistant.'
+            },
+            {
+                title: 'How It Works',
+                section: 'creategpt-details',
+                keywords: ['works', 'how', 'chatgpt', 'interface', 'workflows', 'reliable', 'details', 'secure', 'data', 'premises', 'library card'],
+                content: 'Think of this as our own private version of ChatGPT with the same interface simplicity, but purpose built for our internal workflows. It is your best friend who is reliable, tireless, and focused purely on the details that slow you down. Secure Data on Premises.'
+            },
+            {
+                title: 'Security First',
+                section: 'security',
+                keywords: ['security', 'secure', 'data', 'private', 'premises', 'protection', 'safe'],
+                content: 'Security First. Your data stays on premises, protected and private. Auris ensures all information remains secure within your infrastructure.'
+            },
+            {
+                title: 'Impact',
+                section: 'roi',
+                keywords: ['roi', 'impact', 'return', 'investment', 'savings', 'efficiency', 'bottom line', 'metrics', 'success'],
+                content: 'The Bottom Line. Projected ROI and Phase 1 Investment. Measure success with defined metrics and approval gates at every step.'
+            },
+            {
+                title: 'Questions',
+                section: 'faq',
+                keywords: ['questions', 'faq', 'chatgpt enterprise', 'copilot', 'why', 'how', 'what', 'when'],
+                content: 'Anticipated Questions. Why not just use ChatGPT Enterprise or Copilot? Find answers to common questions about Auris.'
+            },
+            {
+                title: 'Our AI Philosophy',
+                section: 'vision',
+                keywords: ['philosophy', 'vision', 'ai', 'approachable', 'intelligence', 'responsible', 'knowing'],
+                content: 'Our AI Philosophy. Approachable Intelligence. Responsible AI that takes you from guessing to knowing.'
+            },
+            {
+                title: 'Next Steps',
+                section: 'next-steps',
+                keywords: ['next steps', 'pilot', 'integration', 'rollout', 'phase', 'scoped', 'expansion'],
+                content: 'Next Steps. Scoped Pilot, Integration Expansion, Full Rollout. Launch with one high impact use case like the Timesheet Assistant. Expand data sources and integrations based on pilot learnings.'
+            }
+        ];
+        
+        // Search functionality
+        function performSearch(query) {
+            if (!query || query.trim() === '') {
+                searchResults.innerHTML = '<p class="text-[#8a6a4a] text-center py-12">Enter a search term to find content</p>';
+                return;
+            }
+            
+            const results = [];
+            const queryLower = query.toLowerCase().trim();
+            const queryWords = queryLower.split(/\s+/);
+            
+            // Search through content index
+            searchIndex.forEach(item => {
+                let score = 0;
+                let matchedText = '';
+                
+                // Check title match
+                if (item.title.toLowerCase().includes(queryLower)) {
+                    score += 10;
+                    matchedText = item.title;
+                }
+                
+                // Check keyword matches
+                queryWords.forEach(word => {
+                    if (item.keywords.some(kw => kw.includes(word) || word.includes(kw))) {
+                        score += 5;
+                    }
+                });
+                
+                // Check content match
+                if (item.content.toLowerCase().includes(queryLower)) {
+                    score += 3;
+                    // Extract snippet around match
+                    const contentLower = item.content.toLowerCase();
+                    const index = contentLower.indexOf(queryLower);
+                    if (index !== -1) {
+                        const start = Math.max(0, index - 50);
+                        const end = Math.min(item.content.length, index + queryLower.length + 50);
+                        matchedText = item.content.substring(start, end);
+                        if (start > 0) matchedText = '...' + matchedText;
+                        if (end < item.content.length) matchedText = matchedText + '...';
+                    }
+                }
+                
+                // If we have a match, add to results
+                if (score > 0) {
+                    results.push({
+                        title: item.title,
+                        link: `index.html#${item.section}`,
+                        snippet: matchedText || item.content.substring(0, 150) + '...',
+                        score: score
+                    });
+                }
+            });
+            
+            // Sort by score (highest first)
+            results.sort((a, b) => b.score - a.score);
+            
+            // Display results
+            if (results.length === 0) {
+                searchResults.innerHTML = `
+                    <div class="text-center py-12">
+                        <p class="text-[#8a6a4a] text-lg mb-2">No results found</p>
+                        <p class="text-[#8a6a4a] text-sm">Try a different search term</p>
+                    </div>
+                `;
+            } else {
+                searchResults.innerHTML = results.map(result => `
+                    <a href="${result.link}" class="search-result-item block">
+                        <div class="search-result-title">${result.title}</div>
+                        <div class="search-result-snippet">${result.snippet}</div>
+                    </a>
+                `).join('');
+            }
+        }
+        
+        // Search on button click
+        searchButton.addEventListener('click', () => {
+            performSearch(searchInput.value);
+        });
+        
+        // Search on Enter key
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                performSearch(searchInput.value);
+            }
+        });
+        
+        // Search on input (optional - debounced)
+        let searchTimeout;
+        searchInput.addEventListener('input', (e) => {
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(() => {
+                performSearch(e.target.value);
+            }, 300);
+        });
+        
+        // Focus input on load
+        searchInput.focus();
+    </script>
+</body>
+</html>

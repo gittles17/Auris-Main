@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Auris: Brand Identity & Strategy Guide</title>
+    <link rel="icon" type="image/png" href="auris_logo.png">
+    <meta property="og:title" content="Auris: Brand Identity & Strategy Guide">
+    <meta property="og:image" content="Auris_logo_2.svg">
+    <meta property="og:type" content="website">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            /* Logo-inspired color palette */
+            --slate-blue: #4a5a6a;
+            --muted-teal: #6a8a7a;
+            --sky-blue: #8aa5c5;
+            --muted-rose: #c5a5a5;
+            --neutral-grey: #8a8a8a;
+            --dark-text: #2d2d2d;
+            --light-text: #5a6a7a;
+            --bg-cream: #f5f2f0;
+            --bg-light: #faf9f7;
+            --border-color: rgba(106, 138, 122, 0.2);
+            --accent: #6a8a7a;
+        }
+
+        * {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
+        h1,
+        h2 {
+            font-family: 'Crimson Text', Georgia, serif;
+            font-weight: 400;
+            color: var(--dark-text);
+        }
+
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-weight: 400;
+            color: var(--dark-text);
+        }
+
+        .mono-font {
+            font-family: 'Courier New', Courier, 'Monaco', 'Menlo', monospace;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+        }
+
+        .serif-italic {
+            font-family: 'Crimson Text', Georgia, serif;
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        body {
+            background: var(--bg-light);
+            color: var(--light-text);
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .slide-up {
+            animation: slideUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .scroll-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #ffa87a 0%, #e8b8a8 50%, #d4a574 100%);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        nav.scrolled {
+            background: linear-gradient(135deg, rgba(255, 240, 225, 0.7) 0%, rgba(250, 230, 220, 0.7) 100%) !important;
+            backdrop-filter: blur(40px) saturate(180%) brightness(1.05) !important;
+            -webkit-backdrop-filter: blur(40px) saturate(180%) brightness(1.05) !important;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06),
+                inset 0 1px 0 rgba(255, 255, 255, 0.5),
+                inset 0 -1px 0 rgba(255, 255, 255, 0.3),
+                0 0 0 1px rgba(255, 255, 255, 0.2),
+                0 0 60px rgba(255, 200, 150, 0.25) !important;
+            border: 1px solid rgba(255, 168, 122, 0.25) !important;
+            transform: translateX(-50%) translateY(0) !important;
+        }
+
+        .bg-gray-card {
+            background: #ffffff;
+            border: 1px solid rgba(255, 168, 122, 0.2);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .card-hover {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 24px 48px rgba(0, 0, 0, 0.15),
+                0 0 0 1px rgba(255, 255, 255, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3),
+                0 0 30px rgba(255, 168, 122, 0.3),
+                0 0 20px rgba(232, 184, 168, 0.2);
+        }
+
+        .pillar-number {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, rgba(106, 138, 122, 0.15) 0%, rgba(74, 90, 106, 0.15) 100%);
+            border: 1px solid rgba(106, 138, 122, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6a8a7a;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .guideline-item {
+            padding: 20px;
+            margin-bottom: 16px;
+            background: #ffffff;
+            border-left: 3px solid rgba(106, 138, 122, 0.3);
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .guideline-item:hover {
+            border-left-color: #6a8a7a;
+            background: #faf9f7;
+        }
+
+        .guideline-avoid {
+            border-left-color: rgba(197, 165, 165, 0.5);
+        }
+
+        .guideline-avoid:hover {
+            border-left-color: #c5a5a5;
+        }
+
+        .guideline-prefer {
+            border-left-color: rgba(106, 138, 122, 0.5);
+        }
+
+        .guideline-prefer:hover {
+            border-left-color: #6a8a7a;
+        }
+
+
+        /* Hamburger menu styles */
+        .hamburger-menu {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 100;
+        }
+
+        .hamburger-menu span {
+            width: 24px;
+            height: 2px;
+            background: #8a6a4a;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .hamburger-menu.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger-menu.active span:nth-child(2) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        .search-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            background: transparent;
+            border: none;
+            color: #8a6a4a;
+        }
+
+        .search-icon svg {
+            transition: opacity 0.3s ease;
+        }
+
+        .search-icon:hover svg {
+            opacity: 0.7;
+        }
+
+        .search-icon-mobile {
+            display: none;
+        }
+
+        .search-icon-desktop {
+            display: flex;
+        }
+
+        /* Nav logo image sizing */
+        nav img {
+            height: 40px !important;
+            width: 40px !important;
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+
+        img.h-48 {
+            padding-top: 0px;
+            padding-bottom: 0px;
+            height: 118px;
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 767px) {
+            .hamburger-menu {
+                display: flex !important;
+            }
+
+            nav {
+                width: calc(100% - 32px) !important;
+                max-width: calc(100% - 32px) !important;
+                top: 12px !important;
+                left: 16px !important;
+                transform: none !important;
+            }
+
+            nav.scrolled {
+                transform: none !important;
+                left: 16px !important;
+            }
+
+            nav>div {
+                flex-direction: row;
+                padding: 14px 12px !important;
+            }
+
+            nav>div>div.flex.items-center.gap-4.text-xs {
+                display: none !important;
+            }
+
+            nav>div>div:first-child {
+                display: none !important;
+            }
+
+            .search-icon-desktop {
+                display: none !important;
+            }
+
+            .search-icon-mobile {
+                display: flex !important;
+            }
+
+            h2 {
+                font-size: 42px !important;
+                line-height: 1.15 !important;
+            }
+
+            section {
+                padding-top: 32px !important;
+                padding-bottom: 32px !important;
+            }
+
+            .bg-gray-card {
+                padding: 24px !important;
+            }
+        }
+
+        .nav-menu-mobile {
+            display: none;
+            flex-direction: column;
+            width: 100%;
+            gap: 0;
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid rgba(180, 140, 100, 0.1);
+        }
+
+        .nav-menu-mobile.active {
+            display: flex;
+        }
+
+        .nav-menu-mobile .nav-link {
+            padding: 12px 0;
+            text-align: center;
+            border-bottom: 1px solid rgba(232, 184, 168, 0.25);
+        }
+
+        .nav-menu-mobile .nav-link:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+
+<body class="bg-[#faf9f7] text-[#5a6a7a] font-sans selection:bg-[#6a8a7a]/20 selection:text-[#4a5a6a] antialiased">
+
+    <nav id="main-nav"
+        class="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 bg-[#f5f2f0] backdrop-blur-md border border-[#6a8a7a]/20 rounded-md shadow-lg transition-all duration-300"
+        style="background: rgba(245, 242, 240, 0.95); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); width: 80%; max-width: 1400px;">
+        
+        <!-- Center: Logo -->
+        <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 1000; pointer-events: auto;">
+            <a href="index.html" style="display: block; line-height: 0;">
+                <img src="./logo.png?v=9" id="logo-header" 
+                     alt="Auris" 
+                     style="display: block !important; 
+                            visibility: visible !important; 
+                            opacity: 1 !important; 
+                            width: 40px !important; 
+                            height: 40px !important;
+                            max-width: 40px !important;
+                            max-height: 40px !important;
+                            padding: 0 !important;
+                            margin: 0 !important;
+                            object-fit: contain !important;
+                            z-index: 1001 !important;">
+            </a>
+        </div>
+        
+        <div class="px-8 py-4 flex items-center justify-between fade-in relative">
+            <!-- Left: Search icon (desktop) -->
+            <div class="flex items-center gap-2 flex-shrink-0 flex-1">
+                <a href="search.html" class="search-icon search-icon-desktop flex items-center gap-2"
+                    aria-label="Search">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="9" cy="9" r="6" stroke="#8a6a4a" stroke-width="1.5" fill="none" />
+                        <path d="M13 13l4 4" stroke="#8a6a4a" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                    <span class="text-sm text-[#5a6a7a]">Search</span>
+                </a>
+            </div>
+            
+            <!-- Right: Navigation links -->
+            <div class="flex items-center gap-4 text-xs font-medium flex-1 justify-end">
+                <a href="index.html" class="nav-link text-[#5a6a7a] hover:text-[#4a5a6a]">Home</a>
+            </div>
+            <!-- Search icon (mobile) -->
+            <a href="search.html" class="search-icon search-icon-mobile" aria-label="Search">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="9" cy="9" r="6" stroke="#8a6a4a" stroke-width="1.5" fill="none" />
+                    <path d="M13 13l4 4" stroke="#8a6a4a" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+            </a>
+            <!-- Hamburger menu button (hidden on desktop) -->
+            <button class="hamburger-menu" id="hamburger-menu" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <!-- Mobile menu (hidden on desktop) -->
+        <div class="nav-menu-mobile" id="nav-menu-mobile">
+            <a href="index.html" class="nav-link text-[#5a6a7a]">Home</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-24 px-6 min-h-[70vh] flex items-center overflow-hidden"
+        style="background: linear-gradient(135deg, #4a5a6a 0%, #6a8a7a 25%, #8aa5c5 50%, #c5a5a5 75%, #8a8a8a 100%);">
+        <div class="max-w-5xl mx-auto text-center relative z-10">
+            <div class="slide-up">
+                <h1 class="text-6xl md:text-8xl mb-6 tracking-tight leading-tight text-white"
+                    style="font-family: 'Crimson Text', Georgia, serif; font-weight: 400;">
+                    <img src="Auris_logo_2.svg" alt="Auris" class="h-48 md:h-64 w-auto mx-auto" style="width: 543px; height: 127px; filter: brightness(0) invert(1);">
+                </h1>
+                <h1 class="text-xl md:text-2xl text-white mb-4 leading-relaxed"
+                    style="font-family: 'Crimson Text', Georgia, serif; font-style: italic;">
+                    Brand Identity & Strategy Guide
+                </h1>
+            </div>
+        </div>
+    </header>
+
+    <!-- Brand Essence Section -->
+    <section id="essence" class="py-32 md:py-32 px-6 scroll-reveal bg-[#faf9f7] relative">
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="text-center mb-16 scroll-reveal">
+                <div class="text-sm text-[#5a6a7a] font-normal uppercase tracking-wider mb-4 mono-font">BRAND ESSENCE</div>
+                <h2 class="text-4xl md:text-5xl font-normal mb-6 text-[#2d2d2d] leading-tight">The Observatory of the Agency</h2>
+            </div>
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-gray-card rounded-2xl p-8 scroll-reveal">
+                    <p class="text-lg text-[#5a6a7a] leading-relaxed mb-6">
+                        Auris serves as the collective <strong class="text-[#2d2d2d]">eyes and ears</strong> of an organization, providing the high-ground perspective necessary to navigate complex corporate environments.
+                    </p>
+                    <p class="text-lg text-[#5a6a7a] leading-relaxed mb-6">
+                        The brand name is derived from the Latin <em>Auris</em>, meaning <strong class="text-[#2d2d2d]">"ear"</strong> or <strong class="text-[#2d2d2d]">"the act of listening."</strong> While the visual identity is rooted in the architecture of seeing (the observatory), the name is rooted in the discipline of hearing. Together, they create a system of total sensory awareness.
+                    </p>
+                    <p class="text-lg text-[#5a6a7a] leading-relaxed">
+                        Our mission is to filter the noise of the agency so that the visionary work of Create can flourish in a protected, clear-sighted, and resonant environment.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Tagline Section -->
+    <section id="tagline" class="py-32 md:py-32 px-6 scroll-reveal bg-[#f5f2f0] relative">
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="text-center mb-16 scroll-reveal">
+                <div class="text-sm text-[#5a6a7a] font-normal uppercase tracking-wider mb-4 mono-font">CORE TAGLINE</div>
+                <h2 class="text-4xl md:text-5xl font-normal mb-6 text-[#2d2d2d] leading-tight">The Vantage Point</h2>
+            </div>
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-gray-card rounded-2xl p-8 scroll-reveal">
+                    <blockquote class="text-3xl md:text-4xl text-center text-[#2d2d2d] leading-tight mb-6 serif-italic" style="font-family: 'Crimson Text', Georgia, serif;">
+                        "Elevating the Artistic Spirit of Create."
+                    </blockquote>
+                    <p class="text-lg text-[#5a6a7a] leading-relaxed text-center">
+                        This tagline establishes Auris as the guardian of innovation. It positions the AI not just as a tool, but as a strategic overlook, an observatory that watches the horizon and listens to the pulse, so the artists can focus on their craft.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Identity Section -->
+    <section id="visual-identity" class="py-32 md:py-32 px-6 scroll-reveal bg-[#faf9f7] relative">
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="text-center mb-16 scroll-reveal">
+                <div class="text-sm text-[#5a6a7a] font-normal uppercase tracking-wider mb-4 mono-font">VISUAL IDENTITY</div>
+                <h2 class="text-4xl md:text-5xl font-normal mb-6 text-[#2d2d2d] leading-tight">The Logo</h2>
+            </div>
+            
+            <!-- Logo Evolution -->
+            <div class="max-w-7xl mx-auto mb-16 scroll-reveal">
+                <div class="bg-gray-card rounded-2xl p-8">
+                    <h3 class="text-2xl font-semibold text-[#2d2d2d] mb-6 text-center">Process</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="text-center">
+                            <div style="width: 200px; height: 200px; margin: 0 auto 16px auto; display: flex; align-items: center; justify-content: center;">
+                                <img src="./logo stage 1.png?v=1" alt="Stage 1: Orthographic Tracing" style="max-width: 200px; max-height: 200px; width: auto; height: auto; object-fit: contain; display: block;">
+                            </div>
+                            <h4 class="text-base font-semibold text-[#2d2d2d] mb-2">Stage 1</h4>
+                            <p class="text-sm text-[#5a6a7a] font-semibold mb-3">Orthographic Tracing</p>
+                            <p class="text-sm text-[#5a6a7a] leading-relaxed">The initial architectural blueprint traced from the Griffith Observatory's aerial footprint.</p>
+                        </div>
+                        <div class="text-center">
+                            <div style="width: 200px; height: 200px; margin: 0 auto 16px auto; display: flex; align-items: center; justify-content: center;">
+                                <img src="./logo stage 2.png?v=1" alt="Stage 2: Geometric Simplification" style="max-width: 200px; max-height: 200px; width: auto; height: auto; object-fit: contain; display: block;">
+                            </div>
+                            <h4 class="text-base font-semibold text-[#2d2d2d] mb-2">Stage 2</h4>
+                            <p class="text-sm text-[#5a6a7a] font-semibold mb-3">Geometric Simplification</p>
+                            <p class="text-sm text-[#5a6a7a] leading-relaxed">The form refined into clean, interwoven geometric bars preserving the architectural essence.</p>
+                        </div>
+                        <div class="text-center">
+                            <div style="width: 200px; height: 200px; margin: 0 auto 16px auto; display: flex; align-items: center; justify-content: center;">
+                                <img src="./logo stage 3.png?v=1" alt="Stage 3: Rotation and Color Application" style="max-width: 200px; max-height: 200px; width: auto; height: auto; object-fit: contain; display: block;">
+                            </div>
+                            <h4 class="text-base font-semibold text-[#2d2d2d] mb-2">Stage 3</h4>
+                            <p class="text-sm text-[#5a6a7a] font-semibold mb-3">Rotation and Color Application</p>
+                            <p class="text-sm text-[#5a6a7a] leading-relaxed">Strategic rotation with gradient colors applied, symbolizing frequency and transmission.</p>
+                        </div>
+                        <div class="text-center">
+                            <div style="width: 200px; height: 200px; margin: 0 auto 16px auto; display: flex; align-items: center; justify-content: center;">
+                                <img src="./logo.png?v=1" alt="Stage 4: Final Auris Logo" style="max-width: 200px; max-height: 200px; width: 131px; height: auto; object-fit: contain; display: block;">
+                            </div>
+                            <h4 class="text-base font-semibold text-[#2d2d2d] mb-2">Stage 4</h4>
+                            <p class="text-sm text-[#5a6a7a] font-semibold mb-3">Final Auris Logo</p>
+                            <p class="text-sm text-[#5a6a7a] leading-relaxed">The completed symbol synthesizing sight and sound, observation and listening.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-gray-card rounded-2xl p-8 scroll-reveal mb-8">
+                    <div class="text-center mb-8">
+                        <img src="./auris_logo.png" alt="Auris Logo" class="mx-auto max-w-xs" style="max-height: 200px;">
+                    </div>
+                    <h3 class="text-2xl font-semibold text-[#2d2d2d] mb-4">Architectural Inspiration</h3>
+                    <p class="text-lg text-[#5a6a7a] leading-relaxed mb-6">
+                        The Auris logo is a geometric abstraction derived from the structural blueprints of the Griffith Observatory in Los Angeles. The logo utilizes the orthographic aerial footprint of the observatory.
+                    </p>
+                    <ul class="space-y-4 text-lg text-[#5a6a7a] leading-relaxed mb-6">
+                        <li>
+                            <strong class="text-[#2d2d2d]">The Central Rotunda:</strong> The negative space (diamond) at the heart of the logo mirrors the central hall of the observatory, the nucleus where information is processed and insights are formed.
+                        </li>
+                        <li>
+                            <strong class="text-[#2d2d2d]">The Cross-Axial Plan:</strong> The intersecting bars replicate the layout of the observatory's three primary domes and flanking wings, representing the convergence of multiple data streams.
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-gray-card rounded-2xl p-8 scroll-reveal">
+                    <h3 class="text-2xl font-semibold text-[#2d2d2d] mb-4">Symbolic Meaning: Seeing & Hearing</h3>
+                    <ul class="space-y-4 text-lg text-[#5a6a7a] leading-relaxed">
+                        <li>
+                            <strong class="text-[#2d2d2d]">The Eyes and Ears:</strong> The logo represents a synthesis of senses. The horizontal and vertical bars represent the Observatory's sight (scanning the horizon) and the Auris listening (capturing the internal pulse).
+                        </li>
+                        <li>
+                            <strong class="text-[#2d2d2d]">The Gradient Blur:</strong> The soft edges of the bars symbolize frequency and transmission. They evoke the visual phenomenon of "lens flare" from an observatory telescope and the auditory "waveform" of a signal being captured.
+                        </li>
+                        <li>
+                            <strong class="text-[#2d2d2d]">Symmetry:</strong> The perfect balance reflects unbiased, 360-degree monitoring across both visual and auditory data.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Pillars Section -->
+    <section id="pillars" class="py-32 md:py-32 px-6 scroll-reveal bg-[#f5f2f0] relative">
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="text-center mb-16 scroll-reveal">
+                <div class="text-sm text-[#5a6a7a] font-normal uppercase tracking-wider mb-4 mono-font">BRAND PILLARS</div>
+                <h2 class="text-4xl md:text-5xl font-normal mb-6 text-[#2d2d2d] leading-tight">Four Foundations</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+                <div class="bg-gray-card rounded-2xl p-8 card-hover scroll-reveal">
+                    <div class="pillar-number">I</div>
+                    <h3 class="text-2xl font-semibold text-[#2d2d2d] mb-4">The Vantage Point</h3>
+                    <p class="text-base text-[#5a6a7a] mb-3 font-semibold">Strategic Vision</p>
+                    <p class="text-lg text-[#5a6a7a] leading-relaxed">
+                        Like an observatory positioned on a hill, Auris provides a "high-ground" advantage. It looks beyond the immediate chaos to identify long-term trends and risks. It is the "Eye" that sees the storm before it arrives.
+                    </p>
+                </div>
+                <div class="bg-gray-card rounded-2xl p-8 card-hover scroll-reveal">
+                    <div class="pillar-number">II</div>
+                    <h3 class="text-2xl font-semibold text-[#2d2d2d] mb-4">The Active Listener</h3>
+                    <p class="text-base text-[#5a6a7a] mb-3 font-semibold">Resonant Insight</p>
+                    <p class="text-lg text-[#5a6a7a] leading-relaxed">
+                        Rooted in its Latin namesake, Auris is a master of the "Act of Listening." It doesn't just record data; it hears the sentiment, the subtext, and the unspoken needs of the agency. It is the "Ear" that understands the heartbeat of the organization.
+                    </p>
+                </div>
+                <div class="bg-gray-card rounded-2xl p-8 card-hover scroll-reveal">
+                    <div class="pillar-number">III</div>
+                    <h3 class="text-2xl font-semibold text-[#2d2d2d] mb-4">The Guardian</h3>
+                    <p class="text-base text-[#5a6a7a] mb-3 font-semibold">Protection</p>
+                    <p class="text-lg text-[#5a6a7a] leading-relaxed">
+                        Auris does not just observe; it protects. By identifying friction and noise through both sight and sound before it reaches the creative team, it ensures that the "Artistic Spirit" is never compromised by administrative or corporate fog.
+                    </p>
+                </div>
+                <div class="bg-gray-card rounded-2xl p-8 card-hover scroll-reveal">
+                    <div class="pillar-number">IV</div>
+                    <h3 class="text-2xl font-semibold text-[#2d2d2d] mb-4">The Catalyst</h3>
+                    <p class="text-base text-[#5a6a7a] mb-3 font-semibold">Clarity</p>
+                    <p class="text-lg text-[#5a6a7a] leading-relaxed">
+                        Through its connection to Create, Auris acts as a lens and a resonator. It takes raw agency data and clarifies it into actionable vision, turning observation and listening into a catalyst for new artistic work.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Voice and Tone Section -->
+    <section id="voice" class="py-32 md:py-32 px-6 scroll-reveal bg-[#faf9f7] relative">
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="text-center mb-16 scroll-reveal">
+                <div class="text-sm text-[#5a6a7a] font-normal uppercase tracking-wider mb-4 mono-font">VOICE AND TONE</div>
+                <h2 class="text-4xl md:text-5xl font-normal mb-6 text-[#2d2d2d] leading-tight">How We Communicate</h2>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                <div class="bg-gray-card rounded-2xl p-6 card-hover scroll-reveal">
+                    <h3 class="text-xl font-semibold text-[#2d2d2d] mb-3">Visionary</h3>
+                    <p class="text-base text-[#5a6a7a] leading-relaxed">
+                        We speak from the horizon, looking toward the future.
+                    </p>
+                </div>
+                <div class="bg-gray-card rounded-2xl p-6 card-hover scroll-reveal">
+                    <h3 class="text-xl font-semibold text-[#2d2d2d] mb-3">Attentive</h3>
+                    <p class="text-base text-[#5a6a7a] leading-relaxed">
+                        We are deep listeners. Our language reflects an understanding of nuance, tone, and harmony.
+                    </p>
+                </div>
+                <div class="bg-gray-card rounded-2xl p-6 card-hover scroll-reveal">
+                    <h3 class="text-xl font-semibold text-[#2d2d2d] mb-3">Sophisticated</h3>
+                    <p class="text-base text-[#5a6a7a] leading-relaxed">
+                        Our language is rooted in architecture, geometry, and the classical origins of our name.
+                    </p>
+                </div>
+                <div class="bg-gray-card rounded-2xl p-6 card-hover scroll-reveal">
+                    <h3 class="text-xl font-semibold text-[#2d2d2d] mb-3">Protective</h3>
+                    <p class="text-base text-[#5a6a7a] leading-relaxed">
+                        We are the quiet, reliable sentinel in the background.
+                    </p>
+                </div>
+                <div class="bg-gray-card rounded-2xl p-6 card-hover scroll-reveal md:col-span-2 lg:col-span-4">
+                    <h3 class="text-xl font-semibold text-[#2d2d2d] mb-3">Human-Centric</h3>
+                    <p class="text-base text-[#5a6a7a] leading-relaxed">
+                        While we are an AI tool, our ultimate goal is always the "artistic spirit."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Usage Guidelines Section -->
+    <section id="guidelines" class="py-32 md:py-32 px-6 scroll-reveal bg-[#f5f2f0] relative">
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="text-center mb-16 scroll-reveal">
+                <div class="text-sm text-[#5a6a7a] font-normal uppercase tracking-wider mb-4 mono-font">USAGE GUIDELINES</div>
+                <h2 class="text-4xl md:text-5xl font-normal mb-6 text-[#2d2d2d] leading-tight">How to Speak About Auris</h2>
+                <p class="text-lg text-[#5a6a7a] max-w-3xl mx-auto leading-relaxed">
+                    When discussing the brand, always lean into the Observatory and Listening metaphors.
+                </p>
+            </div>
+            <div class="max-w-4xl mx-auto space-y-6">
+                <div class="scroll-reveal">
+                    <h3 class="text-2xl font-semibold text-[#2d2d2d] mb-4">Avoid → Prefer</h3>
+                    <div class="guideline-item guideline-avoid">
+                        <p class="text-base text-[#5a6a7a] mb-2">
+                            <strong class="text-[#c5a5a5]">Avoid:</strong> "Auris is a monitoring tool."
+                        </p>
+                        <p class="text-base text-[#5a6a7a]">
+                            <strong class="text-[#6a8a7a]">Prefer:</strong> "Auris is the vantage point for your organization."
+                        </p>
+                    </div>
+                    <div class="guideline-item guideline-avoid">
+                        <p class="text-base text-[#5a6a7a] mb-2">
+                            <strong class="text-[#c5a5a5]">Avoid:</strong> "Auris transcribes data."
+                        </p>
+                        <p class="text-base text-[#5a6a7a]">
+                            <strong class="text-[#6a8a7a]">Prefer:</strong> "Auris listens to the pulse of the agency to elevate the artistic spirit of Create."
+                        </p>
+                    </div>
+                    <div class="guideline-item guideline-avoid">
+                        <p class="text-base text-[#5a6a7a] mb-2">
+                            <strong class="text-[#c5a5a5]">Avoid:</strong> "Auris saves time."
+                        </p>
+                        <p class="text-base text-[#5a6a7a]">
+                            <strong class="text-[#6a8a7a]">Prefer:</strong> "Auris elevates the artistic spirit of Create by filtering the noise."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Scroll reveal animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Nav glass effect on scroll
+        const nav = document.getElementById('main-nav');
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Hamburger menu toggle
+        const hamburgerMenu = document.getElementById('hamburger-menu');
+        const navMenuMobile = document.getElementById('nav-menu-mobile');
+        
+        if (hamburgerMenu) {
+            hamburgerMenu.addEventListener('click', () => {
+                hamburgerMenu.classList.toggle('active');
+                navMenuMobile.classList.toggle('active');
+            });
+        }
+    </script>
+
+</body>
+</html>
