@@ -448,7 +448,7 @@
             transition: none;
         }
 
-        .text-center.scroll-reveal.revealed {
+        .text-center.scroll-reveal {
             box-sizing: content-box;
             padding-top: 130px;
             padding-bottom: 130px;
@@ -3339,6 +3339,10 @@
 
         // --- Consolidated scroll handler with rAF throttle ---
         let scrollTicking = false;
+        let lastDaytonightTime = -1;
+        let lastHappyTime = -1;
+        let lastDogsTime = -1;
+        var VIDEO_SEEK_THRESHOLD = 0.05;
 
         function onScrollFrame() {
             // ---- READS (batch all layout queries first) ----
@@ -3374,64 +3378,66 @@
 
             // 2) Day-to-night header video scrubber
             if (isVideoLoaded && daytonightVideo && header) {
+                var targetTime;
                 if (scrollY > 0) {
-                    const speedMultiplier = 1.25;
-                    const progress = Math.min((scrollY / hh) * speedMultiplier, 1);
-                    daytonightVideo.currentTime = progress * videoDuration;
-                    if (!daytonightVideo.paused) daytonightVideo.pause();
+                    var speedMultiplier = 1.25;
+                    var progress = Math.min((scrollY / hh) * speedMultiplier, 1);
+                    targetTime = progress * videoDuration;
                 } else {
-                    daytonightVideo.currentTime = 0;
-                    daytonightVideo.pause();
+                    targetTime = 0;
+                }
+                if (Math.abs(targetTime - lastDaytonightTime) > VIDEO_SEEK_THRESHOLD) {
+                    daytonightVideo.currentTime = targetTime;
+                    lastDaytonightTime = targetTime;
+                    if (!daytonightVideo.paused) daytonightVideo.pause();
                 }
             }
 
             // 3) Happy people video scrubber
             if (happyVideoRect && engagementRect) {
-                const isVisible = happyVideoRect.top < wh && happyVideoRect.bottom > 0;
-                if (isVisible) {
-                    const sectionTop = engagementRect.top;
-                    let scrollProgress = 0;
-
-                    if (sectionTop <= wh && sectionTop >= -engagementHeight) {
-                        const scrollRange = wh + engagementHeight + wh;
-                        if (scrollRange > 0) {
-                            scrollProgress = Math.min(Math.max((wh - sectionTop) / scrollRange, 0), 1);
+                var isHappyVisible = happyVideoRect.top < wh && happyVideoRect.bottom > 0;
+                var happyTargetTime = 0;
+                if (isHappyVisible) {
+                    var happySectionTop = engagementRect.top;
+                    var happyProgress = 0;
+                    if (happySectionTop <= wh && happySectionTop >= -engagementHeight) {
+                        var happyScrollRange = wh + engagementHeight + wh;
+                        if (happyScrollRange > 0) {
+                            happyProgress = Math.min(Math.max((wh - happySectionTop) / happyScrollRange, 0), 1);
                         }
-                    } else if (sectionTop < -engagementHeight) {
-                        scrollProgress = 1;
+                    } else if (happySectionTop < -engagementHeight) {
+                        happyProgress = 1;
                     }
-
-                    happyPeopleVideo.currentTime = scrollProgress * happyPeopleVideoDuration;
+                    happyTargetTime = happyProgress * happyPeopleVideoDuration;
+                }
+                if (Math.abs(happyTargetTime - lastHappyTime) > VIDEO_SEEK_THRESHOLD) {
+                    happyPeopleVideo.currentTime = happyTargetTime;
+                    lastHappyTime = happyTargetTime;
                     if (!happyPeopleVideo.paused) happyPeopleVideo.pause();
-                } else {
-                    happyPeopleVideo.currentTime = 0;
-                    happyPeopleVideo.pause();
                 }
             }
 
             // 4) Dogs video scrubber
             if (visionRect) {
-                const sectionTop = visionRect.top;
-                if (sectionTop <= wh) {
-                    let scrollProgress = 0;
-
-                    if (sectionTop >= -visionHeight) {
-                        const scrollRange = wh + visionHeight + wh;
-                        if (scrollRange > 0) {
-                            scrollProgress = Math.min(Math.max((wh - sectionTop) / scrollRange, 0), 1);
+                var dogsSectionTop = visionRect.top;
+                var dogsTargetTime = 0;
+                if (dogsSectionTop <= wh) {
+                    var dogsProgress = 0;
+                    if (dogsSectionTop >= -visionHeight) {
+                        var dogsScrollRange = wh + visionHeight + wh;
+                        if (dogsScrollRange > 0) {
+                            dogsProgress = Math.min(Math.max((wh - dogsSectionTop) / dogsScrollRange, 0), 1);
                         }
                     } else {
-                        scrollProgress = 1;
+                        dogsProgress = 1;
                     }
-
-                    const speedMultiplier = 1.5;
-                    scrollProgress = Math.min(scrollProgress * speedMultiplier, 1);
-
-                    dogsVideo.currentTime = scrollProgress * dogsVideoDuration;
+                    dogsProgress = Math.min(dogsProgress * 1.5, 1);
+                    dogsTargetTime = dogsProgress * dogsVideoDuration;
+                }
+                if (Math.abs(dogsTargetTime - lastDogsTime) > VIDEO_SEEK_THRESHOLD) {
+                    dogsVideo.currentTime = dogsTargetTime;
+                    lastDogsTime = dogsTargetTime;
                     if (!dogsVideo.paused) dogsVideo.pause();
-                } else {
-                    dogsVideo.currentTime = 0;
-                    dogsVideo.pause();
                 }
             }
 
