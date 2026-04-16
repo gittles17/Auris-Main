@@ -440,7 +440,6 @@
         .scroll-reveal.revealed {
             opacity: 1;
             transform: translateY(0);
-            will-change: auto;
         }
 
         .scroll-reveal.no-animate {
@@ -3255,6 +3254,10 @@
                 entries.forEach(function(entry) {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('revealed');
+                        entry.target.addEventListener('transitionend', function handler() {
+                            entry.target.style.willChange = 'auto';
+                            entry.target.removeEventListener('transitionend', handler);
+                        });
                         observer.unobserve(entry.target);
                     }
                 });
