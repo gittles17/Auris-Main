@@ -1107,6 +1107,11 @@
             padding-bottom: 0px;
         }
 
+        #solution img.w-auto {
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+
         img {
             padding-top: 33px;
             padding-bottom: 33px;
@@ -2303,27 +2308,26 @@
                 padding-top: 24px !important;
             }
 
-            /* Security section */
-            section#security .max-w-4xl {
+            /* Architecture section */
+            section#architecture .max-w-4xl {
                 padding: 24px !important;
             }
 
-            section#security h2 {
+            section#architecture h2 {
                 flex-direction: column;
                 gap: 16px !important;
             }
 
-            section#security h2 span {
+            section#architecture h2 span {
                 line-height: 1.2 !important;
             }
 
-            /* Security badge - reduce height and center text on mobile */
-            section#security .flex.flex-col.gap-3 > div {
+            section#architecture .flex.flex-col.gap-3 > div {
                 padding-top: 12px !important;
                 padding-bottom: 12px !important;
             }
 
-            section#security .flex.flex-col.gap-3 > div h2 {
+            section#architecture .flex.flex-col.gap-3 > div h2 {
                 line-height: 1.2 !important;
                 margin: 0 !important;
                 display: flex !important;
@@ -2429,17 +2433,17 @@
                 opacity: 1 !important;
             }
 
-            /* Security section mobile */
-            #security .grid {
+            /* Architecture section mobile */
+            #architecture .grid {
                 grid-template-columns: 1fr !important;
                 gap: 24px !important;
             }
 
-            #security ul {
+            #architecture ul {
                 font-size: 16px !important;
             }
 
-            #security .inline-block {
+            #architecture .inline-block {
                 display: inline-block !important;
             }
 
@@ -2614,9 +2618,8 @@
             <!-- Right: Navigation links -->
             <div class="flex items-center gap-4 text-xs font-medium flex-1 justify-end">
                 <a href="#problem" class="nav-link text-[#5a6a7a] hover:text-[#4a5a6a]">Challenge</a>
-                <a href="#solution" class="nav-link text-[#5a6a7a] hover:text-[#4a5a6a]">Solution</a>
-                <a href="#roi" class="nav-link text-[#5a6a7a] hover:text-[#4a5a6a]">Impact</a>
-                <a href="#vision" class="nav-link text-[#4a5a6a] hover:text-[#3a4a5a]">Future</a>
+                <a href="#built" class="nav-link text-[#5a6a7a] hover:text-[#4a5a6a]">What We Built</a>
+                <a href="#vision" class="nav-link text-[#4a5a6a] hover:text-[#3a4a5a]">Philosophy</a>
             </div>
             <!-- Search icon (mobile) -->
             <a href="search.html" class="search-icon search-icon-mobile" id="search-icon-mobile" aria-label="Search">
@@ -2651,9 +2654,8 @@
         <!-- Mobile menu (hidden on desktop) -->
         <div class="nav-menu-mobile" id="nav-menu-mobile">
             <a href="#problem" class="nav-link text-[#5a6a7a]">Challenge</a>
-            <a href="#solution" class="nav-link text-[#5a6a7a]">Solution</a>
-            <a href="#roi" class="nav-link text-[#5a6a7a]">Impact</a>
-            <a href="#vision" class="nav-link text-[#4a5a6a]">Future</a>
+            <a href="#built" class="nav-link text-[#5a6a7a]">What We Built</a>
+            <a href="#vision" class="nav-link text-[#4a5a6a]">Philosophy</a>
         </div>
     </nav>
 
@@ -2691,13 +2693,8 @@
             <a href="#vision" id="philosophy-link"
                 class="philosophy-text bg-white/20 backdrop-blur-sm text-white text-xs mono-font hover:bg-white/30 transition-all px-3 py-1.5 rounded border border-white/30 whitespace-nowrap"
                 style="font-family: 'Courier New', Courier, 'Monaco', 'Menlo', monospace;">
-                Learn About Our AI Philosophy
+                Our AI Philosophy →
             </a>
-            <div id="philosophy-arrow"
-                class="philosophy-arrow bg-white/80 backdrop-blur-sm text-[#4a5a6a] text-xs mono-font hover:bg-white/90 transition-all px-2 py-1.5 rounded border border-white/30 flex items-center justify-center"
-                style="font-family: 'Courier New', Courier, 'Monaco', 'Menlo', monospace;">
-                →
-            </div>
         </div>
     </header>
 
@@ -2706,16 +2703,12 @@
             <div class="text-center mb-16 scroll-reveal">
                 <div class="text-sm text-[#5a6a7a] font-normal uppercase tracking-wider mb-4 mono-font">THE CHALLENGE
                 </div>
-                <h2 class="text-4xl md:text-5xl font-normal mb-6 text-[#2d2d2d] leading-tight">Volatility Is the New
-                    Norm</h2>
+                <h2 class="text-4xl md:text-5xl font-normal mb-6 text-[#2d2d2d] leading-tight">The Model Is Breaking</h2>
                 <p class="text-lg text-[#5a6a7a] leading-relaxed max-w-3xl mx-auto text-center">
-                    Three years post-COVID, volatility in entertainment is here to stay. Competition is fierce, rate
-                    cards are declining, and labor costs are rising. Even with growing revenue, award-winning creative,
-                    and a best-in-class culture across two international offices, we cannot scale revenue without a
-                    smarter approach to headcount.
+                    Studios are consolidating. Streaming growth is decelerating. Gaming budgets rival theatrical, but publishers expect full creative support across global launches, live service, and franchise campaigns at the same time. Budgets shrink. Scope expands. The studios that survive sell judgment, not hours. The ones that try to scale hit the same two walls.
                 </p>
             </div>
-            <div class="grid md:grid-cols-2 gap-2 lg:pl-[153px] lg:pr-[153px]">
+            <div class="grid md:grid-cols-2 gap-8 lg:pl-[120px] lg:pr-[120px]">
                 <div class="challenge-box fade-in">
                     <h3 class="challenge-box-title red">THE LINEAR TRAP</h3>
                     <div class="mb-4"
@@ -2724,8 +2717,7 @@
                             style="width: 200%; height: 427px; object-fit: contain;" />
                     </div>
                     <p class="challenge-box-text">
-                        Current processes prevent us from scaling revenue without matching linear increases in labor
-                        costs and headcount.
+                        More work means more people. More people means more overhead. Revenue grows, margins don't.
                     </p>
                 </div>
                 <div class="challenge-box fade-in">
@@ -2736,787 +2728,130 @@
                             style="width: 200%; height: 330px; object-fit: contain; margin-top: 0px;" />
                     </div>
                     <p class="challenge-box-text">
-                        Fragmented workflows between platforms force teams to chase information rather than make
-                        creative decisions.
+                        Information lives in a dozen platforms. Teams spend time chasing data instead of making creative decisions.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="solution" class="pt-32 pb-8 md:pt-32 md:pb-8 px-6 scroll-reveal relative bg-[#faf9f7]">
+    <section id="solution" class="py-32 md:py-32 px-6 scroll-reveal relative bg-[#faf9f7]">
         <div class="max-w-7xl mx-auto relative z-10">
             <div class="text-center mb-16 scroll-reveal">
-                <div class="text-sm text-[#5a6a7a] font-normal uppercase tracking-wider mb-4 mono-font">THE SOLUTION
-                </div>
-                <h2 class="text-4xl md:text-5xl font-normal mb-6 text-[#2d2d2d] leading-tight"><img src="Auris_logo_2.svg" alt="Auris" class="h-64 md:h-80 w-auto mx-auto" style="width: 800px; height: 130px;"></h2>
-                <p class="text-[#5a6a7a] text-lg mb-8 max-w-3xl mx-auto leading-relaxed text-center pt-[26px] pb-[26px]">Auris breaks the linear trap. As a private intelligence layer, it scales your capacity without scaling your headcount by automating the operational overhead that slows teams down. By bridging information silos and stopping bottlenecks before they happen, Auris frees creative talent to focus on what they do best.</p>
-            </div>
-            <div class="flex flex-col md:flex-row gap-6">
-                <!-- Sidebar with clickable actions -->
-                <div class="prompt-examples-sidebar w-full md:w-80 flex-shrink-0">
-                    <div class="prompt-example-item active" onclick="showPromptExample(0)">
-                        <div class="prompt-example-icon purple">
-                            <span style="font-family: 'Inter', sans-serif;">✓</span>
-                        </div>
-                        <div class="prompt-example-text">Timesheet Assistant</div>
-                    </div>
-                    <div class="prompt-example-item" onclick="showPromptExample(1)">
-                        <div class="prompt-example-icon blue">
-                            <span style="font-family: 'Inter', sans-serif;">→</span>
-                        </div>
-                        <div class="prompt-example-text">Project Kickoff</div>
-                    </div>
-                    <div class="prompt-example-item" onclick="showPromptExample(2)">
-                        <div class="prompt-example-icon emerald">
-                            <span style="font-family: 'Inter', sans-serif;">→</span>
-                        </div>
-                        <div class="prompt-example-text">Resource Forecast</div>
-                    </div>
-                    <div class="prompt-example-item" onclick="showPromptExample(3)">
-                        <div class="prompt-example-icon amber">
-                            <span style="font-family: 'Inter', sans-serif;">!</span>
-                        </div>
-                        <div class="prompt-example-text">Spotting Workflow Inefficiencies</div>
-                    </div>
-                    <div class="prompt-example-item" onclick="showPromptExample(4)">
-                        <div class="prompt-example-icon blue">
-                            <span style="font-family: 'Inter', sans-serif;">→</span>
-                        </div>
-                        <div class="prompt-example-text">LA/LDN Handoff</div>
-                    </div>
-                    <div class="prompt-example-item" onclick="showPromptExample(5)">
-                        <div class="prompt-example-icon purple">
-                            <span style="font-family: 'Inter', sans-serif;">✓</span>
-                        </div>
-                        <div class="prompt-example-text">AI Usage Guidelines</div>
-                    </div>
-                </div>
-
-                <!-- Main display area -->
-                <div class="prompt-display-area">
-                    <div id="prompt-display-container">
-                        <!-- Content will be dynamically inserted here -->
-                    </div>
-                </div>
+                <div class="text-sm text-[#5a6a7a] font-normal uppercase tracking-wider mb-4 mono-font">THE SOLUTION</div>
+                <h2 class="text-4xl md:text-5xl font-normal mb-6 text-[#2d2d2d] leading-tight"><img src="Auris_logo_2.svg" alt="Auris" class="w-auto mx-auto" style="max-width: 220px; height: auto;"></h2>
+                <p class="text-lg text-[#5a6a7a] leading-relaxed max-w-3xl mx-auto text-center">Create's proprietary intelligence layer. Platforms, dashboards, and automated systems that connect every part of the studio. Private and on-premise where client IP requires it. Open-source and commercial AI models, chosen by use case. 20+ tools deployed in a single quarter. Operational IP that comes with the company.</p>
             </div>
         </div>
     </section>
 
-    <section id="creategpt-details" class="pt-8 pb-32 md:pt-8 md:pb-32 px-6 scroll-reveal relative bg-[#faf9f7]">
-        <div class="max-w-7xl mx-auto relative z-10">
-            <div class="text-center mb-8 scroll-reveal" style="margin-top: 90px; margin-bottom: 90px;">
-                <h2 class="text-4xl md:text-5xl font-normal mb-6 text-[#2d2d2d] leading-tight">How It Works</h2>
-                <p class="text-lg text-[#5a6a7a] max-w-3xl mx-auto leading-relaxed text-center">
-                    Think of this as our own private version of ChatGPT with the same interface simplicity, but purpose
-                    built for our internal workflows. Auris is your silent partner who handles the details that slow you down.
+    <section id="built" class="py-32 md:py-32 px-6 scroll-reveal bg-[#f5f2f0] relative">
+        <div class="max-w-6xl mx-auto relative z-10">
+            <div class="text-center mb-10 md:mb-14 scroll-reveal">
+                <div class="text-sm text-[#5a6a7a] font-normal uppercase tracking-wider mb-4 mono-font">WHAT WE'VE BUILT</div>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-normal text-[#2d2d2d] leading-tight mb-3" style="font-family: 'Crimson Text', Georgia, serif;">20+ tools. One quarter. Built from the inside out.</h2>
+                <p class="text-[#5a6a7a] text-sm uppercase tracking-widest font-medium mb-8">
+                    Proprietary IP that scales with revenue.
+                </p>
+                <p class="text-lg text-[#5a6a7a] leading-relaxed max-w-3xl mx-auto text-center">
+                    The legacy tech stack was stripped down and rebuilt from scratch. Every tool is purpose-built for this studio. But the bigger shift is cultural. Every person has enterprise AI access, and they use it. Producers reduce bottlenecks. Coordinators build intake tools. Creative directors create better workflows for their teams. The studio did not just adopt AI. It created builders. That advantage compounds.
                 </p>
             </div>
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="bg-gray-card rounded-2xl p-8 fade-in">
-                    <div class="flex items-center justify-center gap-4 mb-6">
-                        <h3 class="text-base font-semibold text-[#5a6a7a]">Open Source Models</h3>
+
+            <div class="mb-14">
+                <div class="mb-6">
+                    <div class="bg-[#d4a574]/15 text-[#8a6a4a] px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider inline-block">
+                        Auris Intelligence
                     </div>
-                    <div class="mb-6 rounded-lg overflow-hidden"
-                        style="background: linear-gradient(135deg, rgba(255, 200, 150, 0.15) 0%, rgba(232, 184, 168, 0.15) 100%); height: 120px; position: relative; padding: 12px; display: flex; align-items: center; justify-content: center;">
-                        <svg width="100%" height="100%" viewBox="0 0 400 120" style="opacity: 0.7;">
-                            <!-- ChatGPT with strikeout -->
-                            <g>
-                                <text id="chatgpt-text" x="110" y="70" font-family="'Inter', sans-serif" font-size="36"
-                                    fill="#8a6a4a" text-anchor="middle" font-weight="500">ChatGPT</text>
-                                <!-- Strikeout line -->
-                                <line id="chatgpt-line" x1="67" y1="61" x2="153" y2="61" stroke="#8a6a4a"
-                                    stroke-width="2" opacity="0.9" />
-                            </g>
-
-                            <!-- Gemini with strikeout -->
-                            <g>
-                                <text id="gemini-text" x="290" y="70" font-family="'Inter', sans-serif" font-size="36"
-                                    fill="#8a6a4a" text-anchor="middle" font-weight="500">Gemini</text>
-                                <!-- Strikeout line -->
-                                <line id="gemini-line" x1="257" y1="61" x2="323" y2="61" stroke="#8a6a4a"
-                                    stroke-width="2" opacity="0.9" />
-                            </g>
-                            <script>
-                                (function () {
-                                    const chatgptText = document.getElementById('chatgpt-text');
-                                    const chatgptLine = document.getElementById('chatgpt-line');
-                                    const geminiText = document.getElementById('gemini-text');
-                                    const geminiLine = document.getElementById('gemini-line');
-
-                                    if (chatgptText && chatgptLine) {
-                                        const chatgptBBox = chatgptText.getBBox();
-                                        chatgptLine.setAttribute('x1', chatgptBBox.x);
-                                        chatgptLine.setAttribute('x2', chatgptBBox.x + chatgptBBox.width);
-                                    }
-
-                                    if (geminiText && geminiLine) {
-                                        const geminiBBox = geminiText.getBBox();
-                                        geminiLine.setAttribute('x1', geminiBBox.x);
-                                        geminiLine.setAttribute('x2', geminiBBox.x + geminiBBox.width);
-                                    }
-                                })();
-                            </script>
-                        </svg>
-                    </div>
-                    <p class="text-[#5a6a7a] leading-relaxed text-sm">
-                        We use open source AI models instead of public tools like Gemini or ChatGPT. These are installed
-                        on our own hardware so no external provider processes our data and access is fully controlled
-                        and auditable.
-                    </p>
                 </div>
-                <div class="bg-gray-card rounded-2xl p-8 fade-in">
-                    <div class="flex items-center justify-center gap-4 mb-6">
-                        <h3 class="text-base font-semibold text-[#5a6a7a]">Library Card Approach</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="border-2 border-[#e5e2df] rounded-3xl p-6 md:p-8 bg-white/80 shadow-sm hover:border-[#d4a574] hover:shadow-2xl hover:bg-white hover:scale-[1.02] transition-all duration-500 fade-in">
+                        <h3 class="text-xl font-semibold text-[#2d2d2d] mb-3" style="font-family: 'Crimson Text', Georgia, serif;">Auris Markets</h3>
+                        <p class="text-sm text-[#5a6a7a] leading-relaxed mb-3">Producers and creative directors used to go into client meetings without knowing what else was on the slate or what competitors were doing. Auris Markets solves that.</p>
+                        <p class="text-sm text-[#5a6a7a] leading-relaxed mb-4">It tracks release slates, franchise launches, audience trends, and competitive positioning across film, series, and gaming, and matches them to the client portfolio automatically. AI chat, pipeline tracking, branded client presentations.</p>
+                        <div class="flex gap-4 text-xs text-[#8a6a4a] font-medium mono-font">
+                            <span>22 active users</span>
+                            <span>255 sessions / 90 days</span>
+                        </div>
                     </div>
-                    <div class="mb-6 rounded-lg overflow-hidden"
-                        style="background: linear-gradient(135deg, rgba(255, 200, 150, 0.15) 0%, rgba(232, 184, 168, 0.15) 100%); height: 120px; position: relative; padding: 12px; display: flex; align-items: center; justify-content: center;">
-                        <svg width="100%" height="100%" viewBox="0 0 400 120" style="opacity: 0.8;">
-                            <!-- Secure boundary rectangle -->
-                            <rect x="40" y="15" width="320" height="70" rx="4" fill="none" stroke="#8a6a4a"
-                                stroke-width="3" stroke-dasharray="5,5" opacity="0.7" />
-
-                            <!-- Central lock icon -->
-                            <g>
-                                <!-- Lock body -->
-                                <rect x="188" y="38" width="24" height="26" rx="2.5" fill="#ffffff" stroke="#8a6a4a"
-                                    stroke-width="2.5" opacity="0.95" />
-                                <!-- Lock shackle -->
-                                <path d="M 192 38 Q 200 28 208 38" stroke="#8a6a4a" stroke-width="2.5" fill="none"
-                                    opacity="0.95" />
-                                <!-- AI label -->
-                                <text x="200" y="58" font-family="'Inter', sans-serif" font-size="14" fill="#8a6a4a"
-                                    text-anchor="middle" font-weight="600" opacity="0.95">AI</text>
-                            </g>
-
-                            <!-- Data grid with waves -->
-                            <g opacity="0.8">
-                                <!-- Grid of data bits - 31 columns x 9 rows within boundary (x: 50-350, spacing: 10px) -->
-                                <!-- Row 1 -->
-                                <rect x="50" y="20" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-1" />
-                                <rect x="60" y="20" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-1" />
-                                <rect x="70" y="20" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-1" />
-                                <rect x="80" y="20" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-1" />
-                                <rect x="90" y="20" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-1" />
-                                <rect x="100" y="20" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-1" />
-                                <rect x="110" y="20" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-1" />
-                                <rect x="120" y="20" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-1" />
-                                <rect x="130" y="20" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-1" />
-                                <rect x="140" y="20" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-1" />
-                                <rect x="150" y="20" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-1" />
-                                <rect x="160" y="20" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-1" />
-                                <rect x="170" y="20" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-1" />
-                                <rect x="180" y="20" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-1" />
-                                <rect x="190" y="20" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-1" />
-                                <rect x="200" y="20" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-1" />
-                                <rect x="210" y="20" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-1" />
-                                <rect x="220" y="20" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-1" />
-                                <rect x="230" y="20" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-1" />
-                                <rect x="240" y="20" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-1" />
-                                <rect x="250" y="20" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-1" />
-                                <rect x="260" y="20" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-1" />
-                                <rect x="270" y="20" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-1" />
-                                <rect x="280" y="20" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-1" />
-                                <rect x="290" y="20" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-1" />
-                                <rect x="300" y="20" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-1" />
-                                <rect x="310" y="20" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-1" />
-                                <rect x="320" y="20" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-1" />
-                                <rect x="330" y="20" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-1" />
-                                <rect x="340" y="20" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-1" />
-                                <rect x="350" y="20" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-1" />
-
-                                <!-- Row 2 -->
-                                <rect x="50" y="27" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-2" />
-                                <rect x="60" y="27" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-2" />
-                                <rect x="70" y="27" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-2" />
-                                <rect x="80" y="27" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-2" />
-                                <rect x="90" y="27" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-2" />
-                                <rect x="100" y="27" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-2" />
-                                <rect x="110" y="27" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-2" />
-                                <rect x="120" y="27" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-2" />
-                                <rect x="130" y="27" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-2" />
-                                <rect x="140" y="27" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-2" />
-                                <rect x="150" y="27" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-2" />
-                                <rect x="160" y="27" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-2" />
-                                <rect x="170" y="27" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-2" />
-                                <!-- Gap for lock (x: 175-225) -->
-                                <rect x="230" y="27" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-2" />
-                                <rect x="240" y="27" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-2" />
-                                <rect x="250" y="27" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-2" />
-                                <rect x="260" y="27" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-2" />
-                                <rect x="270" y="27" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-2" />
-                                <rect x="280" y="27" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-2" />
-                                <rect x="290" y="27" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-2" />
-                                <rect x="300" y="27" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-2" />
-                                <rect x="310" y="27" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-2" />
-                                <rect x="320" y="27" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-2" />
-                                <rect x="330" y="27" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-2" />
-                                <rect x="340" y="27" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-2" />
-                                <rect x="350" y="27" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-2" />
-
-                                <!-- Row 3 -->
-                                <rect x="50" y="34" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-3" />
-                                <rect x="60" y="34" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-3" />
-                                <rect x="70" y="34" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-3" />
-                                <rect x="80" y="34" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-3" />
-                                <rect x="90" y="34" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-3" />
-                                <rect x="100" y="34" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-3" />
-                                <rect x="110" y="34" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-3" />
-                                <rect x="120" y="34" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-3" />
-                                <rect x="130" y="34" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-3" />
-                                <rect x="140" y="34" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-3" />
-                                <rect x="150" y="34" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-3" />
-                                <rect x="160" y="34" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-3" />
-                                <rect x="170" y="34" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-3" />
-                                <!-- Gap for lock (x: 175-225) -->
-                                <rect x="230" y="34" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-3" />
-                                <rect x="240" y="34" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-3" />
-                                <rect x="250" y="34" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-3" />
-                                <rect x="260" y="34" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-3" />
-                                <rect x="270" y="34" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-3" />
-                                <rect x="280" y="34" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-3" />
-                                <rect x="290" y="34" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-3" />
-                                <rect x="300" y="34" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-3" />
-                                <rect x="310" y="34" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-3" />
-                                <rect x="320" y="34" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-3" />
-                                <rect x="330" y="34" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-3" />
-                                <rect x="340" y="34" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-3" />
-                                <rect x="350" y="34" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-3" />
-
-                                <!-- Row 4 -->
-                                <rect x="50" y="41" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-4" />
-                                <rect x="60" y="41" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-4" />
-                                <rect x="70" y="41" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-4" />
-                                <rect x="80" y="41" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-4" />
-                                <rect x="90" y="41" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-4" />
-                                <rect x="100" y="41" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-4" />
-                                <rect x="110" y="41" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-4" />
-                                <rect x="120" y="41" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-4" />
-                                <rect x="130" y="41" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-4" />
-                                <rect x="140" y="41" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-4" />
-                                <rect x="150" y="41" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-4" />
-                                <rect x="160" y="41" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-4" />
-                                <rect x="170" y="41" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-4" />
-                                <!-- Gap for lock (x: 175-225) -->
-                                <rect x="230" y="41" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-4" />
-                                <rect x="240" y="41" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-4" />
-                                <rect x="250" y="41" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-4" />
-                                <rect x="260" y="41" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-4" />
-                                <rect x="270" y="41" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-4" />
-                                <rect x="280" y="41" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-4" />
-                                <rect x="290" y="41" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-4" />
-                                <rect x="300" y="41" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-4" />
-                                <rect x="310" y="41" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-4" />
-                                <rect x="320" y="41" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-4" />
-                                <rect x="330" y="41" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-4" />
-                                <rect x="340" y="41" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-4" />
-                                <rect x="350" y="41" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-4" />
-
-                                <!-- Row 5 -->
-                                <rect x="50" y="48" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-5" />
-                                <rect x="60" y="48" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-5" />
-                                <rect x="70" y="48" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-5" />
-                                <rect x="80" y="48" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-5" />
-                                <rect x="90" y="48" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-5" />
-                                <rect x="100" y="48" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-5" />
-                                <rect x="110" y="48" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-5" />
-                                <rect x="120" y="48" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-5" />
-                                <rect x="130" y="48" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-5" />
-                                <rect x="140" y="48" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-5" />
-                                <rect x="150" y="48" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-5" />
-                                <rect x="160" y="48" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-5" />
-                                <rect x="170" y="48" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-5" />
-                                <!-- Gap for lock (x: 175-225) -->
-                                <rect x="230" y="48" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-5" />
-                                <rect x="240" y="48" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-5" />
-                                <rect x="250" y="48" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-5" />
-                                <rect x="260" y="48" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-5" />
-                                <rect x="270" y="48" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-5" />
-                                <rect x="280" y="48" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-5" />
-                                <rect x="290" y="48" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-5" />
-                                <rect x="300" y="48" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-5" />
-                                <rect x="310" y="48" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-5" />
-                                <rect x="320" y="48" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-5" />
-                                <rect x="330" y="48" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-5" />
-                                <rect x="340" y="48" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-5" />
-                                <rect x="350" y="48" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-5" />
-
-                                <!-- Row 6 -->
-                                <rect x="50" y="55" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-6" />
-                                <rect x="60" y="55" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-6" />
-                                <rect x="70" y="55" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-6" />
-                                <rect x="80" y="55" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-6" />
-                                <rect x="90" y="55" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-6" />
-                                <rect x="100" y="55" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-6" />
-                                <rect x="110" y="55" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-6" />
-                                <rect x="120" y="55" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-6" />
-                                <rect x="130" y="55" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-6" />
-                                <rect x="140" y="55" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-6" />
-                                <rect x="150" y="55" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-6" />
-                                <rect x="160" y="55" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-6" />
-                                <rect x="170" y="55" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-6" />
-                                <!-- Gap for lock (x: 175-225) -->
-                                <rect x="230" y="55" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-6" />
-                                <rect x="240" y="55" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-6" />
-                                <rect x="250" y="55" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-6" />
-                                <rect x="260" y="55" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-6" />
-                                <rect x="270" y="55" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-6" />
-                                <rect x="280" y="55" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-6" />
-                                <rect x="290" y="55" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-6" />
-                                <rect x="300" y="55" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-6" />
-                                <rect x="310" y="55" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-6" />
-                                <rect x="320" y="55" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-6" />
-                                <rect x="330" y="55" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-6" />
-                                <rect x="340" y="55" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-6" />
-                                <rect x="350" y="55" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-6" />
-
-                                <!-- Row 7 -->
-                                <rect x="50" y="62" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-7" />
-                                <rect x="60" y="62" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-7" />
-                                <rect x="70" y="62" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-7" />
-                                <rect x="80" y="62" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-7" />
-                                <rect x="90" y="62" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-7" />
-                                <rect x="100" y="62" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-7" />
-                                <rect x="110" y="62" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-7" />
-                                <rect x="120" y="62" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-7" />
-                                <rect x="130" y="62" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-7" />
-                                <rect x="140" y="62" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-7" />
-                                <rect x="150" y="62" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-7" />
-                                <rect x="160" y="62" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-7" />
-                                <rect x="170" y="62" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-7" />
-                                <!-- Gap for lock (x: 175-225) -->
-                                <rect x="230" y="62" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-7" />
-                                <rect x="240" y="62" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-7" />
-                                <rect x="250" y="62" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-7" />
-                                <rect x="260" y="62" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-7" />
-                                <rect x="270" y="62" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-7" />
-                                <rect x="280" y="62" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-7" />
-                                <rect x="290" y="62" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-7" />
-                                <rect x="300" y="62" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-7" />
-                                <rect x="310" y="62" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-7" />
-                                <rect x="320" y="62" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-7" />
-                                <rect x="330" y="62" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-7" />
-                                <rect x="340" y="62" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-7" />
-                                <rect x="350" y="62" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-7" />
-
-                                <!-- Row 8 -->
-                                <rect x="50" y="69" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-8" />
-                                <rect x="60" y="69" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-8" />
-                                <rect x="70" y="69" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-8" />
-                                <rect x="80" y="69" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-8" />
-                                <rect x="90" y="69" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-8" />
-                                <rect x="100" y="69" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-8" />
-                                <rect x="110" y="69" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-8" />
-                                <rect x="120" y="69" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-8" />
-                                <rect x="130" y="69" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-8" />
-                                <rect x="140" y="69" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-8" />
-                                <rect x="150" y="69" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-8" />
-                                <rect x="160" y="69" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-8" />
-                                <rect x="170" y="69" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-8" />
-                                <!-- Gap for lock (x: 175-225) -->
-                                <rect x="230" y="69" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-8" />
-                                <rect x="240" y="69" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-8" />
-                                <rect x="250" y="69" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-8" />
-                                <rect x="260" y="69" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-8" />
-                                <rect x="270" y="69" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-8" />
-                                <rect x="280" y="69" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-8" />
-                                <rect x="290" y="69" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-8" />
-                                <rect x="300" y="69" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-8" />
-                                <rect x="310" y="69" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-8" />
-                                <rect x="320" y="69" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-8" />
-                                <rect x="330" y="69" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-8" />
-                                <rect x="340" y="69" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-8" />
-                                <rect x="350" y="69" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-8" />
-
-                                <!-- Row 9 -->
-                                <rect x="50" y="76" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-9" />
-                                <rect x="60" y="76" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-9" />
-                                <rect x="70" y="76" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-9" />
-                                <rect x="80" y="76" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-9" />
-                                <rect x="90" y="76" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-9" />
-                                <rect x="100" y="76" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-9" />
-                                <rect x="110" y="76" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-9" />
-                                <rect x="120" y="76" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-9" />
-                                <rect x="130" y="76" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-9" />
-                                <rect x="140" y="76" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-9" />
-                                <rect x="150" y="76" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-9" />
-                                <rect x="160" y="76" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-9" />
-                                <rect x="170" y="76" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-9" />
-                                <rect x="180" y="76" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-9" />
-                                <rect x="190" y="76" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-9" />
-                                <rect x="200" y="76" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-9" />
-                                <rect x="210" y="76" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-9" />
-                                <rect x="220" y="76" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-9" />
-                                <rect x="230" y="76" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-9" />
-                                <rect x="240" y="76" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-9" />
-                                <rect x="250" y="76" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-9" />
-                                <rect x="260" y="76" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-9" />
-                                <rect x="270" y="76" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-9" />
-                                <rect x="280" y="76" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-9" />
-                                <rect x="290" y="76" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-9" />
-                                <rect x="300" y="76" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-9" />
-                                <rect x="310" y="76" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-9" />
-                                <rect x="320" y="76" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-9" />
-                                <rect x="330" y="76" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-9" />
-                                <rect x="340" y="76" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-9" />
-                                <rect x="350" y="76" width="3" height="3" rx="1" fill="#8a6a4a"
-                                    class="data-grid-bit data-wave-h-9" />
-                            </g>
-
-                            <!-- "Data Stays Here" text -->
-                            <text x="200" y="110" font-family="'Inter', sans-serif" font-size="12" fill="#8a6a4a"
-                                text-anchor="middle" font-weight="600" opacity="0.8">Data Stays Here</text>
-                        </svg>
+                    <div class="border-2 border-[#e5e2df] rounded-3xl p-6 md:p-8 bg-white/80 shadow-sm hover:border-[#d4a574] hover:shadow-2xl hover:bg-white hover:scale-[1.02] transition-all duration-500 fade-in">
+                        <h3 class="text-xl font-semibold text-[#2d2d2d] mb-3" style="font-family: 'Crimson Text', Georgia, serif;">Auris Weekly Newsletter</h3>
+                        <p class="text-sm text-[#5a6a7a] leading-relaxed mb-3">Everyone in the studio contributes to winning business, not just the sales team. Every week, this newsletter lands in every inbox across the company.</p>
+                        <p class="text-sm text-[#5a6a7a] leading-relaxed mb-4">It scans industry signals, casting announcements, development news, greenlights, and matches them to the portfolio automatically. Anyone can spot an opportunity and act on it.</p>
+                        <div class="flex gap-4 text-xs text-[#8a6a4a] font-medium mono-font">
+                            <span>172 recipients</span>
+                            <span>58% open rate</span>
+                        </div>
                     </div>
-                    <p class="text-[#5a6a7a] leading-relaxed text-sm">
-                        Think of the AI as a smart professor who knows everything except Create. We give that professor
-                        a library card to our private archives including Notion, FileMaker, server logs, Adobe, and
-                        QuickBooks so they can provide answers while your data stays secure in our controlled
-                        environment.
-                    </p>
+                    <div class="border-2 border-[#e5e2df] rounded-3xl p-6 md:p-8 bg-white/80 shadow-sm hover:border-[#d4a574] hover:shadow-2xl hover:bg-white hover:scale-[1.02] transition-all duration-500 fade-in">
+                        <h3 class="text-xl font-semibold text-[#2d2d2d] mb-3" style="font-family: 'Crimson Text', Georgia, serif;">Auris Storyboards</h3>
+                        <p class="text-sm text-[#5a6a7a] leading-relaxed mb-3">Storyboarding was one of the most time-intensive steps in pre-production, and most of that time was spent on frames that would change.</p>
+                        <p class="text-sm text-[#5a6a7a] leading-relaxed mb-4">AI storyboard generation from scene descriptions and briefs now handles that across AV, social, and gaming. Runs on-prem for IP security.</p>
+                        <div class="flex gap-4 text-xs text-[#8a6a4a] font-medium mono-font">
+                            <span>458 hrs saved / yr</span>
+                            <span>$35K freelance eliminated</span>
+                        </div>
+                    </div>
+                    <div class="border-2 border-[#e5e2df] rounded-3xl p-6 md:p-8 bg-white/80 shadow-sm hover:border-[#d4a574] hover:shadow-2xl hover:bg-white hover:scale-[1.02] transition-all duration-500 fade-in">
+                        <h3 class="text-xl font-semibold text-[#2d2d2d] mb-3" style="font-family: 'Crimson Text', Georgia, serif;">Auris Cue Sheets</h3>
+                        <p class="text-sm text-[#5a6a7a] leading-relaxed mb-3">Cue sheets are tedious, manual, and legally required. The studio spent 972 hours on them in 2025.</p>
+                        <p class="text-sm text-[#5a6a7a] leading-relaxed mb-4">This tool ingests Premiere project files and extracts music usage data automatically.</p>
+                        <div class="flex gap-4 text-xs text-[#8a6a4a] font-medium mono-font">
+                            <span>72% automated</span>
+                            <span>972 hrs addressed</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-gray-card rounded-2xl p-8 fade-in">
-                    <div class="flex items-center justify-center gap-4 mb-6">
-                        <h3 class="text-base font-semibold text-[#5a6a7a]">Source Verification</h3>
+            </div>
+
+            <div class="mb-14">
+                <div class="mb-6">
+                    <div class="bg-[#4a9a8a]/15 text-[#4a9a8a] px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider inline-block">
+                        Production Infrastructure
                     </div>
-                    <div class="mb-6 rounded-lg overflow-hidden"
-                        style="background: linear-gradient(135deg, rgba(255, 200, 150, 0.15) 0%, rgba(232, 184, 168, 0.15) 100%); height: 120px; position: relative; padding: 12px; display: flex; align-items: center; justify-content: center;">
-                        <svg width="100%" height="100%" viewBox="0 0 400 120" style="opacity: 0.8;">
-                            <defs>
-                                <marker id="arrowhead-small" markerWidth="6" markerHeight="6" refX="5" refY="3"
-                                    orient="auto">
-                                    <polygon points="0 0, 6 3, 0 6" fill="#8a6a4a" opacity="0.7" />
-                                </marker>
-                            </defs>
-
-                            <!-- Document/source on left -->
-                            <rect x="75" y="30" width="50" height="60" rx="3" fill="#ffffff" stroke="#8a6a4a"
-                                stroke-width="2" opacity="0.9" />
-                            <line x1="83" y1="45" x2="113" y2="45" stroke="#8a6a4a" stroke-width="1.5" opacity="0.6" />
-                            <line x1="83" y1="55" x2="105" y2="55" stroke="#8a6a4a" stroke-width="1.5" opacity="0.6" />
-                            <line x1="83" y1="65" x2="110" y2="65" stroke="#8a6a4a" stroke-width="1.5" opacity="0.6" />
-                            <line x1="83" y1="75" x2="103" y2="75" stroke="#8a6a4a" stroke-width="1.5" opacity="0.6" />
-
-                            <!-- Magnifying glass icon -->
-                            <g opacity="0.8">
-                                <!-- Lens circle -->
-                                <circle cx="100" cy="60" r="12" fill="none" stroke="#8a6a4a" stroke-width="2.5" />
-                                <!-- Handle -->
-                                <line x1="110" y1="70" x2="118" y2="78" stroke="#8a6a4a" stroke-width="2.5"
-                                    stroke-linecap="round" />
-                            </g>
-
-                            <!-- Arrow pointing right (first arrow) -->
-                            <path d="M 135 60 L 155 60" stroke="#8a6a4a" stroke-width="2" opacity="0.7"
-                                marker-end="url(#arrowhead-small)" />
-
-                            <!-- Verified source icon in middle -->
-                            <g opacity="0.9">
-                                <!-- Document -->
-                                <rect x="175" y="30" width="50" height="60" rx="3" fill="#ffffff" stroke="#8a6a4a"
-                                    stroke-width="2" opacity="0.9" />
-                                <!-- Document lines -->
-                                <line x1="185" y1="48" x2="215" y2="48" stroke="#8a6a4a" stroke-width="1.5"
-                                    opacity="0.5" />
-                                <line x1="185" y1="56" x2="210" y2="56" stroke="#8a6a4a" stroke-width="1.5"
-                                    opacity="0.5" />
-                                <line x1="185" y1="64" x2="220" y2="64" stroke="#8a6a4a" stroke-width="1.5"
-                                    opacity="0.5" />
-                            </g>
-
-                            <!-- Large checkmark in center of page -->
-                            <g opacity="0.9">
-                                <circle cx="225" cy="60" r="18" fill="#8a6a4a" opacity="0.9" />
-                                <path d="M 217 60 L 223 66 L 233 50" stroke="#ffffff" stroke-width="4" fill="none"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </g>
-
-                            <!-- Arrow pointing right (second arrow) -->
-                            <path d="M 250 60 L 270 60" stroke="#8a6a4a" stroke-width="2" opacity="0.7"
-                                marker-end="url(#arrowhead-small)" />
-
-                            <!-- Human silhouette -->
-                            <g opacity="0.9">
-                                <!-- Human silhouette - fits within 50x60 box at x=275, y=30 -->
-                                <!-- Head (circle) -->
-                                <circle cx="300" cy="44" r="12" fill="#8a6a4a" opacity="0.9" />
-                                <!-- Body (rounded rectangle/torso) -->
-                                <rect x="288" y="56" width="24" height="28" rx="4" fill="#8a6a4a" opacity="0.9" />
-                            </g>
-                            <text x="300" y="100" font-family="'Inter', sans-serif" font-size="12" fill="#8a6a4a"
-                                text-anchor="middle" font-weight="600" opacity="0.8">Approval</text>
-                        </svg>
-                    </div>
-                    <p class="text-[#5a6a7a] leading-relaxed text-sm">
-                        Auris finds the receipts in our actual data. You can always verify its sources. It acts as a
-                        drafting assistant where humans always verify and approve.
-                    </p>
                 </div>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="border-2 border-[#e5e2df] rounded-3xl p-6 md:p-8 bg-white/80 shadow-sm hover:border-[#4a9a8a] hover:shadow-2xl hover:bg-white hover:scale-[1.02] transition-all duration-500 fade-in">
+                        <h3 class="text-xl font-semibold text-[#2d2d2d] mb-3" style="font-family: 'Crimson Text', Georgia, serif;">Project Launcher</h3>
+                        <p class="text-sm text-[#5a6a7a] leading-relaxed">New hires and freelancers used to spend their first week figuring out where things live. Project Launcher puts project discovery, resource access, brand guides, and scheduling in one app. Used daily across every department.</p>
+                    </div>
+                    <div class="border-2 border-[#e5e2df] rounded-3xl p-6 md:p-8 bg-white/80 shadow-sm hover:border-[#4a9a8a] hover:shadow-2xl hover:bg-white hover:scale-[1.02] transition-all duration-500 fade-in">
+                        <h3 class="text-xl font-semibold text-[#2d2d2d] mb-3" style="font-family: 'Crimson Text', Georgia, serif;">Real Time Resourcing</h3>
+                        <p class="text-sm text-[#5a6a7a] leading-relaxed">Producers used to guess who was available. Now they see it. Project assignment, bandwidth scoring, and automated time tracking across the studio. Capacity based on actual project activity, not spreadsheets.</p>
+                    </div>
+                    <div class="border-2 border-[#e5e2df] rounded-3xl p-6 md:p-8 bg-white/80 shadow-sm hover:border-[#4a9a8a] hover:shadow-2xl hover:bg-white hover:scale-[1.02] transition-all duration-500 fade-in">
+                        <h3 class="text-xl font-semibold text-[#2d2d2d] mb-3" style="font-family: 'Crimson Text', Georgia, serif;">Client Review Platform</h3>
+                        <p class="text-sm text-[#5a6a7a] leading-relaxed">Clients were reviewing work across seven tools. Now it's one. Branded, centralized, password-protected. Frame-level feedback, version comparison, delivery.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-[#e5e2df]/50 pt-6">
+                <p class="text-xs text-[#8a8a8a] text-center leading-relaxed max-w-3xl mx-auto">
+                    Every tool keeps creative teams on creative. Logistics, resourcing, tracking, review handled by the system. All built in one quarter. Primarily one developer.
+                </p>
             </div>
         </div>
     </section>
 
     <!-- Combined Security & Architecture Section -->
-    <section id="architecture" class="py-24 md:py-32 px-6 scroll-reveal bg-[#faf9f7] relative">
+    <section id="architecture" class="py-32 md:py-32 px-6 scroll-reveal bg-[#faf9f7] relative">
         <div class="max-w-6xl mx-auto relative z-10">
             
             <!-- Header with Security Focus -->
-            <div class="text-center mb-10 md:mb-14">
+            <div class="text-center mb-10 md:mb-14 scroll-reveal">
                 <div class="inline-flex items-center gap-3 mb-4">
                     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1a3a5c" stroke-width="1.5">
                         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                         <path d="M9 12l2 2 4-4"/>
                     </svg>
-                    <span class="text-[#1a3a5c] text-sm uppercase tracking-widest font-semibold">Security First</span>
+                    <span class="text-[#5a6a7a] text-sm uppercase tracking-wider font-normal mono-font">Security First</span>
                 </div>
                 <h2 class="text-3xl md:text-4xl lg:text-5xl font-normal text-[#1a3a5c] leading-tight mb-3" style="font-family: 'Crimson Text', Georgia, serif;">
                     One Intelligence, Two Security Layers
                 </h2>
                 <p class="text-[#5a6a7a] text-sm uppercase tracking-widest font-medium">
-                    Auris Connects Your Entire Organization
+                    Auris connects every system in the studio.
                 </p>
             </div>
 
@@ -3756,66 +3091,59 @@
                     Unidirectional data flow ensures Level 1 never touches public APIs. 
                     Role-based access control manages identity across both tiers. 
                     Level 1 remains the source of truth for assets; Level 2 handles metadata.
+                    Built on open-source AI models. No external provider processes studio data. Every response is verified by the team before action.
                 </p>
             </div>
 
         </div>
     </section>
 
-    <section id="engagement" class="py-32 md:py-32 px-6 scroll-reveal relative bg-[#faf9f7]">
+    <section id="engagement" class="py-32 md:py-32 px-6 scroll-reveal relative bg-[#f5f2f0]">
         <div class="max-w-7xl mx-auto relative z-10">
+            <div class="text-center mb-10 md:mb-14 scroll-reveal">
+            </div>
             <div class="grid md:grid-cols-2 gap-12 items-start">
                 <!-- Left Column: Text Content -->
                 <div class="fade-in" style="margin-top: 0;">
                     <h2 class="text-4xl md:text-5xl font-normal mb-6 text-[#2d2d2d] leading-tight"
-                        style="font-family: 'Crimson Text', Georgia, serif;">Bringing Everyone Along</h2>
+                        style="font-family: 'Crimson Text', Georgia, serif;">The Culture Shift</h2>
                     <p class="text-lg text-[#5a6a7a] mb-8 leading-relaxed">
-                        We want Auris to feel like a helpful assistant that makes your day better rather than a
-                        corporate mandate. Our plan focuses on curiosity and helping everyone find their own wins.
+                        Any studio can license AI. Getting 150 people to trust it, build with it voluntarily, and see it as amplification rather than replacement is harder than building the software. That already happened here.
                     </p>
 
                     <div class="accordion-container max-w-[75%] ml-8 mr-0">
-                        <!-- Accordion Item 1: The Expert Squad -->
                         <div class="accordion-item">
                             <button class="accordion-header active" onclick="toggleAccordion(this)">
-                                <span>The Expert Squad</span>
+                                <span>Trust Over Mandates</span>
                                 <span class="accordion-icon">−</span>
                             </button>
                             <div class="accordion-content active">
                                 <p>
-                                    We will find the natural tech lovers in Editorial, Games, and Design to be our local
-                                    experts. They will be there to help their teammates find shortcuts and solve
-                                    specific problems in real time.
+                                    No one was told to adopt AI. The approach was built on earning trust. Tools were designed alongside the people who use them. Field experts lead their areas, and the dev team helps them build what they could not build before. The result: adoption that sticks because it was never forced.
                                 </p>
                             </div>
                         </div>
 
-                        <!-- Accordion Item 2: Sharing the Secret Sauce -->
                         <div class="accordion-item">
                             <button class="accordion-header" onclick="toggleAccordion(this)">
-                                <span>Sharing the Secret Sauce</span>
+                                <span>Builders, Not Users</span>
                                 <span class="accordion-icon">+</span>
                             </button>
                             <div class="accordion-content">
                                 <p>
-                                    We want everyone to experiment and create their own Query Recipes. If you find a way
-                                    to skip a boring data entry task, you are an innovator, and we want to celebrate and
-                                    share that trick with the whole team.
+                                    Producers, coordinators, and creative directors build their own tools and share what works across departments. The mentality spread without being mandated. People who were skeptical six months ago now prototype solutions for their own teams.
                                 </p>
                             </div>
                         </div>
 
-                        <!-- Accordion Item 3: Learning Together -->
                         <div class="accordion-item">
                             <button class="accordion-header" onclick="toggleAccordion(this)">
-                                <span>Learning Together</span>
+                                <span>The Compound Effect</span>
                                 <span class="accordion-icon">+</span>
                             </button>
                             <div class="accordion-content">
                                 <p>
-                                    Getting good at AI is a journey rather than a one time event. We will host regular
-                                    Lunch and Learn sessions to share wins, swap stories, and help each other recapture
-                                    the creative time we all value.
+                                    Each tool makes the next one faster to build and easier to adopt. A knowledge system prevents tribal knowledge loss. An "Agent Tennis" co-development protocol lets domain experts co-build tools with the dev team. One developer built 20+ tools with no contractors.
                                 </p>
                             </div>
                         </div>
@@ -3832,211 +3160,10 @@
         </div>
     </section>
 
-    <section id="roi" class="px-6 scroll-reveal relative bg-[#faf9f7]">
-        <div class="max-w-7xl mx-auto relative z-10">
-            <h2 class="text-4xl md:text-5xl font-normal text-center text-[#2d2d2d] leading-tight scroll-reveal" style="margin-bottom: 24px;">The Bottom Line</h2>
-            <div class="rounded-2xl overflow-hidden fade-in max-w-2xl mx-auto">
-                <div class="px-8 pt-4 pb-8">
-                    <div class="roi-tab-nav">
-                        <button class="roi-tab active" onclick="switchRoiTab(0)">Projected ROI</button>
-                        <button class="roi-tab" onclick="switchRoiTab(1)">Phase 1 Investment</button>
-                    </div>
-                    <div class="roi-tab-content active" id="roi-tab-0">
-                        <div class="grid grid-cols-1 gap-6 mt-8 items-start">
-                            <div class="px-6 py-5 flex flex-col items-center text-center w-full md:w-[590px] mx-auto">
-                                <div
-                                    class="text-xs md:text-sm text-[#5a6a7a] uppercase tracking-wider mb-3 mono-font whitespace-nowrap">
-                                    Time Saved per Week</div>
-                                <div
-                                    class="text-4xl md:text-5xl font-bold text-[#4a5a6a] leading-tight whitespace-nowrap">
-                                    30 Min - 1 Hour</div>
-                            </div>
-                            <div class="px-6 py-5 flex flex-col items-center text-center w-full md:w-[590px] mx-auto">
-                                <div
-                                    class="text-xs md:text-sm text-[#5a6a7a] uppercase tracking-wider mb-3 mono-font whitespace-nowrap">
-                                    Annual Billable Recovery</div>
-                                <div
-                                    class="text-4xl md:text-5xl font-bold text-[#4a5a6a] leading-tight whitespace-nowrap">
-                                    $375k - $750k</div>
-                            </div>
-                            <div class="px-6 py-5 flex flex-col items-center text-center w-full md:w-[590px] mx-auto">
-                                <div
-                                    class="text-xs md:text-sm text-[#5a6a7a] uppercase tracking-wider mb-3 mono-font whitespace-nowrap">
-                                    Payback Period</div>
-                                <div
-                                    class="text-4xl md:text-5xl font-bold text-[#4a5a6a] leading-tight whitespace-nowrap">
-                                    &lt; 6 Months</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="roi-tab-content" id="roi-tab-1">
-                        <div class="grid grid-cols-1 gap-6 mt-8 items-start">
-                            <div class="px-6 py-5 flex flex-col items-center text-center w-full md:w-[590px] mx-auto">
-                                <div
-                                    class="text-xs md:text-sm text-[#5a6a7a] uppercase tracking-wider mb-3 mono-font whitespace-nowrap">
-                                    Hardware Costs</div>
-                                <div
-                                    class="text-4xl md:text-5xl font-bold text-[#4a5a6a] leading-tight whitespace-nowrap">
-                                    $35-50k</div>
-                            </div>
-                            <div class="px-6 py-5 flex flex-col items-center text-center w-full md:w-[590px] mx-auto">
-                                <div
-                                    class="text-xs md:text-sm text-[#5a6a7a] uppercase tracking-wider mb-3 mono-font whitespace-nowrap">
-                                    Proprietary Software Development</div>
-                                <div
-                                    class="text-4xl md:text-5xl font-bold text-[#4a5a6a] leading-tight whitespace-nowrap">
-                                    $30k</div>
-                            </div>
-                            <div class="px-6 py-5 flex flex-col items-center text-center w-full md:w-[590px] mx-auto">
-                                <div
-                                    class="text-xs md:text-sm text-[#5a6a7a] uppercase tracking-wider mb-3 mono-font whitespace-nowrap">
-                                    Total</div>
-                                <div
-                                    class="text-4xl md:text-5xl font-bold text-[#4a5a6a] leading-tight whitespace-nowrap">
-                                    $65-80k</div>
-                            </div>
-                        </div>
-                        <div class="mt-8 text-center">
-                            <span class="text-xs mono-font text-[#5a6a7a]">Costs would be considered CapEx.</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="mt-8 flex items-center justify-center gap-3" id="roi-calculation-note">
-                <span class="text-xs mono-font text-[#5a6a7a]"
-                    style="max-width: 320px; text-align: center; line-height: 1.4;">Calculated for 150 staff at an
-                    average $100/hr billable rate.</span>
-            </div>
-        </div>
-    </section>
-
-    <section id="faq" class="pt-0 pb-0 px-6 scroll-reveal relative bg-[#faf9f7]">
-        <div class="max-w-7xl mx-auto relative z-10 pt-12 pb-12">
-            <h2 class="text-4xl md:text-5xl font-normal text-center text-[#2d2d2d] leading-tight scroll-reveal" style="margin-bottom: 24px;">FAQ</h2>
-            <div class="max-w-4xl mx-auto">
-                <div class="bg-white border border-[#6a8a7a]/20 rounded-2xl overflow-hidden shadow-sm">
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFaq(this)">
-                            <h3 class="text-base font-normal text-[#2d2d2d] pr-8"
-                                style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
-                                Why not just use ChatGPT Enterprise or Copilot?</h3>
-                            <span class="arrow-icon faq-icon"
-                                style="transform: rotate(0deg); transition: transform 0.3s ease;">→</span>
-                        </div>
-                        <div class="faq-answer">
-                            <p class="text-[#6a5a4a] leading-relaxed">Commercial tools do not natively connect across
-                                our internal stack in a single query. On-premise hosting also ensures our most sensitive
-                                client IP stays in our environment, not on a third party cloud.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFaq(this)">
-                            <h3 class="text-base font-normal text-[#2d2d2d] pr-8"
-                                style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
-                                Does this replace FileMaker or make it easier to use?</h3>
-                            <span class="arrow-icon faq-icon"
-                                style="transform: rotate(0deg); transition: transform 0.3s ease;">→</span>
-                        </div>
-                        <div class="faq-answer">
-                            <p class="text-[#6a5a4a] leading-relaxed">We know FileMaker can be clunky and requires
-                                repetitive clicking. Auris acts as a bridge. You can ask it for info in plain English
-                                rather than navigating multiple menus. It can also push data into FM automatically,
-                                sparing you from manual data entry.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFaq(this)">
-                            <h3 class="text-base font-normal text-[#2d2d2d] pr-8"
-                                style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
-                                Can it help eliminate Double Entry and manual re-typing?</h3>
-                            <span class="arrow-icon faq-icon"
-                                style="transform: rotate(0deg); transition: transform 0.3s ease;">→</span>
-                        </div>
-                        <div class="faq-answer">
-                            <p class="text-[#6a5a4a] leading-relaxed">Yes. One of its primary goals is to automate the
-                                relay of information between departments. It can take info from a design brief and
-                                automatically update a finishing tracker or a project slate so you do not have to type
-                                the same thing three times.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFaq(this)">
-                            <h3 class="text-base font-normal text-[#2d2d2d] pr-8"
-                                style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
-                                How does this solve the Information Silo problem between departments?</h3>
-                            <span class="arrow-icon faq-icon"
-                                style="transform: rotate(0deg); transition: transform 0.3s ease;">→</span>
-                        </div>
-                        <div class="faq-answer">
-                            <p class="text-[#6a5a4a] leading-relaxed">It creates a central intelligence layer. Instead
-                                of checking Notion for design, FileMaker for finance, and Teams for status, you can ask
-                                Auris for a holistic project overview. It sees across the silos to give you a single
-                                source of truth.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFaq(this)">
-                            <h3 class="text-base font-normal text-[#2d2d2d] pr-8"
-                                style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
-                                Will this support the tools we already use, like Notion, Frame.io, or FileMaker?</h3>
-                            <span class="arrow-icon faq-icon"
-                                style="transform: rotate(0deg); transition: transform 0.3s ease;">→</span>
-                        </div>
-                        <div class="faq-answer">
-                            <p class="text-[#6a5a4a] leading-relaxed">Absolutely. Auris is built to index data from the
-                                platforms you actually use daily. It does not replace your favorite tools, it makes them
-                                smarter by connecting their data to the rest of the company.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFaq(this)">
-                            <h3 class="text-base font-normal text-[#2d2d2d] pr-8"
-                                style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
-                                What about employee privacy?</h3>
-                            <span class="arrow-icon faq-icon"
-                                style="transform: rotate(0deg); transition: transform 0.3s ease;">→</span>
-                        </div>
-                        <div class="faq-answer">
-                            <p class="text-[#6a5a4a] leading-relaxed">The system references work metadata like project
-                                activity, not personal behavior. All implementation will be reviewed with HR and IT to
-                                ensure clear boundaries.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFaq(this)">
-                            <h3 class="text-base font-normal text-[#2d2d2d] pr-8"
-                                style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
-                                Is this replacing our team?</h3>
-                            <span class="arrow-icon faq-icon"
-                                style="transform: rotate(0deg); transition: transform 0.3s ease;">→</span>
-                        </div>
-                        <div class="faq-answer">
-                            <p class="text-[#6a5a4a] leading-relaxed">No. It is a force multiplier. It handles the
-                                boring tasks so our talent can focus on the creative work clients pay us for.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFaq(this)">
-                            <h3 class="text-base font-normal text-[#2d2d2d] pr-8"
-                                style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
-                                What are the ongoing costs?</h3>
-                            <span class="arrow-icon faq-icon"
-                                style="transform: rotate(0deg); transition: transform 0.3s ease;">→</span>
-                        </div>
-                        <div class="faq-answer">
-                            <p class="text-[#6a5a4a] leading-relaxed">Modest. We avoid per seat subscription taxes.
-                                Costs include electricity, IT oversight, and periodic hardware refreshes.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="vision" class="px-6 scroll-reveal relative bg-[#faf9f7]">
+    <section id="vision" class="py-32 md:py-32 px-6 scroll-reveal relative bg-[#faf9f7]">
         <div class="max-w-7xl mx-auto relative z-10">
             <div class="text-center mb-16 scroll-reveal">
-                <div class="text-sm text-[#6a5a4a] font-normal uppercase tracking-wider mono-font" style="margin-bottom: 0px;">VISION</div>
+                <div class="text-sm text-[#5a6a7a] font-normal uppercase tracking-wider mb-4 mono-font">VISION</div>
                 <div class="max-w-4xl mx-auto">
                     <blockquote class="font-normal text-[#2d2d2d] text-center serif-italic" style="height: 590px; display: flex; align-items: flex-start; justify-content: flex-start; padding: 3rem 2.5rem; position: relative; border-radius: 8px; overflow: hidden;">
                         <video id="dogs-video" style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 80%; height: auto; object-fit: contain; z-index: 0; pointer-events: none;" muted playsinline loop preload="metadata">
@@ -4050,108 +3177,6 @@
         </div>
     </section>
 
-    <section id="next-steps" class="px-6 border-t border-[#6a8a7a]/20 scroll-reveal relative bg-[#faf9f7]">
-        <div class="max-w-7xl mx-auto relative z-10">
-            <h2 class="text-4xl md:text-5xl font-normal text-center text-[#2d2d2d] leading-tight scroll-reveal" style="margin-bottom: 24px; padding-top: 0px; padding-bottom: 0px;">What's Next?</h2>
-            <div class="flex flex-col md:flex-row gap-8 mb-16">
-                <!-- Expandable List (Left) -->
-                <div class="w-full md:w-80 flex-shrink-0">
-                    <div class="bg-white border border-[#6a8a7a]/20 rounded-2xl overflow-hidden shadow-sm">
-                        <!-- Phase 1 -->
-                        <div class="next-steps-item">
-                            <div class="next-steps-question active" onclick="showNextStepPhase(0)">
-                                <div class="flex items-center gap-3">
-                                    <div
-                                        class="w-8 h-8 rounded-full bg-[#6a8a7a]/20 flex items-center justify-center border-2 border-[#6a8a7a]/40 flex-shrink-0">
-                                        <span class="text-sm font-semibold text-[#6a5a4a]">1</span>
-                                    </div>
-                                    <h3 class="text-base font-semibold text-[#2d2d2d]">Scoped Pilot</h3>
-                                </div>
-                                <span class="next-steps-icon"
-                                    style="transform: rotate(0deg); transition: transform 0.3s ease;">−</span>
-                            </div>
-                            <div class="next-steps-answer active">
-                                <p class="text-[#6a5a4a] leading-relaxed text-sm pl-11 pt-[11px] mb-4">
-                                    Launch with one high impact use case like the Timesheet Assistant.
-                                </p>
-                                <!-- Stats -->
-                                <ul class="pl-11 mt-1.5 space-y-2">
-                                    <li class="flex items-center gap-2 text-xs text-[#6a5a4a]">
-                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0">
-                                            <path d="M20 6L9 17l-5-5" stroke="#28ca42" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
-                                        <span>5 min vs 15 min</span>
-                                    </li>
-                                    <li class="flex items-center gap-2 text-xs text-[#6a5a4a]">
-                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0">
-                                            <path d="M20 6L9 17l-5-5" stroke="#28ca42" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
-                                        <span>100% Accuracy</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Phase 2 -->
-                        <div class="next-steps-item">
-                            <div class="next-steps-question" onclick="showNextStepPhase(1)">
-                                <div class="flex items-center gap-3">
-                                    <div
-                                        class="w-8 h-8 rounded-full bg-[#6a8a7a]/20 flex items-center justify-center border-2 border-[#6a8a7a]/40 flex-shrink-0">
-                                        <span class="text-sm font-semibold text-[#6a5a4a]">2</span>
-                                    </div>
-                                    <h3 class="text-base font-semibold text-[#2d2d2d]">Integration Expansion</h3>
-                                </div>
-                                <span class="next-steps-icon"
-                                    style="transform: rotate(0deg); transition: transform 0.3s ease;">+</span>
-                            </div>
-                            <div class="next-steps-answer">
-                                <p class="text-[#6a5a4a] leading-relaxed text-sm pl-11 pt-[11px]">
-                                    Expand data sources and integrations based on pilot learnings.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Phase 3 -->
-                        <div class="next-steps-item">
-                            <div class="next-steps-question" onclick="showNextStepPhase(2)">
-                                <div class="flex items-center gap-3">
-                                    <div
-                                        class="w-8 h-8 rounded-full bg-[#6a8a7a]/20 flex items-center justify-center border-2 border-[#6a8a7a]/40 flex-shrink-0">
-                                        <span class="text-sm font-semibold text-[#6a5a4a]">3</span>
-                                    </div>
-                                    <h3 class="text-base font-semibold text-[#2d2d2d]">Full Rollout</h3>
-                                </div>
-                                <span class="next-steps-icon"
-                                    style="transform: rotate(0deg); transition: transform 0.3s ease;">+</span>
-                            </div>
-                            <div class="next-steps-answer">
-                                <p class="text-[#6a5a4a] leading-relaxed text-sm pl-11 pt-[11px]">
-                                    Broader agency rollout with defined success metrics and approval gates at every
-                                    step.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Visual Display Area (Right) -->
-                <div class="flex-1 min-h-[400px]">
-                    <div id="next-steps-visual" class="chat-container h-full">
-                        <div class="chat-container-inner h-full">
-                            <div id="visual-content" class="p-6">
-                                <!-- Content will be dynamically updated -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <footer class="py-6 px-6 relative bg-[#faf9f7]">
         <div class="max-w-7xl mx-auto">
@@ -4159,30 +3184,17 @@
                 style="font-family: 'Courier New', Courier, 'Monaco', 'Menlo', monospace; font-weight: 400; letter-spacing: 0.02em;">
                 <!-- Logo on the left -->
                 <div class="flex-shrink-0">
-                    <svg id="footer-logo" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 289 137" class="h-16 w-auto" style="max-width: 200px;">
-                        <defs>
-                            <style>
-                                .st0 {
-                                    fill: #5b534c;
-                                }
-                            </style>
-                        </defs>
-                        <path class="st0" d="M204.79,75.67c0-9.5,7.49-17.12,16.99-17.12s16.99,7.62,16.99,17.12c0,.87-.07,1.74-.2,2.54h-26.02c.8,4.21,4.61,7.62,9.43,7.62,3.41,0,6.15-1.07,7.56-3.21h8.76c-2.27,6.09-8.76,10.17-16.32,10.17-9.7,0-17.19-7.62-17.19-17.12ZM230.74,71.93c-1-3.88-4.61-6.55-8.96-6.55s-7.96,2.68-8.96,6.55h17.92Z"/>
-                        <path class="st0" d="M191.34,45.18h7.36v13.78h6.34v6.96h-6.34v26.48h-7.36v-47.22Z"/>
-                        <path class="st0" d="M153.61,75.67c0-10.03,7.22-17.12,16.79-17.12,4.41,0,8.16,2.07,9.56,3.88v-3.48h7.49v33.44h-7.49v-3.48c-1.4,1.81-5.08,3.88-9.56,3.88-9.56,0-16.79-7.09-16.79-17.12ZM180.23,75.67c0-6.15-4.15-10.03-9.56-10.03s-9.83,3.88-9.83,10.03,4.28,10.03,9.83,10.03,9.56-3.88,9.56-10.03Z"/>
-                        <path class="st0" d="M117.65,75.67c0-9.5,7.49-17.12,16.99-17.12s16.99,7.62,16.99,17.12c0,.87-.07,1.74-.2,2.54h-26.02c.8,4.21,4.61,7.62,9.43,7.62,3.41,0,6.15-1.07,7.56-3.21h8.76c-2.27,6.09-8.76,10.17-16.32,10.17-9.7,0-17.19-7.62-17.19-17.12ZM143.6,71.93c-1-3.88-4.61-6.55-8.96-6.55s-7.96,2.68-8.96,6.55h17.92Z"/>
-                        <path class="st0" d="M100.22,58.95h7.36v4.41c1.14-2.68,3.81-4.82,7.82-4.82,1.61,0,2.41.2,2.94.4v7.76c-.74-.33-1.87-.53-3.08-.53-4.41,0-7.69,2.94-7.69,8.29v17.92h-7.36v-33.44Z"/>
-                        <path class="st0" d="M90.55,67.89v.41c0,8.95-7.28,16.23-16.23,16.23s-16.23-7.28-16.23-16.23,7.28-16.23,16.23-16.23c4.91,0,9.51,2.19,12.61,6.02l.28.35,5.6-5.6-.25-.29c-4.58-5.31-11.23-8.35-18.24-8.35-13.29,0-24.09,10.81-24.09,24.09s10.81,24.09,24.09,24.09,24.09-10.81,24.09-24.09v-.41h-7.87Z"/>
+                    <svg id="footer-logo" viewBox="0 0 318.37 44.22" xmlns="http://www.w3.org/2000/svg" class="h-5 w-auto" style="max-width: 100px;">
+                        <g fill="#5b534c"><path d="M0,22.14v-.06C0,8.26,12.86,0,31.26,0c15.08,0,27.07,5.7,30.1,15.28h-12.94c-2.37-4.85-9.63-6.87-16.99-6.87-10.1,0-19.13,4.28-19.13,13.67v.06c0,9.39,9.03,13.67,19.13,13.67,7.36,0,14.61-2.02,16.99-6.87h12.94c-3.03,9.57-15.04,15.28-30.13,15.28C12.83,44.22,0,35.97,0,22.14Z"/><path d="M64.1.96h32.19c11.86,0,19.89,3.27,19.89,13.86v.06c0,10.64-7.99,13.91-19.85,13.91h-20.44v14.48h-11.78V.96ZM94.86,20.44c6.12,0,9-1.22,9-5.56v-.06c0-4.28-2.88-5.51-9-5.51h-18.98v11.13h18.98Z"/><path d="M119.15.96h48.4v8.58h-36.62v8.1h34.89v8.58h-34.89v8.45h36.77v8.58h-48.55V.96Z"/><path d="M185.39.96h15.21l22.76,42.3h-12.92l-5.58-10.38h-24.53l-5.56,10.38h-12.14L185.39.96ZM200.54,24.35l-7.95-14.9h-.06l-7.92,14.9h15.93Z"/><path d="M232.59,9.55h-22.22V.96h56.25v8.59h-22.24v33.72h-11.78V9.55Z"/><path d="M269.82.96h48.4v8.58h-36.62v8.1h34.89v8.58h-34.89v8.45h36.77v8.58h-48.55V.96Z"/></g>
+                        <polygon fill="#5b534c" points="98.47 26.77 84.89 26.77 84.81 28.59 101.44 43.26 116.85 43.26 98.47 26.77"/>
                     </svg>
                 </div>
 
                 <!-- Site Map Links - stacked vertically on the right -->
                 <div class="flex flex-col gap-2 items-end ml-auto">
                     <a href="#problem">Challenge</a>
-                    <a href="#solution">Solution</a>
-                    <a href="#roi">Impact</a>
-                    <a href="#vision">Future</a>
-                    <a href="auris-brand.html">Brand Identity</a>
+                    <a href="#built">What We Built</a>
+                    <a href="#vision">Philosophy</a>
                 </div>
             </div>
         </div>
@@ -4236,117 +3248,6 @@
         document.querySelectorAll('.scroll-reveal').forEach(el => {
             observer.observe(el);
         });
-
-        // Approval card animation sequence on scroll
-        let approvalAnimationStarted = false;
-        const creategptSection = document.getElementById('creategpt-details');
-        if (creategptSection) {
-            const approvalObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting && !approvalAnimationStarted) {
-                        approvalAnimationStarted = true;
-
-                        // Find the Approval card (third card in the grid)
-                        const cards = entry.target.querySelectorAll('.bg-gray-card');
-                        if (cards.length >= 3) {
-                            const approvalCard = cards[2]; // Third card (index 2)
-                            const svg = approvalCard.querySelector('svg');
-
-                            if (svg) {
-                                // Find elements by their specific attributes
-                                const allGroups = svg.querySelectorAll('g');
-                                let magnifyingGlass = null;
-                                let documentIcon = null;
-                                let checkmark = null;
-                                let human = null;
-
-                                allGroups.forEach(g => {
-                                    const magnifyingCircle = g.querySelector('circle[cx="100"][cy="60"]');
-                                    const lines = g.querySelectorAll('line[x1="185"]');
-                                    const checkCircle = g.querySelector('circle[cx="225"]');
-                                    const humanCircle = g.querySelector('circle[cx="300"]');
-
-                                    if (magnifyingCircle) magnifyingGlass = g;
-                                    if (lines.length > 0) documentIcon = g;
-                                    if (checkCircle) checkmark = g;
-                                    if (humanCircle) human = g;
-                                });
-
-                                const arrows = svg.querySelectorAll('path[marker-end]');
-                                const approvalText = svg.querySelector('text');
-
-                                // Set initial opacity - hide everything initially but maintain layout
-                                if (magnifyingGlass) magnifyingGlass.style.opacity = '0';
-                                if (documentIcon) documentIcon.style.opacity = '0';
-                                if (checkmark) checkmark.style.opacity = '0';
-                                arrows.forEach(arrow => arrow.style.opacity = '0');
-                                if (human) human.style.opacity = '0';
-                                if (approvalText) approvalText.style.opacity = '0';
-
-                                // Sequence 1: Magnifying glass finds the right text
-                                setTimeout(() => {
-                                    if (magnifyingGlass) {
-                                        magnifyingGlass.style.transition = 'opacity 0.8s ease-out';
-                                        magnifyingGlass.style.opacity = '0.8';
-                                    }
-                                }, 200);
-
-                                // First arrow appears after magnifying glass
-                                setTimeout(() => {
-                                    if (arrows[0]) {
-                                        arrows[0].style.transition = 'opacity 0.6s ease-out';
-                                        arrows[0].style.opacity = '0.7';
-                                    }
-                                }, 900);
-
-                                // Sequence 2: Verified document appears, then checkmark verifies
-                                setTimeout(() => {
-                                    if (documentIcon) {
-                                        documentIcon.style.transition = 'opacity 0.8s ease-out';
-                                        documentIcon.style.opacity = '0.9';
-                                    }
-                                }, 1200);
-
-                                setTimeout(() => {
-                                    if (checkmark) {
-                                        checkmark.style.transition = 'opacity 0.8s ease-out';
-                                        checkmark.style.opacity = '0.9';
-                                    }
-                                }, 2200);
-
-                                setTimeout(() => {
-                                    if (arrows[1]) { // Second arrow - after checkmark
-                                        arrows[1].style.transition = 'opacity 0.6s ease-out';
-                                        arrows[1].style.opacity = '0.7';
-                                    }
-                                }, 2800);
-
-                                // Sequence 3: Human fades in with approval text
-                                setTimeout(() => {
-                                    if (human) {
-                                        human.style.transition = 'opacity 0.8s ease-out';
-                                        human.style.opacity = '0.9';
-                                    }
-                                }, 3400);
-
-                                setTimeout(() => {
-                                    if (approvalText) {
-                                        approvalText.style.transition = 'opacity 0.8s ease-out';
-                                        approvalText.style.opacity = '0.8';
-                                    }
-                                }, 3800);
-                            }
-                        }
-
-                        approvalObserver.disconnect();
-                    }
-                });
-            }, {
-                threshold: 0.3
-            });
-
-            approvalObserver.observe(creategptSection);
-        }
 
         // Nav glass effect on scroll
         const nav = document.getElementById('main-nav');
@@ -4603,11 +3504,9 @@
         const sectionMap = {
             'problem': 'The Challenge',
             'solution': 'The Solution',
-            'creategpt-details': 'How It Works',
-            'security': 'Security',
-            'engagement': 'Bringing Everyone Along',
-            'roi': 'Impact',
-            'faq': 'FAQ',
+            'built': 'What We Built',
+            'architecture': 'Security & Architecture',
+            'engagement': 'The Culture Shift',
             'vision': 'Our AI Philosophy'
         };
 
@@ -4892,1051 +3791,134 @@
             }
         }
 
-        // Next Steps Phase Visual Updates
-        const nextStepsPhases = [
-            {
-                title: 'Auris',
-                content: `
-                    <div class="space-y-4">
-                        <!-- Chat Interface Mockup -->
-                        <div class="bg-white rounded-lg border border-[#6a8a7a]/20 p-4 shadow-sm">
-                            <div class="flex items-center gap-2 mb-3 pb-3 border-b border-[#6a8a7a]/10">
-                                <img src="logo.png?v=9" alt="Auris" class="w-8 h-8 object-contain logo-cache-bust">
-                                <span class="text-sm font-medium text-[#2d2d2d]">Timesheet Assistant</span>
-                            </div>
-                            <div class="space-y-3">
-                                <div class="prompt-input-area">
-                                    <div class="prompt-text" id="user-prompt-text" data-prompt="Fill out my time sheet for the week">ASK A QUESTION</div>
-                                    <div class="prompt-actions">
-                                        <button class="prompt-action-btn">
-                                            <span style="font-family: 'Inter', sans-serif;">→</span>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="bg-[#6a8a7a]/10 rounded-lg p-3 text-sm text-[#6a5a4a]" id="assistant-response" style="display: none; opacity: 0; transition: opacity 0.5s ease;">
-                                    <p class="font-medium mb-2 text-[#2d2d2d]">Assistant:</p>
-                                    <p class="mb-3">I checked your Adobe logs, server logs, and calendar. Here's what I found:</p>
-                                    <!-- Timesheet Entries -->
-                                    <div class="bg-white rounded-lg p-3 mb-3 space-y-2 border border-[#6a8a7a]/10" id="timesheet-entries">
-                                        <div class="flex items-center justify-between text-xs timesheet-entry" data-hours="6.5">
-                                            <div>
-                                                <span class="font-medium text-[#2d2d2d]">Mon - Netflix</span>
-                                                <span class="text-[#6a5a4a] ml-2">Edited Spot 2 rev</span>
-                                            </div>
-                                            <span class="font-medium text-[#2d2d2d] hours-value">6.5h</span>
-                                        </div>
-                                        <div class="flex items-center justify-between text-xs timesheet-entry" data-hours="7.0">
-                                            <div>
-                                                <span class="font-medium text-[#2d2d2d]">Tue - Activision</span>
-                                                <span class="text-[#6a5a4a] ml-2">Edited Spot 2 rev</span>
-                                            </div>
-                                            <span class="font-medium text-[#2d2d2d] hours-value">7.0h</span>
-                                        </div>
-                                        <div class="flex items-center justify-between text-xs timesheet-entry" data-hours="1.0">
-                                            <div>
-                                                <span class="font-medium text-[#2d2d2d]">Tue - Company Meeting</span>
-                                                <span class="text-[#6a5a4a] ml-2">Calendar</span>
-                                            </div>
-                                            <span class="font-medium text-[#2d2d2d] hours-value">1.0h</span>
-                                        </div>
-                                        <div class="flex items-center justify-between text-xs timesheet-entry" data-hours="8.0">
-                                            <div>
-                                                <span class="font-medium text-[#2d2d2d]">Wed - Time Off</span>
-                                                <span class="text-[#6a5a4a] ml-2">Calendar</span>
-                                            </div>
-                                            <span class="font-medium text-[#2d2d2d] hours-value">8.0h</span>
-                                        </div>
-                                        <div class="flex items-center justify-between text-xs timesheet-entry" data-hours="4.0">
-                                            <div>
-                                                <span class="font-medium text-[#2d2d2d]">Thu - Paramount</span>
-                                                <span class="text-[#6a5a4a] ml-2">Edited Spot 2 rev</span>
-                                            </div>
-                                            <span class="font-medium text-[#2d2d2d] hours-value">4.0h</span>
-                                        </div>
-                                        <div class="flex items-center justify-between text-xs pt-2 border-t border-[#6a8a7a]/10" id="timesheet-total-row" style="opacity: 0;">
-                                            <span class="font-semibold text-[#2d2d2d]">Total</span>
-                                            <span class="font-semibold text-[#2d2d2d]" id="timesheet-total">26.5h</span>
-                                        </div>
-                                    </div>
-                                    <div class="flex items-center gap-2">
-                                        <button id="submit-timesheet-btn" class="flex-1 bg-[#6a8a7a] text-white text-xs py-2 px-3 rounded-lg font-medium hover:bg-[#c49a64] transition-colors">
-                                            Submit
-                                        </button>
-                                        <button class="bg-white border border-[#6a8a7a]/30 text-[#6a5a4a] text-xs py-2 px-3 rounded-lg font-medium hover:bg-[#faf7f2] transition-colors">
-                                            Adjust
-                                        </button>
-                                    </div>
-                                    <!-- FileMaker UI (hidden initially) -->
-                                    <div id="filemaker-ui" class="bg-white rounded-lg border border-[#6a8a7a]/20 p-4 mt-3 shadow-sm hidden relative overflow-hidden">
-                                        <div class="text-xs font-semibold text-[#2d2d2d] mb-3 pb-2 border-b border-[#6a8a7a]/10">FileMaker Timesheet Record</div>
-                                        <div class="space-y-2 text-xs">
-                                            <div class="grid grid-cols-2 gap-2">
-                                                <div>
-                                                    <div class="text-[#6a5a4a] mb-1">Employee:</div>
-                                                    <div class="bg-[#faf7f2] rounded px-2 py-1 filemaker-field" data-field="employee">Loading...</div>
-                                                </div>
-                                                <div>
-                                                    <div class="text-[#6a5a4a] mb-1">Week:</div>
-                                                    <div class="bg-[#faf7f2] rounded px-2 py-1 filemaker-field" data-field="week">Loading...</div>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <div class="text-[#6a5a4a] mb-1">Total Hours:</div>
-                                                <div class="bg-[#faf7f2] rounded px-2 py-1 filemaker-field" data-field="hours">Loading...</div>
-                                            </div>
-                                            <div>
-                                                <div class="text-[#6a5a4a] mb-1">Status:</div>
-                                                <div class="bg-[#6a8a7a]/10 rounded px-2 py-1 filemaker-field inline-block" data-field="status">Loading...</div>
-                                            </div>
-                                        </div>
-                                        <!-- Success message -->
-                                        <div id="filemaker-success" class="hidden mt-3 pt-3 border-t border-[#6a8a7a]/10 flex items-center gap-2 text-xs">
-                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-green-600">
-                                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-                                                <path d="M8 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                            </svg>
-                                            <span class="font-semibold text-green-600">Successfully submitted to FileMaker</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                `
-            },
-            {
-                title: 'Integration Expansion',
-                content: `
-                    <div class="space-y-4">
-                        <!-- Integration Network Visual -->
-                        <div class="bg-white rounded-lg border border-[#6a8a7a]/20 p-6 shadow-sm relative">
-                            <div class="text-center mb-4">
-                                <h4 class="text-sm font-semibold text-[#2d2d2d] mb-2">Connected Data Sources</h4>
-                            </div>
-                            <!-- Central Hub -->
-                            <div class="flex items-center justify-center mb-6">
-                                <img src="logo.png?v=9" alt="Auris" class="w-16 h-16 object-contain logo-cache-bust">
-                            </div>
-                            <!-- Connected Services -->
-                            <div class="grid grid-cols-3 gap-4 relative" style="z-index: 2;">
-                                <div class="text-center integration-platform" data-platform="0">
-                                    <div class="w-full h-full min-h-[100px] rounded-lg bg-[#faf7f2] border-2 border-[#28ca42] flex flex-col items-center justify-center p-4 relative" style="box-shadow: 0 0 8px rgba(40, 202, 66, 0.3);">
-                                        <div class="w-12 h-12 rounded-lg bg-white flex items-center justify-center mb-3 relative">
-                                            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <rect x="4" y="4" width="16" height="16" rx="2" fill="#FF6B35"/>
-                                                <path d="M8 8h8v2H8V8zm0 3h8v2H8v-2zm0 3h6v2H8v-2z" fill="white"/>
-                                            </svg>
-                                            <svg class="absolute -top-1 -right-1 w-5 h-5 integration-check" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <circle cx="12" cy="12" r="10" fill="#28ca42" stroke="white" stroke-width="2"/>
-                                                <path d="M8 12l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                            </svg>
-                                        </div>
-                                        <p class="text-xs text-[#6a5a4a] font-medium">FileMaker</p>
-                                    </div>
-                                </div>
-                                <div class="text-center integration-platform" data-platform="1">
-                                    <div class="w-full h-full min-h-[100px] rounded-lg bg-[#faf7f2] border-2 border-[#28ca42] flex flex-col items-center justify-center p-4 relative" style="box-shadow: 0 0 8px rgba(40, 202, 66, 0.3);">
-                                        <div class="w-12 h-12 rounded-lg bg-white flex items-center justify-center mb-3 relative">
-                                            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <rect x="3" y="3" width="18" height="18" rx="2" fill="#000000"/>
-                                                <path d="M8 8h8M8 12h8M8 16h5" stroke="white" stroke-width="2" stroke-linecap="round"/>
-                                            </svg>
-                                            <svg class="absolute -top-1 -right-1 w-5 h-5 integration-check" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <circle cx="12" cy="12" r="10" fill="#28ca42" stroke="white" stroke-width="2"/>
-                                                <path d="M8 12l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                            </svg>
-                                        </div>
-                                        <p class="text-xs text-[#6a5a4a] font-medium">Notion</p>
-                                    </div>
-                                </div>
-                                <div class="text-center integration-platform" data-platform="2">
-                                    <div class="w-full h-full min-h-[100px] rounded-lg bg-[#faf7f2] border-2 border-[#28ca42] flex flex-col items-center justify-center p-4 relative" style="box-shadow: 0 0 8px rgba(40, 202, 66, 0.3);">
-                                        <div class="w-12 h-12 rounded-lg bg-white flex items-center justify-center mb-3 relative">
-                                            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <circle cx="12" cy="12" r="10" fill="#0077C5"/>
-                                                <path d="M8 10h4c1.1 0 2 .9 2 2s-.9 2-2 2h-2v2h4v1.5H8V10zm2 3h2c.5 0 1-.5 1-1s-.5-1-1-1h-2v2z" fill="white"/>
-                                            </svg>
-                                            <svg class="absolute -top-1 -right-1 w-5 h-5 integration-check" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <circle cx="12" cy="12" r="10" fill="#28ca42" stroke="white" stroke-width="2"/>
-                                                <path d="M8 12l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                            </svg>
-                                        </div>
-                                        <p class="text-xs text-[#6a5a4a] font-medium">QuickBooks</p>
-                                    </div>
-                                </div>
-                                <div class="text-center integration-platform" data-platform="3">
-                                    <div class="w-full h-full min-h-[100px] rounded-lg bg-[#faf7f2] border-2 border-[#28ca42] flex flex-col items-center justify-center p-4 relative" style="box-shadow: 0 0 8px rgba(40, 202, 66, 0.3);">
-                                        <div class="w-12 h-12 rounded-lg bg-white flex items-center justify-center mb-3 relative">
-                                            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <rect x="4" y="4" width="16" height="16" rx="2" fill="#1E88E5"/>
-                                                <path d="M8 8h8v8H8V8z" fill="white" opacity="0.3"/>
-                                                <path d="M10 10h4v4h-4v-4z" fill="white"/>
-                                            </svg>
-                                            <svg class="absolute -top-1 -right-1 w-5 h-5 integration-check" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <circle cx="12" cy="12" r="10" fill="#28ca42" stroke="white" stroke-width="2"/>
-                                                <path d="M8 12l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                            </svg>
-                                        </div>
-                                        <p class="text-xs text-[#6a5a4a] font-medium">Frame.io</p>
-                                    </div>
-                                </div>
-                                <div class="text-center integration-platform" data-platform="4">
-                                    <div class="w-full h-full min-h-[100px] rounded-lg bg-[#faf7f2] border-2 border-[#28ca42] flex flex-col items-center justify-center p-4 relative" style="box-shadow: 0 0 8px rgba(40, 202, 66, 0.3);">
-                                        <div class="w-12 h-12 rounded-lg bg-white flex items-center justify-center mb-3 relative">
-                                            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <circle cx="12" cy="12" r="10" fill="#5558AF"/>
-                                                <path d="M8 10c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v4c0 1.1-.9 2-2 2h-4c-1.1 0-2-.9-2-2v-4z" fill="white"/>
-                                                <circle cx="10" cy="12" r="1" fill="#5558AF"/>
-                                                <circle cx="14" cy="12" r="1" fill="#5558AF"/>
-                                            </svg>
-                                            <svg class="absolute -top-1 -right-1 w-5 h-5 integration-check" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <circle cx="12" cy="12" r="10" fill="#28ca42" stroke="white" stroke-width="2"/>
-                                                <path d="M8 12l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                            </svg>
-                                        </div>
-                                        <p class="text-xs text-[#6a5a4a] font-medium">Teams</p>
-                                    </div>
-                                </div>
-                                <div class="text-center integration-platform" data-platform="5">
-                                    <div class="w-full h-full min-h-[100px] rounded-lg bg-[#faf7f2] border-2 border-[#28ca42] flex flex-col items-center justify-center p-4 relative" style="box-shadow: 0 0 8px rgba(40, 202, 66, 0.3);">
-                                        <div class="w-12 h-12 rounded-lg bg-white flex items-center justify-center mb-3 relative">
-                                            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <circle cx="12" cy="12" r="10" fill="#d4a574" opacity="0.2"/>
-                                                <path d="M12 8v8M8 12h8" stroke="#6a5a4a" stroke-width="2" stroke-linecap="round"/>
-                                            </svg>
-                                            <svg class="absolute -top-1 -right-1 w-5 h-5 integration-check" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <circle cx="12" cy="12" r="10" fill="#28ca42" stroke="white" stroke-width="2"/>
-                                                <path d="M8 12l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                            </svg>
-                                        </div>
-                                        <p class="text-xs text-[#6a5a4a] font-medium">More</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Status -->
-                        <div class="flex items-center gap-2 text-sm text-[#6a5a4a] mt-4">
-                            <div class="w-2 h-2 rounded-full bg-green-500"></div>
-                            <span class="font-medium">6 integrations active</span>
-                        </div>
-                    </div>
-                `
-            },
-            {
-                title: 'Full Rollout',
-                content: `
-                    <div class="space-y-4">
-                        <!-- Dashboard Mockup -->
-                        <div class="bg-white rounded-lg border border-[#6a8a7a]/20 p-4 shadow-sm">
-                            <div class="flex items-center justify-between mb-4 pb-3 border-b border-[#6a8a7a]/10">
-                                <h4 class="text-sm font-semibold text-[#2d2d2d]">Agency Dashboard</h4>
-                                <span class="text-xs text-[#6a5a4a] bg-green-100 text-green-700 px-2 py-1 rounded">Live</span>
-                            </div>
-                            <!-- Metrics -->
-                            <div class="grid grid-cols-2 gap-3 mb-4">
-                                <div class="bg-[#faf7f2] rounded-lg p-3">
-                                    <div class="text-xs text-[#6a5a4a] mb-1">Active Users</div>
-                                    <div class="text-xl font-semibold text-[#2d2d2d]">150</div>
-                                </div>
-                                <div class="bg-[#faf7f2] rounded-lg p-3">
-                                    <div class="text-xs text-[#6a5a4a] mb-1">Queries Today</div>
-                                    <div class="text-xl font-semibold text-[#2d2d2d]">1,247</div>
-                                </div>
-                            </div>
-                            <!-- Departments -->
-                            <div class="space-y-2">
-                                <div class="flex items-center justify-between text-sm">
-                                    <span class="text-[#6a5a4a]">Design</span>
-                                    <div class="flex items-center gap-2">
-                                        <div class="w-24 h-2 bg-[#faf7f2] rounded-full overflow-hidden">
-                                            <div class="h-full bg-[#6a8a7a] rounded-full" style="width: 85%"></div>
-                                        </div>
-                                        <span class="text-xs text-[#6a5a4a]">85%</span>
-                                    </div>
-                                </div>
-                                <div class="flex items-center justify-between text-sm">
-                                    <span class="text-[#6a5a4a]">Production</span>
-                                    <div class="flex items-center gap-2">
-                                        <div class="w-24 h-2 bg-[#faf7f2] rounded-full overflow-hidden">
-                                            <div class="h-full bg-[#6a8a7a] rounded-full" style="width: 92%"></div>
-                                        </div>
-                                        <span class="text-xs text-[#6a5a4a]">92%</span>
-                                    </div>
-                                </div>
-                                <div class="flex items-center justify-between text-sm">
-                                    <span class="text-[#6a5a4a]">Finance</span>
-                                    <div class="flex items-center gap-2">
-                                        <div class="w-24 h-2 bg-[#faf7f2] rounded-full overflow-hidden">
-                                            <div class="h-full bg-[#6a8a7a] rounded-full" style="width: 78%"></div>
-                                        </div>
-                                        <span class="text-xs text-[#6a5a4a]">78%</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Success Metrics -->
-                        <div class="flex items-center gap-4 text-xs text-[#6a5a4a]">
-                            <div class="flex items-center gap-1">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M20 6L9 17l-5-5" stroke="#28ca42" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                <span>All gates passed</span>
-                            </div>
-                        </div>
-                    </div>
-                `
-            }
-        ];
-
-        function showNextStepPhase(index) {
-            const phase = nextStepsPhases[index];
-            if (!phase) return;
-
-            // Update visual content
-            const visualContent = document.getElementById('visual-content');
-
-            // Aggressively remove all confetti before switching content
-            const confettiContainer = document.getElementById('confetti-container');
-            if (confettiContainer) {
-                confettiContainer.remove();
-            }
-            // Also remove any confetti elements that might be direct children
-            if (visualContent) {
-                const allConfetti = visualContent.querySelectorAll('.confetti, #confetti-container');
-                allConfetti.forEach(el => el.remove());
-            }
-
-            if (visualContent) visualContent.innerHTML = phase.content;
-
-            // Double-check: remove any confetti that might have been created
-            setTimeout(() => {
-                const confettiAfter = document.getElementById('confetti-container');
-                if (confettiAfter) {
-                    confettiAfter.remove();
-                }
-                const confettiElements = document.querySelectorAll('.confetti');
-                confettiElements.forEach(el => el.remove());
-            }, 100);
-
-            // Setup intersection observer for phase 0 animation
-            if (index === 0) {
-                setupTimesheetAnimationObserver();
-            }
-
-            // Force remove confetti for Integration Expansion (phase 1)
-            if (index === 1) {
-                // Remove confetti container and all confetti elements
-                const container = document.getElementById('confetti-container');
-                if (container) {
-                    container.style.display = 'none';
-                    container.style.visibility = 'hidden';
-                    container.style.opacity = '0';
-                    container.remove();
-                }
-                const allConfetti = document.querySelectorAll('.confetti');
-                allConfetti.forEach(el => {
-                    el.style.animation = 'none';
-                    el.style.display = 'none';
-                    el.style.visibility = 'hidden';
-                    el.style.opacity = '0';
-                    el.remove();
-                });
-                // Also check in visual-content and parent containers
-                if (visualContent) {
-                    const visualConfetti = visualContent.querySelectorAll('.confetti, #confetti-container');
-                    visualConfetti.forEach(el => {
-                        el.style.animation = 'none';
-                        el.style.display = 'none';
-                        el.remove();
-                    });
-                }
-                // Check in next-steps-visual container
-                const visualContainer = document.getElementById('next-steps-visual');
-                if (visualContainer) {
-                    const containerConfetti = visualContainer.querySelectorAll('.confetti, #confetti-container');
-                    containerConfetti.forEach(el => {
-                        el.style.animation = 'none';
-                        el.style.display = 'none';
-                        el.remove();
-                    });
-                }
-            }
-
-            // Update active state in list
-            const questions = document.querySelectorAll('.next-steps-question');
-            const answers = document.querySelectorAll('.next-steps-answer');
-
-            questions.forEach((q, i) => {
-                const icon = q.querySelector('.next-steps-icon');
-                if (i === index) {
-                    q.classList.add('active');
-                    answers[i].classList.add('active');
-                    if (icon) icon.textContent = '−';
-                } else {
-                    q.classList.remove('active');
-                    answers[i].classList.remove('active');
-                    if (icon) icon.textContent = '+';
-                }
-            });
-        }
-
-        // Setup intersection observer to start animation when section is visible
-        let timesheetAnimationObserver = null;
-        let animationStarted = false;
-
-        function setupTimesheetAnimationObserver() {
-            // Reset animation flag when setting up observer
-            animationStarted = false;
-
-            // Disconnect previous observer if it exists
-            if (timesheetAnimationObserver) {
-                timesheetAnimationObserver.disconnect();
-            }
-
-            // Observe the larger visual container instead of just the content
-            const visualContainer = document.getElementById('next-steps-visual');
-            if (!visualContainer) return;
-
-            // Check if already visible
-            const rect = visualContainer.getBoundingClientRect();
-            const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
-
-            if (isVisible && rect.top < window.innerHeight * 0.8) {
-                // Already visible, start animation
-                animationStarted = true;
-                setTimeout(() => {
-                    animateTimesheetInteraction();
-                }, 500);
-                return;
-            }
-
-            timesheetAnimationObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting && !animationStarted) {
-                        animationStarted = true;
-                        setTimeout(() => {
-                            animateTimesheetInteraction();
-                        }, 500);
-                        timesheetAnimationObserver.disconnect();
-                    }
-                });
-            }, {
-                threshold: 0.2, // Start when 20% of the container is visible
-                rootMargin: '50px' // Start slightly before fully in view
-            });
-
-            timesheetAnimationObserver.observe(visualContainer);
-        }
-
-        // Animate integration expansion - platforms connecting one by one
-        function animateIntegrationExpansion() {
-            const visualContent = document.getElementById('visual-content');
-            if (!visualContent) return;
-
-            const platforms = visualContent.querySelectorAll('.integration-platform');
-            const connectionLines = visualContent.querySelectorAll('[id^="connection-line-"]');
-            const statusText = visualContent.querySelector('#integration-status-text');
-            const statusDot = visualContent.querySelector('#integration-status-dot');
-
-            if (!platforms.length) return;
-
-            let currentIndex = 0;
-
-            function connectNextPlatform() {
-                if (currentIndex >= platforms.length) return;
-
-                const platform = platforms[currentIndex];
-                const line = connectionLines[currentIndex];
-                const platformBox = platform.querySelector('.w-12');
-                const pulse = platform.querySelector('.integration-pulse');
-                const check = platform.querySelector('.integration-check');
-                const label = platform.querySelector('.integration-label');
-
-                // Step 1: Show platform (connecting state)
-                platform.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
-                platform.style.opacity = '0.6';
-                platform.style.transform = 'scale(0.9)';
-
-                // Step 2: Animate connection line appearing
-                if (line) {
-                    line.style.transition = 'opacity 0.5s ease';
-                    line.style.opacity = '0.5';
-                }
-
-                // Step 3: Show pulsing effect (connecting)
-                if (pulse) {
-                    pulse.style.transition = 'opacity 0.3s ease';
-                    pulse.style.opacity = '0.6';
-                    pulse.style.animation = 'pulse 1s ease-in-out infinite';
-                }
-
-                // Step 4: Draw connection line
-                setTimeout(() => {
-                    if (line) {
-                        line.style.transition = 'opacity 0.6s ease, stroke-dasharray 0.8s ease';
-                        line.style.opacity = '1';
-                        line.style.strokeDasharray = '0,1000'; // Draw line
-                    }
-                }, 200);
-
-                // Step 5: Platform comes online (full opacity, scale up)
-                setTimeout(() => {
-                    platform.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                    platform.style.opacity = '1';
-                    platform.style.transform = 'scale(1)';
-
-                    // Stop pulse, show checkmark
-                    if (pulse) {
-                        pulse.style.animation = 'none';
-                        pulse.style.opacity = '0';
-                    }
-
-                    if (check) {
-                        check.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-                        check.style.opacity = '1';
-                        check.style.transform = 'scale(1)';
-                    }
-
-                    // Add success glow to platform box
-                    if (platformBox) {
-                        platformBox.style.borderColor = '#28ca42';
-                        platformBox.style.boxShadow = '0 0 8px rgba(40, 202, 66, 0.3)';
-                    }
-
-                    // Update status
-                    if (statusText) {
-                        statusText.textContent = `${currentIndex + 1} integration${currentIndex + 1 !== 1 ? 's' : ''} active`;
-                    }
-
-                    // Pulse the status dot
-                    if (statusDot) {
-                        statusDot.style.animation = 'none';
-                        setTimeout(() => {
-                            statusDot.style.animation = 'pulse 0.5s ease';
-                        }, 10);
-                    }
-
-                    currentIndex++;
-
-                    // Connect next platform after delay
-                    if (currentIndex < platforms.length) {
-                        setTimeout(connectNextPlatform, 800);
-                    }
-                }, 600);
-            }
-
-            // Start animation
-            connectNextPlatform();
-        }
-
-        // Animate timesheet interaction with cursor
-        function animateTimesheetInteraction() {
-            const visualContent = document.getElementById('visual-content');
-            if (!visualContent) return;
-
-            // Create cursor element
-            const cursor = document.createElement('div');
-            cursor.className = 'timesheet-cursor';
-            cursor.innerHTML = `
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3 3L10.07 19.97L12.58 12.58L19.97 10.07L3 3Z" fill="#2d2d2d" stroke="#ffffff" stroke-width="0.5"/>
-                </svg>
-            `;
-            visualContent.style.position = 'relative';
-            visualContent.appendChild(cursor);
-
-            const userPrompt = visualContent.querySelector('#user-prompt-text');
-            const assistantResponse = visualContent.querySelector('#assistant-response');
-            const entries = visualContent.querySelectorAll('.timesheet-entry');
-            const submitBtn = visualContent.querySelector('#submit-timesheet-btn');
-            const filemakerUI = visualContent.querySelector('#filemaker-ui');
-            const totalEl = visualContent.querySelector('#timesheet-total');
-            const timesheetContainer = visualContent.querySelector('#timesheet-entries');
-
-            if (!entries.length || !submitBtn) return;
-
-            let totalHours = 26.5;
-
-            function typeText(element, text, callback) {
-                if (!element) {
-                    callback();
-                    return;
-                }
-                element.textContent = '';
-                let index = 0;
-                const typingInterval = setInterval(() => {
-                    if (index < text.length) {
-                        element.textContent += text[index];
-                        index++;
-                    } else {
-                        clearInterval(typingInterval);
-                        callback();
-                    }
-                }, 50);
-            }
-
-            function moveCursorTo(element, callback) {
-                if (!element) {
-                    callback();
-                    return;
-                }
-
-                const rect = element.getBoundingClientRect();
-                const containerRect = visualContent.getBoundingClientRect();
-                const x = rect.left - containerRect.left + rect.width / 2 - 10;
-                const y = rect.top - containerRect.top + rect.height / 2 - 10;
-
-                cursor.style.left = x + 'px';
-                cursor.style.top = y + 'px';
-                cursor.classList.add('active');
-
-                setTimeout(() => {
-                    element.classList.add('highlight');
-                    callback();
-                }, 300);
-            }
-
-            function showTimesheetEntry(index, callback) {
-                if (index >= entries.length) {
-                    callback();
-                    return;
-                }
-
-                const entry = entries[index];
-                entry.style.opacity = '0';
-                entry.style.transform = 'translateY(-10px)';
-
-                setTimeout(() => {
-                    entry.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                    entry.style.opacity = '1';
-                    entry.style.transform = 'translateY(0)';
-
-                    setTimeout(callback, 400);
-                }, 100);
-            }
-
-            function adjustHours(entry, newHours, callback) {
-                const hoursEl = entry.querySelector('.hours-value');
-                if (!hoursEl) {
-                    callback();
-                    return;
-                }
-
-                const oldHours = parseFloat(entry.dataset.hours);
-                const diff = newHours - oldHours;
-                totalHours += diff;
-
-                // Animate number change
-                let current = oldHours;
-                const increment = diff / 10;
-                const interval = setInterval(() => {
-                    current += increment;
-                    if ((diff > 0 && current >= newHours) || (diff < 0 && current <= newHours)) {
-                        current = newHours;
-                        clearInterval(interval);
-                        hoursEl.textContent = newHours.toFixed(1) + 'h';
-                        entry.dataset.hours = newHours;
-                        totalEl.textContent = totalHours.toFixed(1) + 'h';
-                        callback();
-                    } else {
-                        hoursEl.textContent = current.toFixed(1) + 'h';
-                    }
-                }, 50);
-            }
-
-            function clickSubmit(callback) {
-                moveCursorTo(submitBtn, () => {
-                    setTimeout(() => {
-                        submitBtn.style.transform = 'scale(0.95)';
-                        setTimeout(() => {
-                            submitBtn.style.transform = 'scale(1)';
-                            callback();
-                        }, 150);
-                    }, 200);
-                });
-            }
-
-            function createConfetti() {
-                const visualContent = document.getElementById('visual-content');
-                if (!visualContent) return;
-
-                // Create confetti container if it doesn't exist
-                let container = document.getElementById('confetti-container');
-                if (!container) {
-                    container = document.createElement('div');
-                    container.id = 'confetti-container';
-                    container.className = 'absolute inset-0 pointer-events-none overflow-hidden';
-                    container.style.zIndex = '2000';
-                    visualContent.style.position = 'relative';
-                    visualContent.appendChild(container);
-                }
-
-                // Clear any existing confetti
-                container.innerHTML = '';
-
-                // Create many more confetti pieces for bigger explosion
-                const colors = ['#d4a574', '#8a6a4a', '#c49a64', '#ffa87a', '#e8b8a8', '#f5c896', '#b88a7a'];
-                for (let i = 0; i < 120; i++) {
-                    const confetti = document.createElement('div');
-                    confetti.className = 'confetti';
-                    confetti.style.position = 'absolute';
-                    confetti.style.width = (6 + Math.random() * 6) + 'px';
-                    confetti.style.height = (6 + Math.random() * 6) + 'px';
-                    confetti.style.left = Math.random() * 100 + '%';
-                    confetti.style.top = '-20px';
-                    confetti.style.animationDelay = Math.random() * 0.8 + 's';
-                    confetti.style.animationDuration = (2 + Math.random() * 2) + 's';
-                    confetti.style.animationName = 'confetti-fall';
-                    confetti.style.animationTimingFunction = 'linear';
-                    confetti.style.animationIterationCount = '1';
-                    confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
-
-                    // Random colors
-                    confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
-
-                    container.appendChild(confetti);
-                }
-
-                // Remove confetti after animation
-                setTimeout(() => {
-                    if (container) container.innerHTML = '';
-                }, 5000);
-            }
-
-            function populateFileMaker(callback) {
-                if (!filemakerUI) {
-                    callback();
-                    return;
-                }
-
-                filemakerUI.classList.remove('hidden');
-
-                const fields = {
-                    employee: 'John Doe',
-                    week: 'Week of Jan 15, 2024',
-                    hours: totalHours.toFixed(1) + ' hours',
-                    status: 'Submitted'
-                };
-
-                Object.keys(fields).forEach((key, index) => {
-                    setTimeout(() => {
-                        const field = filemakerUI.querySelector(`[data-field="${key}"]`);
-                        if (field) {
-                            field.textContent = fields[key];
-                            field.classList.add('populated');
-
-                            // Update status field with success styling
-                            if (key === 'status') {
-                                field.textContent = 'Submitted ✓';
-                                field.classList.add('bg-green-100', 'text-green-700');
-                            }
-                        }
-                    }, index * 300);
-                });
-
-                // Show success message and confetti after fields populate
-                setTimeout(() => {
-                    const successMsg = filemakerUI.querySelector('#filemaker-success');
-                    if (successMsg) {
-                        successMsg.classList.remove('hidden');
-                        successMsg.style.animation = 'fadeIn 0.5s ease-in';
-                    }
-
-                    // Trigger confetti
-                    createConfetti();
-
-                    if (callback) callback();
-                }, Object.keys(fields).length * 300 + 500);
-            }
-
-            // Animation sequence
-            function animateSequence() {
-                // Step 1: Type user prompt (matching solution section style)
-                if (userPrompt) {
-                    const actualPrompt = userPrompt.getAttribute('data-prompt') || 'Fill out my time sheet for the week';
-                    userPrompt.classList.remove('placeholder');
-                    userPrompt.textContent = '';
-                    userPrompt.classList.add('typing-started');
-
-                    // Type out the question (matching solution section speed)
-                    let i = 0;
-                    const typeInterval = setInterval(() => {
-                        if (i < actualPrompt.length) {
-                            userPrompt.textContent += actualPrompt.charAt(i);
-                            i++;
-                        } else {
-                            clearInterval(typeInterval);
-                            userPrompt.classList.add('typing-complete');
-                            userPrompt.classList.remove('typing-started');
-
-                            // Wait a bit, then show the response (matching solution section)
-                            setTimeout(() => {
-                                // Step 2: Show assistant response (wait for question to be fully submitted)
-                                if (assistantResponse) {
-                                    assistantResponse.style.display = 'block';
-                                    assistantResponse.style.opacity = '0';
-                                    assistantResponse.style.transition = 'opacity 0.5s ease';
-                                    setTimeout(() => {
-                                        assistantResponse.style.opacity = '1';
-                                        // Assistant response is now visible, wait a bit then show timesheet
-                                        setTimeout(() => {
-                                            // Step 3: Show timesheet entries appearing one by one
-                                            let entryIndex = 0;
-                                            function showNextEntry() {
-                                                if (entryIndex < entries.length) {
-                                                    showTimesheetEntry(entryIndex, () => {
-                                                        entryIndex++;
-                                                        showNextEntry();
-                                                    });
-                                                } else {
-                                                    // Show total row
-                                                    const totalRow = visualContent.querySelector('#timesheet-total-row');
-                                                    if (totalRow) {
-                                                        totalRow.style.transition = 'opacity 0.5s ease';
-                                                        totalRow.style.opacity = '1';
-                                                    }
-
-                                                    // All entries shown, now make adjustments
-                                                    setTimeout(() => {
-                                                        // Step 4: Adjust first entry (Mon - Netflix: 6.5h -> 7.0h)
-                                                        moveCursorTo(entries[0], () => {
-                                                            setTimeout(() => {
-                                                                adjustHours(entries[0], 7.0, () => {
-                                                                    entries[0].classList.remove('highlight');
-                                                                    setTimeout(() => {
-                                                                        // Adjust second entry (Tue - Activision: 7.0h -> 6.5h)
-                                                                        moveCursorTo(entries[1], () => {
-                                                                            setTimeout(() => {
-                                                                                adjustHours(entries[1], 6.5, () => {
-                                                                                    entries[1].classList.remove('highlight');
-                                                                                    setTimeout(() => {
-                                                                                        // Adjust third entry (Tue - Company Meeting: 1.0h -> 1.5h)
-                                                                                        moveCursorTo(entries[2], () => {
-                                                                                            setTimeout(() => {
-                                                                                                adjustHours(entries[2], 1.5, () => {
-                                                                                                    entries[2].classList.remove('highlight');
-                                                                                                    setTimeout(() => {
-                                                                                                        // Adjust fourth entry (Wed - Time Off: 8.0h -> 7.5h)
-                                                                                                        moveCursorTo(entries[3], () => {
-                                                                                                            setTimeout(() => {
-                                                                                                                adjustHours(entries[3], 7.5, () => {
-                                                                                                                    entries[3].classList.remove('highlight');
-                                                                                                                    setTimeout(() => {
-                                                                                                                        // Adjust fifth entry (Thu - Paramount: 4.0h -> 4.5h)
-                                                                                                                        moveCursorTo(entries[4], () => {
-                                                                                                                            setTimeout(() => {
-                                                                                                                                adjustHours(entries[4], 4.5, () => {
-                                                                                                                                    entries[4].classList.remove('highlight');
-                                                                                                                                    setTimeout(() => {
-                                                                                                                                        // Step 5: Click submit
-                                                                                                                                        clickSubmit(() => {
-                                                                                                                                            setTimeout(() => {
-                                                                                                                                                cursor.classList.remove('active');
-                                                                                                                                                populateFileMaker(() => {
-                                                                                                                                                    // Animation complete - restart after delay
-                                                                                                                                                    setTimeout(() => {
-                                                                                                                                                        // Reset and restart animation
-                                                                                                                                                        if (userPrompt) userPrompt.textContent = '';
-                                                                                                                                                        if (assistantResponse) {
-                                                                                                                                                            assistantResponse.textContent = '';
-                                                                                                                                                            assistantResponse.style.opacity = '1';
-                                                                                                                                                        }
-                                                                                                                                                        entries.forEach((entry, idx) => {
-                                                                                                                                                            const origHours = [6.5, 7.0, 1.0, 8.0, 4.0][idx];
-                                                                                                                                                            entry.dataset.hours = origHours;
-                                                                                                                                                            const hEl = entry.querySelector('.hours-value');
-                                                                                                                                                            if (hEl) hEl.textContent = origHours.toFixed(1) + 'h';
-                                                                                                                                                            entry.style.opacity = '0';
-                                                                                                                                                            entry.classList.remove('highlight');
-                                                                                                                                                        });
-                                                                                                                                                        if (totalEl) totalEl.textContent = '26.5h';
-                                                                                                                                                        const tr = visualContent.querySelector('#timesheet-total-row');
-                                                                                                                                                        if (tr) tr.style.opacity = '0';
-                                                                                                                                                        if (filemakerUI) filemakerUI.classList.add('hidden');
-                                                                                                                                                        const cc = document.getElementById('confetti-container');
-                                                                                                                                                        if (cc) cc.innerHTML = '';
-                                                                                                                                                        const ec = visualContent.querySelector('.timesheet-cursor');
-                                                                                                                                                        if (ec) ec.remove();
-                                                                                                                                                        totalHours = 26.5;
-                                                                                                                                                        setTimeout(() => animateSequence(), 500);
-                                                                                                                                                    }, 3000);
-                                                                                                                                                });
-                                                                                                                                            }, 500);
-                                                                                                                                        });
-                                                                                                                                    }, 500);
-                                                                                                                                });
-                                                                                                                            }, 300);
-                                                                                                                        });
-                                                                                                                    }, 500);
-                                                                                                                });
-                                                                                                            }, 300);
-                                                                                                        });
-                                                                                                    }, 500);
-                                                                                                });
-                                                                                            }, 300);
-                                                                                        });
-                                                                                    }, 500);
-                                                                                });
-                                                                            }, 300);
-                                                                        });
-                                                                    }, 500);
-                                                                });
-                                                            }, 300);
-                                                        });
-                                                    }, 800);
-                                                }
-                                            }
-                                            showNextEntry();
-                                        }, 500);
-                                    }, 10);
-                                }
-                            }, 500);
-                        }
-                    }, 50);
-                }
-            }
-
-            // Start animation
-            setTimeout(animateSequence, 500);
-        }
-
-        // Initialize with first phase on page load
-        document.addEventListener('DOMContentLoaded', () => {
-            showNextStepPhase(0);
-        });
-
         // Typing animation observer (define early so it's available)
         let promptTextObserver;
 
         // Prompt examples data
         const promptExamples = [
             {
-                title: 'Timesheet Assistant',
-                icon: 'fa-calendar-check',
+                title: 'Auris Markets',
+                icon: 'fa-chart-line',
                 iconColor: 'purple-400',
-                prompt: 'Help me fill out my timesheet. Include detail of the project and work.',
+                prompt: 'What upcoming releases match our portfolio? Show me the top opportunities for Q3.',
                 response: `
-                    <p>Based on your Adobe logs, Calendar, Teams, and Email, here's your draft timesheet:</p>
-                    <p class="mt-2"><strong>Monday (8h):</strong> Project Alpha - Client review meeting (2h), Design revisions (4h), Team sync (2h)</p>
-                    <p><strong>Tuesday (7.5h):</strong> Project Beta - Production work (5h), FileMaker updates (2.5h)</p>
-                    <p><strong>Wednesday (8h):</strong> Project Alpha - Final deliverables (6h), QA review (2h)</p>
-                    <p class="mt-3 text-[#6a5a4a] text-sm">Review and approve? This turns a 30-minute chore into a 30-second review.</p>
-                `,
-                actions: [
-                    { icon: 'fa-calendar', iconType: 'fas', text: 'View in Calendar' },
-                    { icon: 'fa-database', iconType: 'fas', text: 'Update FileMaker' }
-                ]
-            },
-            {
-                title: 'Project Kickoff',
-                icon: 'fa-rocket',
-                iconColor: 'blue-400',
-                prompt: 'A new peoject arrived from WB. I\'ve copied as pasted the details below. Draft a project setup.',
-                response: `
-                    <div class="mb-4 p-3 bg-white/50 rounded border border-[#6a8a7a]/20">
-                        <p class="text-xs text-[#6a5a4a] mb-2 font-medium">Pasted from WB:</p>
-                        <div class="text-sm text-[#5a6a7a] whitespace-pre-wrap">[Pasted information from WB client will appear here]</div>
+                    <p><strong>Top Opportunities (Q3 2026)</strong></p>
+                    <p class="mt-2">Cross-referenced upcoming releases against Create's full portfolio, client relationships, and studio history.</p>
+                    <div class="mt-3 space-y-2">
+                        <div class="flex justify-between items-center p-2 bg-white/50 rounded border border-[#6a8a7a]/20">
+                            <div><strong>Sinners</strong> <span class="text-xs text-[#5a6a7a]">Warner Bros</span></div>
+                            <div class="text-xs font-semibold text-green-700">Strong Match</div>
+                        </div>
+                        <div class="flex justify-between items-center p-2 bg-white/50 rounded border border-[#6a8a7a]/20">
+                            <div><strong>F1</strong> <span class="text-xs text-[#5a6a7a]">Apple</span></div>
+                            <div class="text-xs font-semibold text-green-700">Strong Match</div>
+                        </div>
+                        <div class="flex justify-between items-center p-2 bg-white/50 rounded border border-[#6a8a7a]/20">
+                            <div><strong>Thunderbolts*</strong> <span class="text-xs text-[#5a6a7a]">Disney</span></div>
+                            <div class="text-xs font-semibold text-amber-700">Good Match</div>
+                        </div>
                     </div>
-                    <p>I've drafted the project setup:</p>
-                    <ul class="mt-2">
-                        <li><strong>Team:</strong> Sarah (Editor), Mike (Designer) - both available next week</li>
-                        <li><strong>Budget:</strong> $45k allocated, billing codes: <code>PROJ-2025-042</code></li>
-                        <li><strong>Timeline:</strong> Kickoff 3/15, Delivery 4/1</li>
-                    </ul>
-                    <p class="mt-3 text-[#6a5a4a] text-sm">Once approved, the project moves from Awarded to Active in minutes.</p>
+                    <p class="mt-3 text-[#6a5a4a] text-sm">Scored by genre, tone, talent overlap, warm contacts, and studio history. 22 active users, 255 sessions in 90 days.</p>
                 `,
                 actions: [
-                    { icon: 'fa-database', iconType: 'fas', text: 'View in Trello' },
-                    { icon: 'fa-sticky-note', iconType: 'fas', text: 'Teams Available Editor' },
-                    { icon: 'fa-users', iconType: 'fas', text: 'Add to Teams' }
+                    { icon: 'fa-external-link-alt', iconType: 'fas', text: 'Open in Markets' },
+                    { icon: 'fa-envelope', iconType: 'fas', text: 'Generate Portfolio' }
                 ]
             },
             {
-                title: 'Up to Date Resource Forecast',
-                icon: 'fa-users',
+                title: 'Films & Series Intelligence',
+                icon: 'fa-film',
+                iconColor: 'blue-400',
+                prompt: 'How is the Films & Series group tracking against Q2 revenue goals? Any projects at risk?',
+                response: `
+                    <p><strong>Films & Series Q2 Dashboard</strong></p>
+                    <p class="mt-2">Pulling from Notion project tracker, financial analytics, and active job data.</p>
+                    <ul class="mt-2 space-y-1">
+                        <li><strong>Revenue vs Goal:</strong> 87% of Q2 target with 6 weeks remaining</li>
+                        <li><strong>Active Projects:</strong> 14 (8 on track, 4 at risk, 2 completed)</li>
+                        <li><strong>At Risk:</strong> Paramount title (scope creep), Netflix series (timeline compressed)</li>
+                    </ul>
+                    <p class="mt-3 text-[#6a5a4a] text-sm">Industry intel: Variety reports Netflix reshuffling marketing leadership. May affect the series timeline.</p>
+                `,
+                actions: [
+                    { icon: 'fa-chart-bar', iconType: 'fas', text: 'Full Dashboard' },
+                    { icon: 'fa-sticky-note', iconType: 'fas', text: 'View in Notion' }
+                ]
+            },
+            {
+                title: 'Weekly Intelligence',
+                icon: 'fa-newspaper',
                 iconColor: 'emerald-400',
-                prompt: 'Based on current assignments, is the editor on the Paramount project available or blocked? Who is projected to free up by 3 PM today?',
+                prompt: 'What did the latest Weekly Intelligence newsletter surface for the Games division?',
                 response: `
-                    <p><strong>Paramount Project Editor:</strong> Blocked until Friday (current deadline).</p>
-                    <p class="mt-2"><strong>Available by 3 PM today:</strong></p>
-                    <ul>
-                        <li>Alex Chen - Finishing up at 2:30 PM</li>
-                        <li>Jordan Smith - Available now</li>
-                    </ul>
-                    <p class="mt-3 text-[#6a5a4a] text-sm">Instant best fit matches instead of waiting for biweekly meetings.</p>
+                    <p><strong>Games Edition Highlights (This Week)</strong></p>
+                    <div class="mt-3 space-y-2">
+                        <div class="p-2 bg-white/50 rounded border border-[#6a8a7a]/20">
+                            <p class="text-xs font-semibold text-[#5a6a7a]">GREENLIGHT</p>
+                            <p class="text-sm">EA confirms new Sims expansion with cinematic trailer campaign</p>
+                        </div>
+                        <div class="p-2 bg-white/50 rounded border border-[#6a8a7a]/20">
+                            <p class="text-xs font-semibold text-[#5a6a7a]">EXEC MOVE</p>
+                            <p class="text-sm">New VP Marketing at Activision (previously at Xbox)</p>
+                        </div>
+                        <div class="p-2 bg-white/50 rounded border border-[#6a8a7a]/20">
+                            <p class="text-xs font-semibold text-[#5a6a7a]">OPPORTUNITY</p>
+                            <p class="text-sm">Matched to Create portfolio: 3 warm contacts at EA</p>
+                        </div>
+                    </div>
+                    <p class="mt-3 text-[#6a5a4a] text-sm">172 recipients, 58% open rate. Games edition approaches 100%.</p>
                 `,
                 actions: [
-                    { icon: 'fa-database', iconType: 'fas', text: 'View in FileMaker' },
-                    { icon: 'fa-calendar', iconType: 'fas', text: 'Teams Available Editor' }
+                    { icon: 'fa-envelope-open', iconType: 'fas', text: 'View Newsletter' },
+                    { icon: 'fa-share', iconType: 'fas', text: 'Forward to Team' }
                 ]
             },
             {
-                title: 'Spotting Workflow Inefficiencies',
-                icon: 'fa-exclamation-circle',
+                title: 'Storyboard Generation',
+                icon: 'fa-images',
                 iconColor: 'amber-400',
-                prompt: 'Analyze workflow patterns and identify inefficiencies',
+                prompt: 'Generate storyboard panels for the opening sequence. Scene: protagonist walks through a neon-lit city at night.',
                 response: `
-                    <p><strong>Inefficiency Detected:</strong></p>
-                    <p class="mt-2">I've analyzed workflow patterns and found a producer spending ~5 hours/week manually chasing status updates across Teams, Notion, and FileMaker.</p>
-                    <p class="mt-2">I can draft automated follow-up nudges for your review. This would save approximately 4.5 hours per week.</p>
-                    <p class="mt-3 text-[#6a5a4a] text-sm">Would you like me to set up automated status check-ins?</p>
+                    <p><strong>Storyboard Generated (6 panels)</strong></p>
+                    <p class="mt-2">Multi-stage pipeline with beat tracking. Running on-prem for IP security.</p>
+                    <div class="mt-3 grid grid-cols-3 gap-2">
+                        <div class="bg-[#2d2d2d] rounded h-16 flex items-center justify-center text-white text-xs">Panel 1</div>
+                        <div class="bg-[#2d2d2d] rounded h-16 flex items-center justify-center text-white text-xs">Panel 2</div>
+                        <div class="bg-[#2d2d2d] rounded h-16 flex items-center justify-center text-white text-xs">Panel 3</div>
+                        <div class="bg-[#2d2d2d] rounded h-16 flex items-center justify-center text-white text-xs">Panel 4</div>
+                        <div class="bg-[#2d2d2d] rounded h-16 flex items-center justify-center text-white text-xs">Panel 5</div>
+                        <div class="bg-[#2d2d2d] rounded h-16 flex items-center justify-center text-white text-xs">Panel 6</div>
+                    </div>
+                    <p class="mt-3 text-[#6a5a4a] text-sm">458 hours of storyboard labor eliminated annually. No client IP leaves the building.</p>
                 `,
                 actions: [
-                    { icon: 'fa-microsoft', iconType: 'fab', text: 'Setup in Teams' },
-                    { icon: 'fa-sticky-note', iconType: 'fas', text: 'Configure in Notion' },
-                    { icon: 'fa-bell', iconType: 'fas', text: 'Enable Notifications' }
+                    { icon: 'fa-download', iconType: 'fas', text: 'Export Panels' },
+                    { icon: 'fa-redo', iconType: 'fas', text: 'Regenerate' }
                 ]
             },
             {
-                title: 'LA/LDN Handoff',
-                icon: 'fa-globe',
+                title: 'Cue Sheet Automation',
+                icon: 'fa-music',
                 iconColor: 'blue-400',
-                prompt: 'Create evening handoff report for London team',
+                prompt: 'Extract cue sheet data from the latest Premiere project file for the HBO delivery.',
                 response: `
-                    <p><strong>Evening Report - LA to London</strong></p>
-                    <p class="mt-3">✅ <strong>Completed:</strong> Project Alpha final assets delivered to client.</p>
-                    <p>🔄 <strong>In Progress:</strong> Project Beta awaiting client feedback (expected tomorrow AM).</p>
-                    <p>📋 <strong>Ready for London:</strong> Project Gamma files uploaded to shared drive, ready for your review.</p>
-                    <p class="mt-3"><strong>Action Items:</strong> Review Project Beta feedback when available. All links and assets are in the project folder.</p>
-                    <p class="mt-4 text-[#6a5a4a] text-sm">London will receive a "Ready to Work" brief tomorrow morning, ensuring the project never stops moving despite the 8-hour time difference.</p>
+                    <p><strong>Cue Sheet Extracted</strong></p>
+                    <p class="mt-2">Ingested .prproj file. Music usage data extracted automatically.</p>
+                    <div class="mt-3 overflow-hidden rounded border border-[#6a8a7a]/20">
+                        <table class="w-full text-xs">
+                            <thead><tr class="bg-[#f5f2f0]"><th class="p-2 text-left">Track</th><th class="p-2 text-left">Usage</th><th class="p-2 text-left">Duration</th></tr></thead>
+                            <tbody>
+                                <tr class="border-t border-[#e5e2df]"><td class="p-2">Opening Theme</td><td class="p-2">Background</td><td class="p-2">2:34</td></tr>
+                                <tr class="border-t border-[#e5e2df]"><td class="p-2">Chase Scene</td><td class="p-2">Visual Vocal</td><td class="p-2">1:47</td></tr>
+                                <tr class="border-t border-[#e5e2df]"><td class="p-2">End Credits</td><td class="p-2">Featured</td><td class="p-2">3:12</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="mt-3 text-[#6a5a4a] text-sm">72% of manual cue sheet work automated. Previously consumed 44% of one person's work week.</p>
                 `,
                 actions: [
-                    { icon: 'fa-microsoft', iconType: 'fab', text: 'Send to Teams' },
-                    { icon: 'fa-sticky-note', iconType: 'fas', text: 'Post in Notion' },
-                    { icon: 'fa-envelope', iconType: 'fas', text: 'Email London Team' },
-                    { icon: 'fa-folder-open', iconType: 'fas', text: 'Link Assets' }
-                ]
-            },
-            {
-                title: 'AI Usage Guidelines',
-                icon: 'fa-shield-alt',
-                iconColor: 'purple-400',
-                prompt: 'I\'m a Designer working on style frames. Can I use AI tools like Midjourney or Adobe Firefly for texture generation?',
-                response: `
-                    <p><strong>AI Usage Guidelines for Designer Role</strong></p>
-                    <div class="mt-4 p-4 bg-green-50 border-l-4 border-green-500 rounded">
-                        <p class="font-semibold text-green-800 mb-2">✅ Approved (Green):</p>
-                        <ul class="list-disc list-inside text-sm text-green-700 space-y-1">
-                            <li><strong>Adobe Firefly (Local)</strong> - Safe for Generative Fill, AI upscaling, and texture generation</li>
-                            <li>All work processes locally on your machine</li>
-                            <li>No data leaves your device</li>
-                        </ul>
-                    </div>
-                    <div class="mt-4 p-4 bg-red-50 border-l-4 border-red-500 rounded">
-                        <p class="font-semibold text-red-800 mb-2">❌ Not Approved (Red):</p>
-                        <ul class="list-disc list-inside text-sm text-red-700 space-y-1">
-                            <li><strong>Midjourney</strong> - Prohibited for unreleased IP</li>
-                            <li>Do not use cloud-based AI tools with any unreleased project content</li>
-                            <li>Never input client artwork, style frames, or key art into public AI services</li>
-                        </ul>
-                    </div>
-                    <p class="mt-4 text-[#6a5a4a] text-sm"><strong>Your Tasks:</strong> Style frames, key art, title treatments</p>
-                    <p class="text-[#6a5a4a] text-sm"><strong>Recommended Tools:</strong> Photoshop (with Firefly), C4D, Illustrator</p>
-                    <p class="mt-3 text-[#6a5a4a] text-sm">For texture generation specifically, use Adobe Firefly's Generative Fill locally within Photoshop. This maintains security compliance while leveraging AI efficiency.</p>
-                `,
-                actions: [
-                    { icon: 'fa-shield-alt', iconType: 'fas', text: 'View Full Guidelines' },
-                    { icon: 'fa-question-circle', iconType: 'fas', text: 'Ask About Another Tool' }
+                    { icon: 'fa-file-export', iconType: 'fas', text: 'Export to Excel' },
+                    { icon: 'fa-check-circle', iconType: 'fas', text: 'Submit for Review' }
                 ]
             }
         ];
