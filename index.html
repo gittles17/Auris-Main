@@ -2776,21 +2776,34 @@
                         <span>22 active users</span>
                         <span>255 sessions / 90 days</span>
                     </div>
-                    <div class="grid grid-cols-3 gap-3">
-                        <div>
-                            <img src="screenshots/auris-markets.jpg" alt="Portfolio Matching" class="w-full rounded-lg shadow-sm" style="padding: 0;">
-                            <p class="text-[10px] text-[#8a6a4a] mt-2 mono-font font-medium">Portfolio Matching</p>
-                            <p class="text-[10px] text-[#5a6a7a] leading-tight mt-0.5">Cross-references upcoming releases against the client portfolio via embedding-based match scoring.</p>
+                    <div class="relative overflow-hidden rounded-lg">
+                        <div id="markets-carousel" class="flex transition-transform duration-500 ease-in-out" style="width: 300%;">
+                            <div class="w-full flex-shrink-0 px-1">
+                                <img src="screenshots/auris-markets.jpg" alt="Portfolio Matching" class="w-full rounded-lg shadow-sm" style="padding: 0;">
+                                <p class="text-[10px] text-[#8a6a4a] mt-2 mono-font font-medium">Portfolio Matching</p>
+                                <p class="text-[10px] text-[#5a6a7a] leading-tight mt-0.5">Cross-references upcoming releases against the client portfolio via embedding-based match scoring.</p>
+                            </div>
+                            <div class="w-full flex-shrink-0 px-1">
+                                <img src="screenshots/auris-slates.png" alt="Studio Slates" class="w-full rounded-lg shadow-sm" style="padding: 0;">
+                                <p class="text-[10px] text-[#8a6a4a] mt-2 mono-font font-medium">Studio Slates</p>
+                                <p class="text-[10px] text-[#5a6a7a] leading-tight mt-0.5">Every studio's full content slate. AI-powered analysis reveals genre leans, audience targeting, and competitive positioning.</p>
+                            </div>
+                            <div class="w-full flex-shrink-0 px-1">
+                                <img src="screenshots/auris-chat.png" alt="Auris Chat" class="w-full rounded-lg shadow-sm" style="padding: 0;">
+                                <p class="text-[10px] text-[#8a6a4a] mt-2 mono-font font-medium">Auris Chat</p>
+                                <p class="text-[10px] text-[#5a6a7a] leading-tight mt-0.5">Industry-wide and internal data, queryable in one conversation. Luminate, box office, trade news, client databases, project P&Ls.</p>
+                            </div>
                         </div>
-                        <div>
-                            <img src="screenshots/auris-slates.png" alt="Studio Slates" class="w-full rounded-lg shadow-sm" style="padding: 0;">
-                            <p class="text-[10px] text-[#8a6a4a] mt-2 mono-font font-medium">Studio Slates</p>
-                            <p class="text-[10px] text-[#5a6a7a] leading-tight mt-0.5">Every studio's full content slate. AI-powered analysis reveals genre leans, audience targeting, and competitive positioning.</p>
-                        </div>
-                        <div>
-                            <img src="screenshots/auris-chat.png" alt="Auris Chat" class="w-full rounded-lg shadow-sm" style="padding: 0;">
-                            <p class="text-[10px] text-[#8a6a4a] mt-2 mono-font font-medium">Auris Chat</p>
-                            <p class="text-[10px] text-[#5a6a7a] leading-tight mt-0.5">Industry-wide and internal data, queryable in one conversation. Luminate, box office, trade news, client databases, project P&Ls.</p>
+                        <button onclick="marketsCarousel(-1)" class="absolute left-2 top-1/3 -translate-y-1/2 w-8 h-8 rounded-full bg-white/90 shadow-md flex items-center justify-center text-[#5a6a7a] hover:bg-white hover:shadow-lg transition-all" aria-label="Previous">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                        </button>
+                        <button onclick="marketsCarousel(1)" class="absolute right-2 top-1/3 -translate-y-1/2 w-8 h-8 rounded-full bg-white/90 shadow-md flex items-center justify-center text-[#5a6a7a] hover:bg-white hover:shadow-lg transition-all" aria-label="Next">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                        </button>
+                        <div class="flex justify-center gap-2 mt-3">
+                            <button onclick="marketsGoTo(0)" class="markets-dot w-2 h-2 rounded-full bg-[#d4a574] transition-all" aria-label="Slide 1"></button>
+                            <button onclick="marketsGoTo(1)" class="markets-dot w-2 h-2 rounded-full bg-[#d4a574]/30 transition-all" aria-label="Slide 2"></button>
+                            <button onclick="marketsGoTo(2)" class="markets-dot w-2 h-2 rounded-full bg-[#d4a574]/30 transition-all" aria-label="Slide 3"></button>
                         </div>
                     </div>
                 </div>
@@ -3736,6 +3749,21 @@
                 }, index * 100);
             });
         });
+
+        // Markets carousel
+        var marketsIdx = 0;
+        function marketsGoTo(i) {
+            marketsIdx = i;
+            var el = document.getElementById('markets-carousel');
+            if (el) el.style.transform = 'translateX(-' + (i * 33.333) + '%)';
+            var dots = document.querySelectorAll('.markets-dot');
+            dots.forEach(function(d, di) {
+                d.style.opacity = di === i ? '1' : '0.3';
+            });
+        }
+        function marketsCarousel(dir) {
+            marketsGoTo((marketsIdx + dir + 3) % 3);
+        }
 
         // Animated word cycling - continuous fade in/out cycle
         const words = ['Adaptable', 'Approachable', 'Attentive'];
