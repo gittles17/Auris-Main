@@ -2804,7 +2804,9 @@
                 <div class="flex flex-col md:flex-row-reverse items-center gap-8 md:gap-12 fade-in">
                     <div class="w-full md:w-3/5">
                         <div class="rounded-xl overflow-hidden aspect-video bg-[#1a1a2e]">
-                            <img src="screenshots/newsletter.jpg" alt="Auris Newsletter" class="w-full h-full object-cover cursor-pointer" style="padding: 0;" onclick="openLightbox(this.src)">
+                            <video id="newsletter-video" class="w-full h-full object-cover" muted playsinline preload="metadata">
+                                <source src="auris-newsletter.mp4" type="video/mp4">
+                            </video>
                         </div>
                     </div>
                     <div class="w-full md:w-2/5">
@@ -3218,6 +3220,10 @@
         let dogsVideoDuration = 0;
         let isDogsVideoLoaded = false;
 
+        const newsletterVideo = document.getElementById('newsletter-video');
+        let newsletterVideoDuration = 0;
+        let isNewsletterVideoLoaded = false;
+
         // --- Cached layout values (updated on load + resize, not every scroll) ---
         let cachedWindowHeight = window.innerHeight;
         let cachedHeaderHeight = header ? header.offsetHeight : 0;
@@ -3258,11 +3264,22 @@
             dogsVideo.load();
         }
 
+        if (newsletterVideo) {
+            newsletterVideo.addEventListener('loadedmetadata', () => {
+                newsletterVideoDuration = newsletterVideo.duration;
+                newsletterVideo.currentTime = 0;
+                newsletterVideo.pause();
+                isNewsletterVideoLoaded = true;
+            });
+            newsletterVideo.load();
+        }
+
         // --- Consolidated scroll handler with rAF throttle ---
         let scrollTicking = false;
         let lastDaytonightTime = -1;
         let lastHappyTime = -1;
         let lastDogsTime = -1;
+        let lastNewsletterTime = -1;
         var VIDEO_SEEK_THRESHOLD = 0.05;
 
         function onScrollFrame() {
@@ -3359,6 +3376,21 @@
                     dogsVideo.currentTime = dogsTargetTime;
                     lastDogsTime = dogsTargetTime;
                     if (!dogsVideo.paused) dogsVideo.pause();
+                }
+            }
+
+            // 5) Newsletter video scrubber
+            if (isNewsletterVideoLoaded && newsletterVideo && newsletterVideoDuration > 0) {
+                var nlRect = newsletterVideo.getBoundingClientRect();
+                var nlTargetTime = 0;
+                if (nlRect.top < wh && nlRect.bottom > 0) {
+                    var nlProgress = Math.min(Math.max((wh - nlRect.top) / (wh + nlRect.height), 0), 1);
+                    nlTargetTime = nlProgress * newsletterVideoDuration;
+                }
+                if (Math.abs(nlTargetTime - lastNewsletterTime) > VIDEO_SEEK_THRESHOLD) {
+                    newsletterVideo.currentTime = nlTargetTime;
+                    lastNewsletterTime = nlTargetTime;
+                    if (!newsletterVideo.paused) newsletterVideo.pause();
                 }
             }
 
