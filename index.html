@@ -434,11 +434,13 @@
             transform: translateY(50px);
             transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
                         transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: transform, opacity;
         }
 
         .scroll-reveal.revealed {
             opacity: 1;
             transform: translateY(0);
+            will-change: auto;
         }
 
         .scroll-reveal.no-animate {
@@ -449,8 +451,8 @@
 
         .text-center.scroll-reveal.revealed {
             box-sizing: content-box;
-            margin-top: 130px;
-            margin-bottom: 130px;
+            padding-top: 130px;
+            padding-bottom: 130px;
         }
 
         .prompt-examples-sidebar {
@@ -2587,8 +2589,8 @@
 <body class="bg-[#faf9f7] text-[#5a6a7a] font-sans selection:bg-[#6a8a7a]/20 selection:text-[#4a5a6a] antialiased">
 
     <nav id="main-nav"
-        class="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 bg-[#f5f2f0] backdrop-blur-md border border-[#6a8a7a]/20 rounded-md shadow-lg transition-all duration-300"
-        style="background: rgba(245, 242, 240, 0.95); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); width: 80%; max-width: 1400px;">
+        class="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 bg-[#f5f2f0] backdrop-blur-md border border-[#6a8a7a]/20 rounded-md shadow-lg"
+        style="background: rgba(245, 242, 240, 0.95); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); width: 80%; max-width: 1400px; transition: background 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;">
         
         <!-- Center: Logo -->
         <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 1000; pointer-events: auto;">
@@ -3275,219 +3277,170 @@
             requestAnimationFrame(function() { requestAnimationFrame(initScrollReveal); });
         }
 
-        // Nav glass effect on scroll
+        // --- Element references ---
         const nav = document.getElementById('main-nav');
-
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-
-            if (currentScroll > 50) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-        });
-
-        // Control video playback with scroll
-        const daytonightVideo = document.getElementById('daytonight-video');
         const header = document.querySelector('header');
+        const daytonightVideo = document.getElementById('daytonight-video');
+        const happyPeopleVideo = document.getElementById('happy-people-video');
+        const engagementSection = document.getElementById('engagement');
+        const dogsVideo = document.getElementById('dogs-video');
+        const visionSection = document.getElementById('vision');
+
+        // --- Video state ---
         let videoDuration = 0;
         let isVideoLoaded = false;
-        
+        let happyPeopleVideoDuration = 0;
+        let isHappyPeopleVideoLoaded = false;
+        let dogsVideoDuration = 0;
+        let isDogsVideoLoaded = false;
+
+        // --- Cached layout values (updated on load + resize, not every scroll) ---
+        let cachedWindowHeight = window.innerHeight;
+        let cachedHeaderHeight = header ? header.offsetHeight : 0;
+
+        window.addEventListener('resize', () => {
+            cachedWindowHeight = window.innerHeight;
+            cachedHeaderHeight = header ? header.offsetHeight : 0;
+        });
+
+        // --- Video initialization ---
         if (daytonightVideo) {
-            // Load video and set to first frame
             daytonightVideo.addEventListener('loadedmetadata', () => {
                 videoDuration = daytonightVideo.duration;
                 daytonightVideo.currentTime = 0;
                 daytonightVideo.pause();
                 isVideoLoaded = true;
             });
-            
-            // Load the video metadata
             daytonightVideo.load();
         }
-        
-        window.addEventListener('scroll', () => {
-            if (!isVideoLoaded || !daytonightVideo || !header) return;
-            
-            const scrollY = window.pageYOffset;
-            const headerHeight = header.offsetHeight;
-            const windowHeight = window.innerHeight;
-            
-            // Calculate scroll progress (0 to 1) as user scrolls through the header
-            // Start controlling video when scroll begins
-            let scrollProgress = 0;
-            
-            if (scrollY > 0) {
-                // Map scroll position to video progress with acceleration
-                // Use header height as the range for scroll control
-                // Apply speed multiplier to make video progress faster
-                const speedMultiplier = 1.25; // Increase this value to make video go faster
-                scrollProgress = Math.min((scrollY / headerHeight) * speedMultiplier, 1);
-                
-                // Accelerated mapping - video plays faster as you scroll
-                // Set video currentTime based on scroll progress
-                daytonightVideo.currentTime = scrollProgress * videoDuration;
-                
-                // Pause the video (we're controlling it manually)
-                if (!daytonightVideo.paused) {
-                    daytonightVideo.pause();
-                }
-            } else {
-                // At the top, show first frame
-                daytonightVideo.currentTime = 0;
-                daytonightVideo.pause();
-            }
-        });
 
-        // Happy people video - controlled by scroll
-        const happyPeopleVideo = document.getElementById('happy-people-video');
-        const engagementSection = document.getElementById('engagement');
-        let happyPeopleVideoDuration = 0;
-        let isHappyPeopleVideoLoaded = false;
-        
         if (happyPeopleVideo && engagementSection) {
-            // Load video and set to first frame
             happyPeopleVideo.addEventListener('loadedmetadata', () => {
                 happyPeopleVideoDuration = happyPeopleVideo.duration;
                 happyPeopleVideo.currentTime = 0;
                 happyPeopleVideo.pause();
                 isHappyPeopleVideoLoaded = true;
             });
-            
-            // Load the video metadata
             happyPeopleVideo.load();
-            
-            // Control video playback with scroll - animation happens entire time video is visible
-            window.addEventListener('scroll', () => {
-                if (!isHappyPeopleVideoLoaded || !happyPeopleVideo || !engagementSection) return;
-                if (happyPeopleVideoDuration === 0) return;
-                
-                const videoRect = happyPeopleVideo.getBoundingClientRect();
-                const windowHeight = window.innerHeight;
-                const sectionRect = engagementSection.getBoundingClientRect();
-                const sectionTop = sectionRect.top;
-                const sectionHeight = engagementSection.offsetHeight;
-                
-                // Check if video is visible in viewport
-                const isVideoVisible = videoRect.top < windowHeight && videoRect.bottom > 0;
-                
-                if (isVideoVisible) {
-                    // Calculate scroll progress based on section position
-                    // Progress from 0 to 1 as section scrolls through viewport
-                    let scrollProgress = 0;
-                    
-                    // Calculate progress: 0 when section enters viewport, 1 when section exits
-                    // Extend the scroll range to make video play longer
-                    if (sectionTop <= windowHeight && sectionTop >= -sectionHeight) {
-                        // Section is scrolling through viewport
-                        // Start: section top at viewport bottom (sectionTop = windowHeight)
-                        // End: section bottom at viewport top (sectionTop = -sectionHeight)
-                        // Use larger range by including viewport height for longer playback
-                        const scrollStart = windowHeight;
-                        const scrollEnd = -sectionHeight;
-                        const scrollRange = scrollStart - scrollEnd + windowHeight; // Add viewport height for longer range
-                        
-                        if (scrollRange > 0) {
-                            const currentPosition = windowHeight - sectionTop;
-                            scrollProgress = Math.min(Math.max(currentPosition / scrollRange, 0), 1);
-                        }
-                    } else if (sectionTop < -sectionHeight) {
-                        // Section has fully scrolled past
-                        scrollProgress = 1;
-                    }
-                    
-                    // Speed multiplier to control video playback speed
-                    const speedMultiplier = 1;
-                    scrollProgress = Math.min(scrollProgress * speedMultiplier, 1);
-                    
-                    // Set video currentTime based on scroll progress
-                    happyPeopleVideo.currentTime = scrollProgress * happyPeopleVideoDuration;
-                    
-                    // Pause the video (we're controlling it manually)
-                    if (!happyPeopleVideo.paused) {
-                        happyPeopleVideo.pause();
-                    }
-                } else {
-                    // Video is not visible, reset to first frame
-                    happyPeopleVideo.currentTime = 0;
-                    happyPeopleVideo.pause();
-                }
-            });
         }
 
-        // Dogs video - controlled by scroll (same as happy people video)
-        const dogsVideo = document.getElementById('dogs-video');
-        const visionSection = document.getElementById('vision');
-        let dogsVideoDuration = 0;
-        let isDogsVideoLoaded = false;
-        
         if (dogsVideo && visionSection) {
-            // Load video and set to first frame
             dogsVideo.addEventListener('loadedmetadata', () => {
                 dogsVideoDuration = dogsVideo.duration;
                 dogsVideo.currentTime = 0;
                 dogsVideo.pause();
                 isDogsVideoLoaded = true;
             });
-            
-            // Load the video metadata
             dogsVideo.load();
-            
-            // Control video playback with scroll - animation happens entire time video is visible
-            window.addEventListener('scroll', () => {
-                if (!isDogsVideoLoaded || !dogsVideo || !visionSection) return;
-                if (dogsVideoDuration === 0) return;
-                
-                const windowHeight = window.innerHeight;
-                const sectionRect = visionSection.getBoundingClientRect();
-                const sectionTop = sectionRect.top;
-                const sectionHeight = visionSection.offsetHeight;
-                
-                // Only start playback when section enters viewport
-                if (sectionTop <= windowHeight) {
-                    // Calculate scroll progress based on section position
-                    // Progress from 0 to 1 as section scrolls through viewport
+        }
+
+        // --- Consolidated scroll handler with rAF throttle ---
+        let scrollTicking = false;
+
+        function onScrollFrame() {
+            // ---- READS (batch all layout queries first) ----
+            const scrollY = window.pageYOffset;
+
+            let happyVideoRect = null;
+            let engagementRect = null;
+            let engagementHeight = 0;
+            if (isHappyPeopleVideoLoaded && happyPeopleVideo && engagementSection && happyPeopleVideoDuration > 0) {
+                happyVideoRect = happyPeopleVideo.getBoundingClientRect();
+                engagementRect = engagementSection.getBoundingClientRect();
+                engagementHeight = engagementSection.offsetHeight;
+            }
+
+            let visionRect = null;
+            let visionHeight = 0;
+            if (isDogsVideoLoaded && dogsVideo && visionSection && dogsVideoDuration > 0) {
+                visionRect = visionSection.getBoundingClientRect();
+                visionHeight = visionSection.offsetHeight;
+            }
+
+            const wh = cachedWindowHeight;
+            const hh = cachedHeaderHeight;
+
+            // ---- WRITES (all DOM mutations after reads) ----
+
+            // 1) Nav glass effect
+            if (scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+
+            // 2) Day-to-night header video scrubber
+            if (isVideoLoaded && daytonightVideo && header) {
+                if (scrollY > 0) {
+                    const speedMultiplier = 1.25;
+                    const progress = Math.min((scrollY / hh) * speedMultiplier, 1);
+                    daytonightVideo.currentTime = progress * videoDuration;
+                    if (!daytonightVideo.paused) daytonightVideo.pause();
+                } else {
+                    daytonightVideo.currentTime = 0;
+                    daytonightVideo.pause();
+                }
+            }
+
+            // 3) Happy people video scrubber
+            if (happyVideoRect && engagementRect) {
+                const isVisible = happyVideoRect.top < wh && happyVideoRect.bottom > 0;
+                if (isVisible) {
+                    const sectionTop = engagementRect.top;
                     let scrollProgress = 0;
-                    
-                    // Calculate progress: 0 when section enters viewport, 1 when section exits
-                    // Extend the scroll range to make video play longer
-                    if (sectionTop >= -sectionHeight) {
-                        // Section is scrolling through viewport
-                        // Start: section top at viewport bottom (sectionTop = windowHeight)
-                        // End: section bottom at viewport top (sectionTop = -sectionHeight)
-                        // Use larger range by including viewport height for longer playback
-                        const scrollStart = windowHeight;
-                        const scrollEnd = -sectionHeight;
-                        const scrollRange = scrollStart - scrollEnd + windowHeight; // Add viewport height for longer range
-                        
+
+                    if (sectionTop <= wh && sectionTop >= -engagementHeight) {
+                        const scrollRange = wh + engagementHeight + wh;
                         if (scrollRange > 0) {
-                            const currentPosition = windowHeight - sectionTop;
-                            scrollProgress = Math.min(Math.max(currentPosition / scrollRange, 0), 1);
+                            scrollProgress = Math.min(Math.max((wh - sectionTop) / scrollRange, 0), 1);
                         }
-                    } else {
-                        // Section has fully scrolled past
+                    } else if (sectionTop < -engagementHeight) {
                         scrollProgress = 1;
                     }
-                    
-                    // Speed multiplier to control video playback speed
+
+                    happyPeopleVideo.currentTime = scrollProgress * happyPeopleVideoDuration;
+                    if (!happyPeopleVideo.paused) happyPeopleVideo.pause();
+                } else {
+                    happyPeopleVideo.currentTime = 0;
+                    happyPeopleVideo.pause();
+                }
+            }
+
+            // 4) Dogs video scrubber
+            if (visionRect) {
+                const sectionTop = visionRect.top;
+                if (sectionTop <= wh) {
+                    let scrollProgress = 0;
+
+                    if (sectionTop >= -visionHeight) {
+                        const scrollRange = wh + visionHeight + wh;
+                        if (scrollRange > 0) {
+                            scrollProgress = Math.min(Math.max((wh - sectionTop) / scrollRange, 0), 1);
+                        }
+                    } else {
+                        scrollProgress = 1;
+                    }
+
                     const speedMultiplier = 1.5;
                     scrollProgress = Math.min(scrollProgress * speedMultiplier, 1);
-                    
-                    // Set video currentTime based on scroll progress
+
                     dogsVideo.currentTime = scrollProgress * dogsVideoDuration;
-                    
-                    // Pause the video (we're controlling it manually)
-                    if (!dogsVideo.paused) {
-                        dogsVideo.pause();
-                    }
+                    if (!dogsVideo.paused) dogsVideo.pause();
                 } else {
-                    // Section hasn't entered viewport yet, reset to first frame
                     dogsVideo.currentTime = 0;
                     dogsVideo.pause();
                 }
-            });
+            }
+
+            scrollTicking = false;
         }
+
+        window.addEventListener('scroll', () => {
+            if (!scrollTicking) {
+                scrollTicking = true;
+                requestAnimationFrame(onScrollFrame);
+            }
+        });
 
         // Hamburger menu toggle
         const hamburgerMenu = document.getElementById('hamburger-menu');
