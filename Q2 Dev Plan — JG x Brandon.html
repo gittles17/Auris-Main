@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Q2 Development Plan / Create</title>
+<style>
+@font-face { font-family: 'Baikal'; font-weight: 400; font-style: normal; src: local('Baikal'), local('Baikal-Regular'); }
+@font-face { font-family: 'Baikal'; font-weight: 700; font-style: normal; src: local('Baikal Bold'), local('Baikal-Bold'); }
+@font-face { font-family: 'Baikal'; font-weight: 900; font-style: normal; src: local('Baikal ExtraBlack'), local('Baikal-ExtraBlack'); }
+@font-face { font-family: 'IBM Plex Mono'; font-weight: 400; font-style: normal; src: local('IBM Plex Mono'), local('IBMPlexMono'); }
+@font-face { font-family: 'IBM Plex Mono'; font-weight: 500; font-style: normal; src: local('IBM Plex Mono Medium'), local('IBMPlexMono-Medium'); }
+
+:root {
+  --bg: #fafafa;
+  --surface: #fff;
+  --surface-alt: #f5f5f5;
+  --border: #e5e5e5;
+  --border-dark: #d4d4d4;
+  --text: #171717;
+  --text-2: #525252;
+  --text-3: #8a8a8a;
+  --text-4: #adadad;
+  --accent: #c0392b;
+  --green: #16a34a;
+  --green-bg: #f0fdf4;
+  --yellow: #ca8a04;
+  --yellow-bg: #fefce8;
+  --mono: 'IBM Plex Mono', monospace;
+  --sans: 'Baikal', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --heading: 'Baikal', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: var(--sans); font-size: 15px; color: var(--text-2); background: var(--bg); line-height: 1.75; -webkit-font-smoothing: antialiased; }
+
+nav {
+  position: sticky; top: 0; z-index: 100;
+  display: flex; align-items: center; gap: 32px;
+  padding: 0 48px; height: 52px;
+  background: rgba(250,250,250,0.92); backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.logo-svg { height: 15px; fill: var(--text); flex-shrink: 0; }
+.nav-links { display: flex; align-items: center; gap: 4px; margin-left: auto; }
+.nav-link {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.03em;
+  color: var(--text-3); text-decoration: none; padding: 6px 10px;
+  border-radius: 6px; transition: all 0.15s; white-space: nowrap;
+}
+.nav-link:hover { color: var(--text); background: var(--surface-alt); }
+
+.hero { padding: 120px 48px 80px; max-width: 900px; margin: 0 auto; }
+.hero-label {
+  font-family: var(--mono); font-size: 12px; color: var(--text-3);
+  margin-bottom: 16px; letter-spacing: 0.06em;
+}
+.hero h1 {
+  font-family: var(--heading); font-size: 36px; font-weight: 700; line-height: 1.15;
+  letter-spacing: -0.025em; margin-bottom: 24px; color: var(--text);
+}
+.hero-desc {
+  color: var(--text-2); font-size: 17px; font-weight: 400;
+  max-width: 620px; line-height: 1.75;
+}
+
+.section-divider {
+  border-top: 1px solid var(--border);
+  padding: 100px 48px 40px;
+  max-width: 900px; margin: 0 auto;
+  scroll-margin-top: 56px;
+}
+.section-divider .section-code {
+  font-family: var(--mono); font-size: 13px; color: var(--accent);
+  letter-spacing: 0.06em; margin-bottom: 12px;
+}
+.section-divider h2 {
+  font-family: var(--heading); font-size: 32px; font-weight: 700; line-height: 1.15;
+  letter-spacing: -0.02em; margin-bottom: 16px; color: var(--text);
+}
+.section-divider .section-intro {
+  color: var(--text-2); font-size: 16px; line-height: 1.7; max-width: 620px;
+}
+
+.content { max-width: 900px; padding: 0 48px; margin: 0 auto; }
+.content-padded { padding-bottom: 96px; }
+
+h3 { font-family: var(--heading); font-size: 18px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 12px; color: var(--text); }
+p { color: var(--text-2); font-weight: 400; margin-bottom: 16px; line-height: 1.75; }
+p strong { color: var(--text); font-weight: 600; }
+
+.pull-quote {
+  border-left: 3px solid var(--accent); padding: 24px 28px;
+  margin: 32px 0 36px; font-size: 21px; font-weight: 500;
+  line-height: 1.5; color: var(--text); font-style: italic;
+  max-width: 580px;
+}
+
+.callout {
+  background: var(--surface); border: 1px solid var(--border);
+  border-left: 3px solid var(--border-dark); border-radius: 4px;
+  padding: 16px 20px; margin: 24px 0;
+  font-size: 14px; color: var(--text-2); line-height: 1.65;
+}
+.callout-label {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.04em;
+  text-transform: uppercase; color: var(--text-3); margin-bottom: 6px;
+}
+.callout.dark {
+  background: #1a1a1a; border-color: #333;
+  border-left: 3px solid var(--accent);
+}
+.callout.dark .callout-label { color: var(--accent); }
+.callout.dark p, .callout.dark span {
+  color: #ccc; font-size: 13px; line-height: 1.7;
+}
+
+.gate-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+  background: var(--border); border: 1px solid var(--border);
+  border-radius: 8px; overflow: hidden; margin: 28px 0;
+}
+.gate-cell { background: var(--surface); padding: 28px; }
+.gate-label {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.04em;
+  text-transform: uppercase; color: var(--text-3); margin-bottom: 14px;
+}
+.gate-item { font-size: 14px; color: var(--text-2); line-height: 1.8; padding: 2px 0; }
+
+.table-wrap {
+  overflow-x: auto; margin: 28px 0;
+  border: 1px solid var(--border); border-radius: 8px;
+}
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+thead th {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.04em;
+  text-transform: uppercase; color: var(--text-3); text-align: left;
+  padding: 12px 14px; border-bottom: 1px solid var(--border);
+  background: var(--surface-alt); white-space: nowrap;
+}
+tbody td {
+  font-family: var(--sans); padding: 10px 14px; border-bottom: 1px solid var(--border);
+  color: var(--text-2); font-size: 13px;
+}
+tbody tr:last-child td { border-bottom: none; }
+tbody tr:hover { background: var(--surface-alt); }
+
+.owner-tag {
+  display: inline-block; font-family: var(--mono); font-size: 10px;
+  letter-spacing: 0.04em; text-transform: uppercase;
+  padding: 3px 8px; border-radius: 4px; margin-right: 4px;
+}
+.owner-brandon { background: #f0f0f0; color: var(--text-3); }
+.owner-jg { background: var(--accent); color: #fff; }
+.owner-carl { background: #e8e8e8; color: var(--text-3); }
+.owner-both { background: var(--text); color: #fff; }
+
+footer {
+  padding: 32px 48px; border-top: 1px solid var(--border);
+  display: flex; justify-content: space-between; align-items: center;
+  margin-top: 48px;
+}
+footer p {
+  font-family: var(--mono); font-size: 11px;
+  color: var(--text-4); margin: 0;
+}
+
+@media (max-width: 700px) {
+  nav { padding: 0 16px; gap: 12px; height: 48px; }
+  .logo-svg { height: 13px; }
+  .hero { padding: 80px 20px 56px; }
+  .hero h1 { font-size: 28px; }
+  .content { padding: 0 20px; }
+  .section-divider { padding: 80px 20px 36px; }
+  .section-divider h2 { font-size: 26px; }
+  .gate-grid { grid-template-columns: 1fr; }
+  .pull-quote { font-size: 18px; padding: 18px 22px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <svg class="logo-svg" viewBox="0 0 318.37 44.22" xmlns="http://www.w3.org/2000/svg">
+    <g fill="currentColor"><path d="M0,22.14v-.06C0,8.26,12.86,0,31.26,0c15.08,0,27.07,5.7,30.1,15.28h-12.94c-2.37-4.85-9.63-6.87-16.99-6.87-10.1,0-19.13,4.28-19.13,13.67v.06c0,9.39,9.03,13.67,19.13,13.67,7.36,0,14.61-2.02,16.99-6.87h12.94c-3.03,9.57-15.04,15.28-30.13,15.28C12.83,44.22,0,35.97,0,22.14Z"/><path d="M64.1.96h32.19c11.86,0,19.89,3.27,19.89,13.86v.06c0,10.64-7.99,13.91-19.85,13.91h-20.44v14.48h-11.78V.96ZM94.86,20.44c6.12,0,9-1.22,9-5.56v-.06c0-4.28-2.88-5.51-9-5.51h-18.98v11.13h18.98Z"/><path d="M119.15.96h48.4v8.58h-36.62v8.1h34.89v8.58h-34.89v8.45h36.77v8.58h-48.55V.96Z"/><path d="M185.39.96h15.21l22.76,42.3h-12.92l-5.58-10.38h-24.53l-5.56,10.38h-12.14L185.39.96ZM200.54,24.35l-7.95-14.9h-.06l-7.92,14.9h15.93Z"/><path d="M232.59,9.55h-22.22V.96h56.25v8.59h-22.24v33.72h-11.78V9.55Z"/><path d="M269.82.96h48.4v8.58h-36.62v8.1h34.89v8.58h-34.89v8.45h36.77v8.58h-48.55V.96Z"/></g>
+    <polygon fill="currentColor" points="98.47 26.77 84.89 26.77 84.81 28.59 101.44 43.26 116.85 43.26 98.47 26.77"/>
+  </svg>
+  <div class="nav-links">
+    <a class="nav-link" href="#shift">The Shift</a>
+    <a class="nav-link" href="#structure">Structure</a>
+    <a class="nav-link" href="#q2">Q2 Plan</a>
+    <a class="nav-link" href="#risks">Risks</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-label">CREATE / Q2 DEVELOPMENT PLAN</div>
+  <h1>From prototyping to production.</h1>
+  <p class="hero-desc">The team is literate. The tools work. Now we build the house they live in. This quarter is about architecture, activation, and expanding beyond the design group.</p>
+</div>
+
+<!-- 01 THE SHIFT -->
+<div class="section-divider" id="shift">
+  <div class="section-code">01 &mdash; THE SHIFT</div>
+  <h2>Stop tightening the waistband. Start moving faster.</h2>
+</div>
+
+<div class="content">
+  <p>Q1 was about getting people comfortable. It worked. The design group builds daily, other departments are watching and starting to participate, and the "yes, and" culture is taking hold &mdash; Marcel, Mike, Casey, and others are picking up tools and riffing without being asked.</p>
+
+  <p>The next move isn't more prototyping. It's putting a structure around everything so the studio can see what exists, where it's going, and how they're a part of it. One front door. Clear suites. A way for people to contribute without it turning into chaos.</p>
+
+  <p>The thinking also shifts. We're done looking backward at what we can trim. The question now is: how does this studio work bigger, move faster, and do things that weren't possible six months ago?</p>
+</div>
+
+<!-- 02 STRUCTURE -->
+<div class="section-divider" id="structure">
+  <div class="section-code">02 &mdash; STRUCTURE</div>
+  <h2>Two suites. One front door.</h2>
+</div>
+
+<div class="content">
+  <p>Everything consolidates under <strong>create.work</strong>, a single internal destination where the studio goes to find tools, see development status, and contribute their own work. Both suites below sit under the broader Auris development umbrella.</p>
+
+  <div class="gate-grid">
+    <div class="gate-cell">
+      <div class="gate-label">Auris</div>
+      <div class="gate-item">AI-generated and AI-intelligence tools. Anything with a generative or intelligence layer qualifies &mdash; this is the capex classification. Markets, Storyboards, Cue Sheets, image-to-3D, music search, text-to-image.</div>
+    </div>
+    <div class="gate-cell">
+      <div class="gate-label">Machine Shop</div>
+      <div class="gate-item">Production infrastructure. Scripts, plugins, automation. Launcher, LoadBalance, Auto_Hours, AE Pipeline, CFO Reports, Shotmap, production packet tools. The diesel that keeps the studio running.</div>
+    </div>
+  </div>
+
+  <p>A community layer lets the team upload their own tools. IT scans for security. If it's clean, it goes live. The deployment model moves to GitHub with automated builds and security scanning &mdash; less burden on Steve's team, more self-service without sacrificing safety.</p>
+
+  <p>Brandon's first deliverable is the architecture deck that maps all of this: the two suites, deployment flow, how the studio participates, where everything lives. Until that's locked, most other development pauses.</p>
+</div>
+
+<!-- 03 Q2 PLAN -->
+<div class="section-divider" id="q2">
+  <div class="section-code">03 &mdash; Q2 PLAN</div>
+  <h2>Who does what. When.</h2>
+</div>
+
+<div class="content">
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>What</th>
+          <th>Owner</th>
+          <th>When</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Architecture deck + create.work branding</strong><br>The "here's how we're moving forward" presentation</td>
+          <td><span class="owner-tag owner-brandon">BRANDON</span></td>
+          <td>End of April</td>
+        </tr>
+        <tr>
+          <td><strong>Key art creative tools (ComfyUI)</strong><br>Image-to-3D first. Carl at Brandon's flank, Agent Tennis. On-prem, no licensing risk</td>
+          <td><span class="owner-tag owner-carl">CARL</span> <span class="owner-tag owner-brandon">BP</span></td>
+          <td>April &rarr; ongoing</td>
+        </tr>
+        <tr>
+          <td><strong>Ship Storyboards</strong><br>In producer testing now. Wrap it, deploy it, done</td>
+          <td><span class="owner-tag owner-brandon">BRANDON</span></td>
+          <td>End of April</td>
+        </tr>
+        <tr>
+          <td><strong>Launcher expansion</strong><br>Kelle check-in, gaming master call, then editorial + I/O. Five departments by end of June</td>
+          <td><span class="owner-tag owner-brandon">BRANDON</span></td>
+          <td>April &rarr; June</td>
+        </tr>
+        <tr>
+          <td><strong>LoadBalance &rarr; Launcher merge</strong><br>Marcel's producer version + Mike's artist version fold in</td>
+          <td><span class="owner-tag owner-brandon">BRANDON</span></td>
+          <td>May &ndash; June</td>
+        </tr>
+        <tr>
+          <td><strong>Cue Sheets dev run</strong><br>Audit done. Deliver for Megan. Three months overdue</td>
+          <td><span class="owner-tag owner-brandon">BRANDON</span></td>
+          <td>May</td>
+        </tr>
+        <tr>
+          <td><strong>Joey deep dive &mdash; production packet tools</strong><br>PSD detection, shop maps. Shopping list, not fishing expedition</td>
+          <td><span class="owner-tag owner-brandon">BRANDON</span></td>
+          <td>May</td>
+        </tr>
+        <tr>
+          <td><strong>AE Pipeline force-deploy</strong><br>IT adds to repository + onboarding. LA and London</td>
+          <td><span class="owner-tag owner-brandon">BRANDON</span></td>
+          <td>May</td>
+        </tr>
+        <tr>
+          <td><strong>Internal tool hub (create.work v1)</strong><br>Local URL, all tools, status, community uploads</td>
+          <td><span class="owner-tag owner-brandon">BRANDON</span></td>
+          <td>May</td>
+        </tr>
+        <tr>
+          <td><strong>AIMS activation</strong><br>Get the Disco integration quote. Days to activate</td>
+          <td><span class="owner-tag owner-jg">JG</span></td>
+          <td>End of April</td>
+        </tr>
+        <tr>
+          <td><strong>CaraOne procurement</strong><br>Finalize pricing, approve hardware</td>
+          <td><span class="owner-tag owner-jg">JG</span></td>
+          <td>May</td>
+        </tr>
+        <tr>
+          <td><strong>Steve conversation</strong><br>IT bandwidth, deployment pipeline, support model</td>
+          <td><span class="owner-tag owner-jg">JG</span></td>
+          <td>End of April</td>
+        </tr>
+        <tr>
+          <td><strong>Q2 review + Q3 planning</strong><br>Measure adoption. Plan finishing automation + producer workflow build</td>
+          <td><span class="owner-tag owner-both">BOTH</span></td>
+          <td>End of June</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout">
+    <div class="callout-label">PARKED FOR Q3</div>
+    <p>Finishing automation (Premiere/DaVinci plugins &mdash; after brand rollout frees Brandon's bandwidth), full producer workflow build, Claude skills/slash commands (platform uncertainty), CREF cloud decision (cost analysis pending).</p>
+  </div>
+</div>
+
+<!-- 04 RISKS -->
+<div class="section-divider" id="risks">
+  <div class="section-code">04 &mdash; RISKS</div>
+  <h2>Three things that slow us down.</h2>
+</div>
+
+<div class="content content-padded">
+  <p><strong>IT bandwidth.</strong> Steve's team is buried and can't support the deployment volume. The GitHub pipeline is the structural fix, but it needs to be treated as a priority. JG has the direct conversation by end of April.</p>
+
+  <p><strong>FileMaker + editorial resistance.</strong> Auto_Hours is blocked by FileMaker's hostile API and the editorial team's distrust. Different strategy needed &mdash; force the adoption conversation and evaluate whether Notion can absorb the function long-term.</p>
+
+  <p><strong>Adoption habits.</strong> People still default to what they know. The tool hub is the structural answer, but it only works with consistent reinforcement and engagement tracking. If something isn't getting used, we need to know why &mdash; and decide whether it needs a pivot or just more time.</p>
+
+  <div class="callout dark">
+    <div class="callout-label">THE REAL VARIABLE</div>
+    <p>Trust. The energy is in a different place than it was six months ago. People are comfortable, even excited. The posture that got us here stays the same: field experts lead their areas, dev team helps them build what they couldn't build before. Be genuine, be direct, come correct. That's the whole thing.</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <svg class="logo-svg" viewBox="0 0 318.37 44.22" xmlns="http://www.w3.org/2000/svg" style="height: 12px;">
+    <g fill="currentColor"><path d="M0,22.14v-.06C0,8.26,12.86,0,31.26,0c15.08,0,27.07,5.7,30.1,15.28h-12.94c-2.37-4.85-9.63-6.87-16.99-6.87-10.1,0-19.13,4.28-19.13,13.67v.06c0,9.39,9.03,13.67,19.13,13.67,7.36,0,14.61-2.02,16.99-6.87h12.94c-3.03,9.57-15.04,15.28-30.13,15.28C12.83,44.22,0,35.97,0,22.14Z"/><path d="M64.1.96h32.19c11.86,0,19.89,3.27,19.89,13.86v.06c0,10.64-7.99,13.91-19.85,13.91h-20.44v14.48h-11.78V.96ZM94.86,20.44c6.12,0,9-1.22,9-5.56v-.06c0-4.28-2.88-5.51-9-5.51h-18.98v11.13h18.98Z"/><path d="M119.15.96h48.4v8.58h-36.62v8.1h34.89v8.58h-34.89v8.45h36.77v8.58h-48.55V.96Z"/><path d="M185.39.96h15.21l22.76,42.3h-12.92l-5.58-10.38h-24.53l-5.56,10.38h-12.14L185.39.96ZM200.54,24.35l-7.95-14.9h-.06l-7.92,14.9h15.93Z"/><path d="M232.59,9.55h-22.22V.96h56.25v8.59h-22.24v33.72h-11.78V9.55Z"/><path d="M269.82.96h48.4v8.58h-36.62v8.1h34.89v8.58h-34.89v8.45h36.77v8.58h-48.55V.96Z"/></g>
+    <polygon fill="currentColor" points="98.47 26.77 84.89 26.77 84.81 28.59 101.44 43.26 116.85 43.26 98.47 26.77"/>
+  </svg>
+  <p>Q2 Development Plan &mdash; JG &times; Brandon &mdash; April 2026</p>
+</footer>
+
+</body>
+</html>

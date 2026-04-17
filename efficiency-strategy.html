@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create / Operational Strategy</title>
+    <meta name="description" content="How Create's proprietary intelligence layer drives continuous operational improvement. Six focus areas, technology-first solutions, measurable results.">
+    <link rel="icon" type="image/png" href="auris_logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --slate-blue: #4a5a6a;
+            --muted-teal: #6a8a7a;
+            --sky-blue: #8aa5c5;
+            --muted-rose: #c5a5a5;
+            --neutral-grey: #8a8a8a;
+            --dark-text: #2d2d2d;
+            --light-text: #5a6a7a;
+            --bg-cream: #f5f2f0;
+            --bg-light: #faf9f7;
+            --border-color: rgba(106, 138, 122, 0.2);
+            --accent: #6a8a7a;
+        }
+
+        * {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
+        h1, h2 {
+            font-family: 'Crimson Text', Georgia, serif;
+            font-weight: 400;
+            color: var(--dark-text);
+        }
+
+        h3, h4, h5, h6 {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-weight: 400;
+            color: var(--dark-text);
+        }
+
+        .mono-font {
+            font-family: 'Courier New', Courier, 'Monaco', 'Menlo', monospace;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+        }
+
+        body {
+            background: var(--bg-light);
+            color: var(--light-text);
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        .slide-up {
+            animation: slideUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .initiative-card {
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            background: white;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .initiative-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+        }
+
+        .phase-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--muted-teal);
+            text-decoration: none;
+            font-size: 13px;
+            letter-spacing: 0.05em;
+            transition: opacity 0.2s;
+        }
+
+        .back-link:hover {
+            opacity: 0.7;
+        }
+
+        .stat-block {
+            text-align: center;
+            padding: 1.5rem 1rem;
+        }
+
+        .stat-number {
+            font-family: 'Crimson Text', Georgia, serif;
+            font-size: 2.5rem;
+            font-weight: 400;
+            color: var(--dark-text);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--neutral-grey);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--muted-teal);
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 4px;
+            top: 22px;
+            width: 2px;
+            height: calc(100% - 14px);
+            background: var(--border-color);
+        }
+
+        .timeline-item:last-child::after {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-[#faf9f7]/90 backdrop-blur-sm border-b border-[#e5e2df]/50">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="index.html" class="back-link mono-font">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+                BACK TO AURIS
+            </a>
+            <svg class="create-logo" viewBox="0 0 318.37 44.22" xmlns="http://www.w3.org/2000/svg" style="height: 16px; width: auto; opacity: 0.5; fill: #2d2d2d;">
+                <g><path d="M0,22.14v-.06C0,8.26,12.86,0,31.26,0c15.08,0,27.07,5.7,30.1,15.28h-12.94c-2.37-4.85-9.63-6.87-16.99-6.87-10.1,0-19.13,4.28-19.13,13.67v.06c0,9.39,9.03,13.67,19.13,13.67,7.36,0,14.61-2.02,16.99-6.87h12.94c-3.03,9.57-15.04,15.28-30.13,15.28C12.83,44.22,0,35.97,0,22.14Z"/><path d="M64.1.96h32.19c11.86,0,19.89,3.27,19.89,13.86v.06c0,10.64-7.99,13.91-19.85,13.91h-20.44v14.48h-11.78V.96ZM94.86,20.44c6.12,0,9-1.22,9-5.56v-.06c0-4.28-2.88-5.51-9-5.51h-18.98v11.13h18.98Z"/><path d="M119.15.96h48.4v8.58h-36.62v8.1h34.89v8.58h-34.89v8.45h36.77v8.58h-48.55V.96Z"/><path d="M185.39.96h15.21l22.76,42.3h-12.92l-5.58-10.38h-24.53l-5.56,10.38h-12.14L185.39.96ZM200.54,24.35l-7.95-14.9h-.06l-7.92,14.9h15.93Z"/><path d="M232.59,9.55h-22.22V.96h56.25v8.59h-22.24v33.72h-11.78V9.55Z"/><path d="M269.82.96h48.4v8.58h-36.62v8.1h34.89v8.58h-34.89v8.45h36.77v8.58h-48.55V.96Z"/></g>
+                <polygon points="98.47 26.77 84.89 26.77 84.81 28.59 101.44 43.26 116.85 43.26 98.47 26.77"/>
+            </svg>
+        </div>
+    </nav>
+
+    <section class="pt-36 pb-20 px-6">
+        <div class="max-w-3xl mx-auto text-center fade-in">
+            <div class="text-sm text-[#5a6a7a] font-normal uppercase tracking-wider mb-4 mono-font">OPERATIONAL STRATEGY</div>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl leading-tight mb-6">How we think about efficiency.</h1>
+            <p class="text-lg text-[#5a6a7a] leading-relaxed max-w-2xl mx-auto">
+                A data-driven framework for continuous operational improvement, built from our FY2025 analysis. Six focus areas, measurable targets, technology-first solutions.
+            </p>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 scroll-reveal">
+        <div class="max-w-4xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-0 border border-[#e5e2df] rounded-xl bg-white overflow-hidden">
+                <div class="stat-block border-b md:border-b-0 md:border-r border-[#e5e2df]">
+                    <div class="stat-number">112K+</div>
+                    <div class="stat-label">Timesheet records analyzed</div>
+                </div>
+                <div class="stat-block border-b md:border-b-0 md:border-r border-[#e5e2df]">
+                    <div class="stat-number">6</div>
+                    <div class="stat-label">Optimization areas identified</div>
+                </div>
+                <div class="stat-block">
+                    <div class="stat-number">10-17x</div>
+                    <div class="stat-label">Projected return on investment</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-6 bg-[#f5f2f0] scroll-reveal">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-sm text-[#5a6a7a] font-normal uppercase tracking-wider mb-4 mono-font">THE METHODOLOGY</div>
+            <h2 class="text-3xl md:text-4xl leading-tight mb-6">Start with the data. Build from what it shows.</h2>
+            <div class="space-y-5 text-[#5a6a7a] leading-relaxed">
+                <p>
+                    We pulled every hour logged across the company for the full fiscal year and cross-referenced it against the P&L, line by line. The goal: understand exactly where time goes, where processes create drag, and where technology can accelerate the workflow.
+                </p>
+                <p>
+                    The analysis mapped every non-billable hour to a cost pool, then scored each pool on three dimensions: size of the opportunity, feasibility of automation, and confidence level based on existing tooling. Six areas emerged as clear, high-confidence targets.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 scroll-reveal">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <div class="text-sm text-[#5a6a7a] font-normal uppercase tracking-wider mb-4 mono-font">SIX FOCUS AREAS</div>
+                <h2 class="text-3xl md:text-4xl leading-tight mb-4">Where the leverage is.</h2>
+                <p class="text-[#5a6a7a] max-w-2xl mx-auto">Each initiative targets a specific cost pool, with a defined solution path and measurable savings target.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="initiative-card">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="text-xs mono-font text-[#8a8a8a] uppercase tracking-wider">01</div>
+                        <div class="flex-1 h-px bg-[#e5e2df]"></div>
+                        <div class="text-xs mono-font text-[#4a9a8a] uppercase tracking-wider">Largest opportunity</div>
+                    </div>
+                    <h3 class="text-lg font-medium text-[#2d2d2d] mb-2">Producer Workflow Automation</h3>
+                    <p class="text-sm text-[#5a6a7a] leading-relaxed mb-4">
+                        Automating repetitive administrative tasks (data entry, timesheet reconciliation, status updates, resourcing) so producers focus on client work and creative oversight.
+                    </p>
+                    <div class="text-xs mono-font text-[#8a8a8a]">40-50% of admin hours automatable</div>
+                </div>
+
+                <div class="initiative-card">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="text-xs mono-font text-[#8a8a8a] uppercase tracking-wider">02</div>
+                        <div class="flex-1 h-px bg-[#e5e2df]"></div>
+                        <div class="text-xs mono-font text-[#4a9a8a] uppercase tracking-wider">Scheduling</div>
+                    </div>
+                    <h3 class="text-lg font-medium text-[#2d2d2d] mb-2">Intelligent Resource Scheduling</h3>
+                    <p class="text-sm text-[#5a6a7a] leading-relaxed mb-4">
+                        A unified engine that matches talent to projects by availability, skill set, and capacity. One resource view across producers and artists, replacing fragmented scheduling workflows.
+                    </p>
+                    <div class="text-xs mono-font text-[#8a8a8a]">Predictive allocation, single resource view</div>
+                </div>
+
+                <div class="initiative-card">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="text-xs mono-font text-[#8a8a8a] uppercase tracking-wider">03</div>
+                        <div class="flex-1 h-px bg-[#e5e2df]"></div>
+                        <div class="text-xs mono-font text-[#4a9a8a] uppercase tracking-wider">Media</div>
+                    </div>
+                    <h3 class="text-lg font-medium text-[#2d2d2d] mb-2">AI-Assisted Footage Breakdown</h3>
+                    <p class="text-sm text-[#5a6a7a] leading-relaxed mb-4">
+                        On-premise AI infrastructure for automated footage logging, scene detection, and content indexing. Machine-speed analysis while keeping client IP on-site.
+                    </p>
+                    <div class="text-xs mono-font text-[#8a8a8a]">On-prem GPU, privacy-first architecture</div>
+                </div>
+
+                <div class="initiative-card">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="text-xs mono-font text-[#8a8a8a] uppercase tracking-wider">04</div>
+                        <div class="flex-1 h-px bg-[#e5e2df]"></div>
+                        <div class="text-xs mono-font text-[#4a9a8a] uppercase tracking-wider">Creative</div>
+                    </div>
+                    <h3 class="text-lg font-medium text-[#2d2d2d] mb-2">Music Search Automation</h3>
+                    <p class="text-sm text-[#5a6a7a] leading-relaxed mb-4">
+                        AI-powered semantic search integrated into the existing music library. Prompt-based and similarity-based discovery replaces manual browsing, cutting search time for editors and producers.
+                    </p>
+                    <div class="text-xs mono-font text-[#8a8a8a]">Semantic search, reference matching</div>
+                </div>
+
+                <div class="initiative-card">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="text-xs mono-font text-[#8a8a8a] uppercase tracking-wider">05</div>
+                        <div class="flex-1 h-px bg-[#e5e2df]"></div>
+                        <div class="text-xs mono-font text-[#4a9a8a] uppercase tracking-wider">Post</div>
+                    </div>
+                    <h3 class="text-lg font-medium text-[#2d2d2d] mb-2">Finishing Pipeline Automation</h3>
+                    <p class="text-sm text-[#5a6a7a] leading-relaxed mb-4">
+                        Scripted prep, conform, and delivery workflows with automated asset indexing and management. Reduces manual touchpoints across the post-production handoff.
+                    </p>
+                    <div class="text-xs mono-font text-[#8a8a8a]">End-to-end delivery automation</div>
+                </div>
+
+                <div class="initiative-card">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="text-xs mono-font text-[#8a8a8a] uppercase tracking-wider">06</div>
+                        <div class="flex-1 h-px bg-[#e5e2df]"></div>
+                        <div class="text-xs mono-font text-[#4a9a8a] uppercase tracking-wider">Operations</div>
+                    </div>
+                    <h3 class="text-lg font-medium text-[#2d2d2d] mb-2">Admin Overhead Reduction</h3>
+                    <p class="text-sm text-[#5a6a7a] leading-relaxed mb-4">
+                        Centralized project management, automated reporting, and workflow standardization replace scattered administrative processes across departments.
+                    </p>
+                    <div class="text-xs mono-font text-[#8a8a8a]">Centralized operations backbone</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 bg-[#f5f2f0] scroll-reveal">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-sm text-[#5a6a7a] font-normal uppercase tracking-wider mb-4 mono-font">THE APPROACH</div>
+            <h2 class="text-3xl md:text-4xl leading-tight mb-4">Infrastructure first. Then scale on it.</h2>
+            <p class="text-[#5a6a7a] leading-relaxed mb-10">The efficiency analysis identifies the opportunities. The development plan sequences them so each layer builds on the one before it.</p>
+
+            <div class="space-y-8">
+                <div class="timeline-item">
+                    <div class="text-xs mono-font text-[#4a9a8a] uppercase tracking-wider mb-1">Layer 1</div>
+                    <h4 class="text-base font-medium text-[#2d2d2d] mb-1">Architecture and deployment</h4>
+                    <p class="text-sm text-[#5a6a7a] leading-relaxed">A centralized tool hub, automated deployment pipeline, and security-scanned distribution. The structural layer that every other initiative depends on.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="text-xs mono-font text-[#4a9a8a] uppercase tracking-wider mb-1">Layer 2</div>
+                    <h4 class="text-base font-medium text-[#2d2d2d] mb-1">High-confidence automation</h4>
+                    <p class="text-sm text-[#5a6a7a] leading-relaxed">AI-powered media analysis, intelligent search, predictive scheduling. Proven capabilities with clear integration paths and immediate time savings.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="text-xs mono-font text-[#4a9a8a] uppercase tracking-wider mb-1">Layer 3</div>
+                    <h4 class="text-base font-medium text-[#2d2d2d] mb-1">Workflow transformation</h4>
+                    <p class="text-sm text-[#5a6a7a] leading-relaxed">Producer workflow automation and finishing pipeline scripting. The two largest efficiency opportunities, rolled out department by department on top of the platform and adoption built in earlier layers.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="text-xs mono-font text-[#4a9a8a] uppercase tracking-wider mb-1">Layer 4</div>
+                    <h4 class="text-base font-medium text-[#2d2d2d] mb-1">Measure and repeat</h4>
+                    <p class="text-sm text-[#5a6a7a] leading-relaxed">Adoption data feeds back into the analysis. What works scales. What doesn't gets pivoted or retired. The next layer of opportunity surfaces from a higher baseline.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 scroll-reveal">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-sm text-[#5a6a7a] font-normal uppercase tracking-wider mb-4 mono-font">THE INVESTMENT</div>
+            <h2 class="text-3xl md:text-4xl leading-tight mb-6">Low cost. High return. Built in-house.</h2>
+            <div class="space-y-5 text-[#5a6a7a] leading-relaxed">
+                <p>
+                    Total external licensing runs approximately $30K per year. Everything else is built internally using open-source and commercial AI models, chosen by use case.
+                </p>
+                <p>
+                    Effective total investment, including internal engineering time, runs approximately $90-105K per year. Against an addressable improvement of over $1M annually, that represents a 10-17x return.
+                </p>
+                <p>
+                    Tools are deployed and adoption is expanding across departments. Each wave of tooling funds the next.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 bg-[#f5f2f0] scroll-reveal">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-sm text-[#5a6a7a] font-normal uppercase tracking-wider mb-4 mono-font">THE CYCLE</div>
+            <h2 class="text-3xl md:text-4xl leading-tight mb-6">Continuous, not one-time.</h2>
+            <div class="space-y-5 text-[#5a6a7a] leading-relaxed mb-10">
+                <p>
+                    Each quarter, as new tools ship and workflows evolve, the data surfaces the next layer of opportunity. What was manual becomes automated. What was estimated becomes measured. The operational baseline keeps rising.
+                </p>
+                <p>
+                    Systematically identifying friction, building targeted solutions, measuring the impact, cycling again. Technology is the accelerant. The discipline is the differentiator.
+                </p>
+            </div>
+
+            <div class="border border-[#e5e2df] rounded-xl bg-white p-8">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-center">
+                    <div class="flex-1">
+                        <div class="text-xs mono-font text-[#8a8a8a] uppercase tracking-wider mb-2">Analyze</div>
+                        <p class="text-sm text-[#5a6a7a]">Surface where time and money go. Identify the highest-leverage targets.</p>
+                    </div>
+                    <div class="text-[#e5e2df] text-xl hidden md:block">&rarr;</div>
+                    <div class="flex-1">
+                        <div class="text-xs mono-font text-[#8a8a8a] uppercase tracking-wider mb-2">Build</div>
+                        <p class="text-sm text-[#5a6a7a]">Design and ship targeted tools for each opportunity.</p>
+                    </div>
+                    <div class="text-[#e5e2df] text-xl hidden md:block">&rarr;</div>
+                    <div class="flex-1">
+                        <div class="text-xs mono-font text-[#8a8a8a] uppercase tracking-wider mb-2">Measure</div>
+                        <p class="text-sm text-[#5a6a7a]">Track adoption, time saved, and margin improvement.</p>
+                    </div>
+                    <div class="text-[#e5e2df] text-xl hidden md:block">&rarr;</div>
+                    <div class="flex-1">
+                        <div class="text-xs mono-font text-[#8a8a8a] uppercase tracking-wider mb-2">Repeat</div>
+                        <p class="text-sm text-[#5a6a7a]">The next cycle starts from a higher baseline.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-16 px-6 text-center">
+        <svg viewBox="0 0 318.37 44.22" xmlns="http://www.w3.org/2000/svg" style="height: 18px; width: auto; margin: 0 auto 12px; fill: #8a8a8a;">
+            <g><path d="M0,22.14v-.06C0,8.26,12.86,0,31.26,0c15.08,0,27.07,5.7,30.1,15.28h-12.94c-2.37-4.85-9.63-6.87-16.99-6.87-10.1,0-19.13,4.28-19.13,13.67v.06c0,9.39,9.03,13.67,19.13,13.67,7.36,0,14.61-2.02,16.99-6.87h12.94c-3.03,9.57-15.04,15.28-30.13,15.28C12.83,44.22,0,35.97,0,22.14Z"/><path d="M64.1.96h32.19c11.86,0,19.89,3.27,19.89,13.86v.06c0,10.64-7.99,13.91-19.85,13.91h-20.44v14.48h-11.78V.96ZM94.86,20.44c6.12,0,9-1.22,9-5.56v-.06c0-4.28-2.88-5.51-9-5.51h-18.98v11.13h18.98Z"/><path d="M119.15.96h48.4v8.58h-36.62v8.1h34.89v8.58h-34.89v8.45h36.77v8.58h-48.55V.96Z"/><path d="M185.39.96h15.21l22.76,42.3h-12.92l-5.58-10.38h-24.53l-5.56,10.38h-12.14L185.39.96ZM200.54,24.35l-7.95-14.9h-.06l-7.92,14.9h15.93Z"/><path d="M232.59,9.55h-22.22V.96h56.25v8.59h-22.24v33.72h-11.78V9.55Z"/><path d="M269.82.96h48.4v8.58h-36.62v8.1h34.89v8.58h-34.89v8.45h36.77v8.58h-48.55V.96Z"/></g>
+            <polygon points="98.47 26.77 84.89 26.77 84.81 28.59 101.44 43.26 116.85 43.26 98.47 26.77"/>
+        </svg>
+        <p class="text-xs text-[#8a8a8a] mono-font uppercase tracking-widest">Operational Strategy / FY2025</p>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>
