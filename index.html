@@ -2856,8 +2856,21 @@
 
                 <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12 fade-in">
                     <div class="w-full md:w-3/5">
-                        <div class="rounded-xl overflow-hidden aspect-video bg-[#1a1a2e]">
-                            <img src="screenshots/resourcing.jpg" alt="Real Time Resourcing" class="w-full h-full object-cover cursor-pointer" style="padding: 0;" onclick="openLightbox(this.src)">
+                        <div class="relative overflow-hidden rounded-xl bg-[#1a1a2e] aspect-video">
+                            <div id="resourcing-carousel" class="flex transition-transform duration-500 ease-in-out absolute inset-0" style="width: 200%;">
+                                <div class="h-full flex items-center justify-center" style="width: 50%;"><img src="screenshots/loadbalance-1.png" alt="LoadBalance Dashboard" class="max-w-full max-h-full object-contain cursor-pointer" style="padding: 0;" onclick="openLightbox(this.src)"></div>
+                                <div class="h-full flex items-center justify-center" style="width: 50%;"><img src="screenshots/loadbalance-2.png" alt="LoadBalance List View" class="max-w-full max-h-full object-contain cursor-pointer" style="padding: 0;" onclick="openLightbox(this.src)"></div>
+                            </div>
+                            <button onclick="resourcingCarousel(-1)" class="absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/90 shadow-md flex items-center justify-center text-[#5a6a7a] hover:bg-white transition-all" aria-label="Previous">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                            </button>
+                            <button onclick="resourcingCarousel(1)" class="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/90 shadow-md flex items-center justify-center text-[#5a6a7a] hover:bg-white transition-all" aria-label="Next">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                            </button>
+                            <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
+                                <button onclick="resourcingGoTo(0)" class="resourcing-dot w-2 h-2 rounded-full bg-white transition-all" aria-label="Slide 1"></button>
+                                <button onclick="resourcingGoTo(1)" class="resourcing-dot w-2 h-2 rounded-full bg-white/40 transition-all" aria-label="Slide 2"></button>
+                            </div>
                         </div>
                     </div>
                     <div class="w-full md:w-2/5">
@@ -3647,6 +3660,21 @@
         }
         function marketsCarousel(dir) {
             marketsGoTo((marketsIdx + dir + 3) % 3);
+        }
+
+        // Resourcing carousel
+        var resourcingIdx = 0;
+        function resourcingGoTo(i) {
+            resourcingIdx = i;
+            var el = document.getElementById('resourcing-carousel');
+            if (el) el.style.transform = 'translateX(-' + (i * 50) + '%)';
+            var dots = document.querySelectorAll('.resourcing-dot');
+            dots.forEach(function(d, di) {
+                d.style.opacity = di === i ? '1' : '0.4';
+            });
+        }
+        function resourcingCarousel(dir) {
+            resourcingGoTo((resourcingIdx + dir + 2) % 2);
         }
 
         // Animated word cycling - continuous fade in/out cycle
